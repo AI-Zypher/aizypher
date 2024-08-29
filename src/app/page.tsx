@@ -1,5 +1,5 @@
 import Image from "next/image";
-import StudentForm from '../../components/forms';
+import StudentForm from './components/forms';
 
 
 export default function Home() {
