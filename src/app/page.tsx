@@ -112,7 +112,7 @@ export default function Home() {
     //   </div>
     // </main>
     <div className="App">
-      <h1>Student Registration Form</h1>
+      
       <StudentForm />
     </div>
   );
