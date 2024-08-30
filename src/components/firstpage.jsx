@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const VideoBackground = () => {
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
       <video
         autoPlay
         loop
@@ -60,7 +60,6 @@ const VideoBackground = () => {
         {/* Add your overlay content here */}
         <h1 className="text-white text-4xl font-bold">Welcome to My Website</h1>
       </div>
-          
     </div>
   );
 };
