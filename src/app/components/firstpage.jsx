@@ -26,7 +26,7 @@ const VideoBackground = () => {
         <h1 className="text-white text-6xl md:text-8xl font-extrabold tracking-wide drop-shadow-lg">Welcome to AI-ZYPHER 2024</h1> 
         </div>
         {/* <div className="flex items-center justify-center mt-8">
-        <Link href="">
+        <Link href="/src/app/components/forms.jsx">
           <button className="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
             Register Now
           </button>
