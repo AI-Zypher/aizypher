@@ -10,6 +10,7 @@ const VideoBackground = () => {
         <source src="/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+     
       <div className="relative z-10 flex flex-col w-full h-full">
         <nav className="bg-opacity-0 bg-black text-white p-4">
         <ul className="flex justify-end space-x-6">
@@ -27,7 +28,7 @@ const VideoBackground = () => {
         </div>
         {/* <div className="flex items-center justify-center mt-8">
         <Link href="/src/app/components/forms.jsx">
-          <button className="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+          <button className="px-6 py-3 border-2 border-green-500 bg-green-500 rounded-full text-white font-semibold rounded-lg hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
             Register Now
           </button>
         </Link>
@@ -37,6 +38,7 @@ const VideoBackground = () => {
         {/* Add your overlay content here */}
         <h1 className="text-white text-4xl font-bold">Welcome to My Website</h1>
       </div>
+      
     </div>
   );
 };
