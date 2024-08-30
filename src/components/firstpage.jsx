@@ -1,7 +1,17 @@
+"use client";
 import React from 'react';
-import Link from 'next/link';
+import { auth, provider, signInWithPopup } from "../app/firebaseConfig";
 
 const VideoBackground = () => {
+  const handleSignIn = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      window.location.href = "/register";
+    } catch (error) {
+      console.error("Error during sign-in:", error.message);
+    }
+  };
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <video
@@ -29,9 +39,8 @@ const VideoBackground = () => {
           <h1 className="text-white text-6xl md:text-8xl font-extrabold tracking-wide drop-shadow-lg text-center">
             Welcome to AI-ZYPHER 2024
           </h1>
-          <div className="mt-28"> {/* Increased margin to move button down */}
-            <Link href="/src/app/components/forms.jsx">
-              <button className="px-8 py-3 border-2 border-green-500 bg-green-500 rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center">
+          <div className="mt-28">
+              <button onClick={handleSignIn} className="px-8 py-3 border-2 border-green-500 bg-green-500 rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center">
                 Register  
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +57,6 @@ const VideoBackground = () => {
                   />
                 </svg>
               </button>
-            </Link>
           </div>
         </div>
       </div>
