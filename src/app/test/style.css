@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: #111;
+}
+
+#page1 {
+    height : 100%;
+    width : 100%;
+    background-color: rgb(255, 0, 51);
+    font-size: 5VW;
+    padding-top: 150PX;
+    padding-bottom: 150PX;
+    padding-left: 35px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+#page2 {
+    height : 100%;
+    width : 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 115, 0);
+    font-size: 15VW;
+    overflow-x: hidden;
+    padding-top: 130PX;
+    padding-left: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#page3 {
+    height : 100%;
+    width : 100%;
+    background-color: rgb(37, 32, 33);
+}
