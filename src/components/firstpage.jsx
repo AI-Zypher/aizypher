@@ -1,4 +1,5 @@
 "use client";
+import { auth, provider, signInWithPopup } from "../app/firebaseConfig";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -26,8 +27,17 @@ const AnimationPage = () => {
     );
   }, []);
 
+  const handleSignIn = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      window.location.href = "/register";
+    } catch (error) {
+      console.error("Error during sign-in:", error.message);
+    }
+  };
+
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
       <video
         autoPlay
         loop
@@ -37,6 +47,7 @@ const AnimationPage = () => {
         <source src="/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
       <div className="relative z-10 flex flex-col w-full h-full">
         <nav className="bg-opacity-0 bg-black text-white p-4 flex items-center justify-between">
           <div className="flex-shrink-0">
@@ -66,10 +77,30 @@ const AnimationPage = () => {
           </div>
         </nav>
 
-        <div id="zypherhead" className="flex flex-grow items-center justify-center">
-          <h1 ref={headingRef} id="zypherheading" className="text-white text-6xl md:text-8xl font-extrabold tracking-wide drop-shadow-lg">
+
+        <div id="zypherhead" className="flex flex-col items-center justify-center flex-grow">
+          <h1 ref={headingRef} id="zypherheading" className="text-white text-6xl md:text-8xl font-extrabold tracking-wide drop-shadow-lg text-center">
             Welcome to AI-ZYPHER 2024
           </h1>
+          <div className="mt-28">
+              <button onClick={handleSignIn} className="px-8 py-3 border-2 border-green-500 bg-green-500 rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center">
+                Register  
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-3.5 w-3.5 ml-2" 
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </button>
+          </div>
         </div>
       </div>
       <div className="h-screen w-screen bg-black">hello</div>
