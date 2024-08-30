@@ -11,6 +11,7 @@ const AnimationPage = () => {
   const headingRef = useRef(null);
   const [background, setBackground] = useState(20);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("#home");
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -56,25 +57,29 @@ const AnimationPage = () => {
     setIsMenuOpen(false);
   };
 
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+    closeMenu();
+  };
+
   return (
     <div ref={triggerzone} className="relative w-full h-screen overflow-hidden">
       <video
         autoPlay
         loop
         muted
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
       >
         <source src="/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       <div className="relative z-10 flex flex-col w-full h-full">
-        <nav className="z-20 bg-opacity-0 bg-black text-white p-4 flex items-center justify-between">
+        <nav className="z-20 bg-opacity-0 bg-black text-white px-4 flex items-center justify-between">
           <div className="flex-shrink-0">
-            <img src="/logo.png" alt="logo" className="h-16" />
+            <img src="/nav-logo.png" alt="logo" className="h-28" />
           </div>
 
-          {/* Hamburger Menu Icon for Mobile */}
           <div className="block md:hidden z-30">
             <button
               onClick={toggleMenu}
@@ -107,42 +112,70 @@ const AnimationPage = () => {
           </div>
 
           {/* Navbar Links - Visible in Desktop */}
-          <ul className="hidden md:flex justify-center md:text-xl text-2xl space-x-6">
+          <ul className="hidden md:flex justify-center md:text-lg text-2xl space-x-6">
             <li>
-              <a href="#home" className="font-bold px-6">
+              <a
+                href="#home"
+                onClick={() => handleLinkClick("#home")}
+                className={`font-bold px-6 ${
+                  activeLink === "#home" ? "text-white" : "text-gray-400"
+                }`}
+              >
                 Home
               </a>
             </li>
             <li>
-              <a href="#about" className="font-bold px-6">
+              <a
+                href="#about"
+                onClick={() => handleLinkClick("#about")}
+                className={`font-bold px-6 ${
+                  activeLink === "#about" ? "text-white" : "text-gray-400"
+                }`}
+              >
                 About
               </a>
             </li>
             <li>
-              <a href="#events" className="font-bold px-6">
+              <a
+                href="#events"
+                onClick={() => handleLinkClick("#events")}
+                className={`font-bold px-6 ${
+                  activeLink === "#events" ? "text-white" : "text-gray-400"
+                }`}
+              >
                 Events
               </a>
             </li>
             <li>
-              <a href="#sponsors" className="font-bold px-6">
+              <a
+                href="#sponsors"
+                onClick={() => handleLinkClick("#sponsors")}
+                className={`font-bold px-6 ${
+                  activeLink === "#sponsors" ? "text-white" : "text-gray-400"
+                }`}
+              >
                 Sponsors
               </a>
             </li>
             <li>
-              <a href="#team" className="font-bold px-6">
+              <a
+                href="#team"
+                onClick={() => handleLinkClick("#team")}
+                className={`font-bold px-6 ${
+                  activeLink === "#team" ? "text-white" : "text-gray-400"
+                }`}
+              >
                 Team
               </a>
             </li>
           </ul>
 
-          {/* Login Button */}
           <div className="hidden md:block flex-shrink-0 pr-8">
-            <button className="text-[#31771F] border-2 border-white px-12 py-4 rounded-full tracking-widest uppercase font-bold text-xl bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200">
+            <button className="text-[#31771F] border-2 border-white px-12 py-4 rounded-full tracking-widest uppercase font-bold text-sm bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200">
               Login
             </button>
           </div>
 
-          {/* Sliding Menu for Mobile */}
           <div
             className={`fixed top-0 left-0 h-full w-64 bg-black text-white transform ${
               isMenuOpen ? "translate-x-0" : "-translate-x-full"
@@ -152,8 +185,10 @@ const AnimationPage = () => {
               <li>
                 <a
                   href="#home"
-                  onClick={closeMenu}
-                  className="font-bold text-xl"
+                  onClick={() => handleLinkClick("#home")}
+                  className={`font-bold text-xl ${
+                    activeLink === "#home" ? "text-white" : "text-gray-400"
+                  }`}
                 >
                   Home
                 </a>
@@ -161,8 +196,10 @@ const AnimationPage = () => {
               <li>
                 <a
                   href="#about"
-                  onClick={closeMenu}
-                  className="font-bold text-xl"
+                  onClick={() => handleLinkClick("#about")}
+                  className={`font-bold text-xl ${
+                    activeLink === "#about" ? "text-white" : "text-gray-400"
+                  }`}
                 >
                   About
                 </a>
@@ -170,8 +207,10 @@ const AnimationPage = () => {
               <li>
                 <a
                   href="#events"
-                  onClick={closeMenu}
-                  className="font-bold text-xl"
+                  onClick={() => handleLinkClick("#events")}
+                  className={`font-bold text-xl ${
+                    activeLink === "#events" ? "text-white" : "text-gray-400"
+                  }`}
                 >
                   Events
                 </a>
@@ -179,8 +218,10 @@ const AnimationPage = () => {
               <li>
                 <a
                   href="#sponsors"
-                  onClick={closeMenu}
-                  className="font-bold text-xl"
+                  onClick={() => handleLinkClick("#sponsors")}
+                  className={`font-bold text-xl ${
+                    activeLink === "#sponsors" ? "text-white" : "text-gray-400"
+                  }`}
                 >
                   Sponsors
                 </a>
@@ -188,8 +229,10 @@ const AnimationPage = () => {
               <li>
                 <a
                   href="#team"
-                  onClick={closeMenu}
-                  className="font-bold text-xl"
+                  onClick={() => handleLinkClick("#team")}
+                  className={`font-bold text-xl ${
+                    activeLink === "#team" ? "text-white" : "text-gray-400"
+                  }`}
                 >
                   Team
                 </a>
@@ -223,15 +266,12 @@ const AnimationPage = () => {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                  d="M17.25 6.75L21 12m0 0l-3.75 5.25M21 12H3"
                 />
               </svg>
             </button>
           </div>
         </div>
-      </div>
-      <div className="h-screen w-screen bg-black">
-        <p className="text-white">hello</p>
       </div>
     </div>
   );
