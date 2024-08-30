@@ -1,30 +1,41 @@
 "use client";
 import { auth, provider, signInWithPopup } from "../app/firebaseConfig";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AnimationPage = () => {
+  const triggerzone = useRef(null);
   const headingRef = useRef(null);
+  const [background, setBackground] = useState(20)
 
   useEffect(() => {
-    gsap.fromTo(
-      headingRef.current,
-      { y: '150%' }, // Start from below the viewport
-      {
-        y: '-50%', // End up slightly above the viewport
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: 'top bottom', // Start the animation when the top of the heading reaches the bottom of the viewport
-          end: 'bottom top', // End the animation when the bottom of the heading reaches the top of the viewport
-          scrub: true, // Make the animation linked to the scroll position
-        },
-        duration: 2,
-        ease: 'power2.out',
-      }
-    );
+    let ctx = gsap.context(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        var tl = gsap.timeline({
+            defaults: { duration: 1 },
+            scrollTrigger: {
+                trigger: triggerzone.current,
+                start: "top top",
+                end: "5000 bottom",
+                scrub: true,
+                pin: true,
+                onUpdate: (self) => {
+                    setBackground(Math.ceil(self.progress * 100 + 20))
+                },
+            },
+        });
+        tl.to(
+            headingRef.current,
+            {
+                y: "-=540",
+            },
+            0
+        );
+      });
+      return () => ctx.revert();
   }, []);
 
   const handleSignIn = async () => {
@@ -37,7 +48,7 @@ const AnimationPage = () => {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div ref={triggerzone} className="relative w-full h-screen overflow-hidden">
       <video
         autoPlay
         loop
@@ -79,7 +90,7 @@ const AnimationPage = () => {
 
 
         <div id="zypherhead" className="flex flex-col items-center justify-center flex-grow">
-          <h1 ref={headingRef} id="zypherheading" className="text-white text-6xl md:text-8xl font-extrabold tracking-wide drop-shadow-lg text-center">
+          <h1 ref={headingRef} id="zypherheading" className="translate-y-96 text-white text-6xl md:text-8xl font-extrabold tracking-wide drop-shadow-lg text-center">
             Welcome to AI-ZYPHER 2024
           </h1>
           <div className="mt-28">
