@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { db } from "../firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 
-const RegistrationForm = () => {
+export default function RegistrationForm() {
   const [formData, setFormData] = useState({
     name: "",
     registerNo: "",
@@ -180,5 +180,3 @@ const RegistrationForm = () => {
     </div>
   );
 };
-
-export default RegistrationForm;
