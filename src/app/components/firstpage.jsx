@@ -6,20 +6,18 @@ import Link from 'next/link';
 const VideoBackground = () => {
   return (
     <div className="relative w-screen h-screen overflow-hidden">
-      <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover">
+      <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover ">
         <source src="/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="relative z-10 flex flex-col w-full h-full">
         <nav className="bg-opacity-0 bg-black text-white p-4">
-        <ul className="flex justify-end space-x-6">
-            <li><a href="#home" className="hover:underline">Home</a></li>
-            <li><a href="#about" className="hover:underline">About</a></li>
-            <li><a href="#events" className="hover:underline">Events</a></li>
-            <li><a href="#carnival" className="hover:underline">Carnival</a></li>
-            <li><a href="#gallery" className="hover:underline">Gallery</a></li>
-            <li><a href="#sponsors" className="hover:underline">Sponsors</a></li>
-            <li><a href="#team" className="hover:underline">Team</a></li>
+        <ul className="flex justify-center font-size text-2xl space-x-6 mt-8 ">
+            <li><a href="#home" className=" font-bold px-6">Home</a></li>
+            <li><a href="#about" className=" font-bold px-6">About</a></li>
+            <li><a href="#events" className=" font-bold px-6">Events</a></li>
+            <li><a href="#sponsors" className=" font-bold px-6">Sponsors</a></li>
+            <li><a href="#team" className=" font-bold px-6">Team</a></li>
           </ul>
         </nav>
         <div className="flex flex-grow items-center justify-center">
