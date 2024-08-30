@@ -3,8 +3,13 @@ import Link from 'next/link';
 
 const VideoBackground = () => {
   return (
-    <div className="relative w-screen h-screen overflow-hidden">
-      <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover">
+    <div className="relative w-full h-screen overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover "
+      >
         <source src="/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
