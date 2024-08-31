@@ -14,6 +14,7 @@ const AnimationPage = () => {
   const imgref1 = useRef(null);
   const imgrefbg = useRef(null);
   const days = useRef(null);
+  const foregroundImageRef = useRef(null); // New ref for foreground image
   const [background, setBackground] = useState(20);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#home");
@@ -21,9 +22,11 @@ const AnimationPage = () => {
   useEffect(() => {
 
     let ctx = gsap.context(() => {
-      gsap.to(imgref1.current, { rotate: 360,scale: 400, duration: 3, ease: Expo.easeIn });
-      gsap.to(imgref1.current, { opacity:0,delay: 2, duration: 1, ease: Expo.easeIn });
-      gsap.to(imgrefbg.current, { opacity:0,delay: 2, duration: 0, ease: Expo.easeIn });
+      gsap.to(imgref1.current, { rotate: 360, scale: 400, duration: 3, ease: Expo.easeIn });
+      gsap.to(imgref1.current, { opacity: 0, delay: 2, duration: 1, ease: Expo.easeIn });
+      gsap.to(imgrefbg.current, { opacity: 0, delay: 2, duration: 0, ease: Expo.easeIn });
+      // gsap.to(foregroundImageRef.current, { opacity: 1, delay: 3, duration: 2, ease: Expo.easeOut }); // Animate the foreground image
+
       gsap.registerPlugin(ScrollTrigger);
       var tl = gsap.timeline({
         defaults: { duration: 1 },
@@ -43,14 +46,21 @@ const AnimationPage = () => {
         {
           y: "-=250",
         },
-        0
+        1
+      );
+      tl.to(
+        foregroundImageRef.current,
+        {
+          opacity:0,
+        },
+        2
       );
       tl.to(
         clockRef.current,
         {
           y: "-=250",
         },
-        0
+        1
       );
     });
 
@@ -123,6 +133,7 @@ const AnimationPage = () => {
         <source src="/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
       <div className="relative z-10 flex flex-col w-full h-full">
         <nav className="z-20 bg-opacity-0 bg-black text-white px-4 flex items-center justify-between">
           <div className="flex-shrink-0">
@@ -229,7 +240,7 @@ const AnimationPage = () => {
 
               <div className="timer flex flex-col items-center justify-center">
                 <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
-                  <h3 className="countdown-element hours font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
                     {timeLeft.hours}
                   </h3>
                   <p className="text-xs md:text-sm font-normal text-white text-center w-full">
@@ -240,7 +251,7 @@ const AnimationPage = () => {
 
               <div className="timer flex flex-col items-center justify-center">
                 <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
-                  <h3 className="countdown-element minutes font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
                     {timeLeft.minutes}
                   </h3>
                   <p className="text-xs md:text-sm font-normal text-white text-center w-full">
@@ -251,7 +262,7 @@ const AnimationPage = () => {
 
               <div className="timer flex flex-col items-center justify-center">
                 <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
-                  <h3 className="countdown-element seconds font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
                     {timeLeft.seconds}
                   </h3>
                   <p className="text-xs md:text-sm font-normal text-white text-center w-full">
@@ -261,30 +272,12 @@ const AnimationPage = () => {
               </div>
             </div>
           </div>
-
-          <div className="mt-28">
-            <button
-              ref={buttonref}
-              onClick={handleSignIn}
-              className="opacity-0 px-8 py-3 border-2 border-green-500 bg-green-500 rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center"
-            >
-              Register
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-3.5 w-3.5 ml-2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 6.75L21 12m0 0l-3.75 5.25M21 12H3"
-                />
-              </svg>
-            </button>
-          </div>
+          <img
+            ref={foregroundImageRef}
+            src="bush.png"
+            alt="Foreground Image"
+            className="absolute top-0 left-0 z-50 w-full h-auto opacity-0"
+          />
         </div>
       </div>
     </div>
