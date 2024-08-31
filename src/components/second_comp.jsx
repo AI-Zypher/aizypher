@@ -14,7 +14,7 @@ const borderGradientStyle = {
 
 const SecondComp = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#016E2D] to-black p-4">
+    <div id="about" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#016E2D] to-black p-4">
       <div className="text-white max-w-4xl mx-auto text-justify">
         {/* Section 1: SRM Institute of Science and Technology */}
         <section

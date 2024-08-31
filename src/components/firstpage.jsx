@@ -3,6 +3,7 @@ import { auth, provider, signInWithPopup } from "../app/firebaseConfig";
 import React, { useEffect, useRef, useState } from "react";
 import { gsap, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import NavBar from "./navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,19 +137,20 @@ const AnimationPage = () => {
   }
 
   return (
-    <div ref={triggerzone} className="relative w-full h-screen overflow-hidden">
+    <div id="home" ref={triggerzone} className="relative w-full h-screen overflow-hidden">
       <video
         autoPlay
         loop
         muted
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-50"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-10"
       >
         <source src="/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
       <div className="relative z-10 flex flex-col w-full h-full">
-        <nav className="z-20 bg-opacity-0 bg-black text-white px-4 flex items-center justify-between">
+        <NavBar activeLink={activeLink} handleLinkClick={handleLinkClick} />
+        {/* <nav className="relative z-50 bg-opacity-0 bg-black text-white px-4 flex items-center justify-between">
           <div className="flex-shrink-0">
             <img src="/nav-logo.png" alt="logo" className="h-28" />
           </div>
@@ -225,7 +227,7 @@ const AnimationPage = () => {
               )}
             </ul>
           </div>
-        </nav>
+        </nav> */}
 
         <div className="flex flex-col items-center justify-center flex-grow">
           <h1
@@ -289,13 +291,13 @@ const AnimationPage = () => {
             ref={foregroundImageRRef}
             src="bushL.png"
             alt="Foreground Image"
-            className="absolute bottom-0 left-0 z-50 w-full h-auto opacity-70"
+            className="absolute bottom-0 left-0 w-full h-auto opacity-70"
           />
           <img
             ref={foregroundImageLRef}
             src="bushR.png"
             alt="Foreground Image"
-            className="absolute bottom-0 right-0 z-50 w-full h-auto opacity-70"
+            className="absolute bottom-0 right-0 w-full h-auto opacity-70"
           />
         </div>
       </div>

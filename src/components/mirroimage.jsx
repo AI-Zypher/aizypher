@@ -3,7 +3,6 @@ import React from "react";
 const SecondComp = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
-      {/* Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="/white-bg.png"
