@@ -9,13 +9,13 @@ import More from "../components/morepage";
 export default function Home() {
   return (
     <div className="App">
-      {/* <First />
+      <First />
       <Second />
       <Fourth />
       <Third />
-      <SponsorsPage /> */}
+      <SponsorsPage />
       {/* <Event /> */}
-      <More />
+      {/* <More /> */}
     </div>
   );
 }
