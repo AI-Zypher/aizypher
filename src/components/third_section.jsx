@@ -105,19 +105,21 @@ const data = [
 const Events = () => {
   return (
     <div className="relative items-center justify-center bg-black w-full h-full">
-        <div className="relative flex items-center justify-center py-10 relative z-10">
-            <h1 className="text-white text-8xl uppercase font-bold">Unleash Your Talents</h1>
-        </div>
-        <div className="absolute inset-0 z-0 overflow-hidden">
-            <img
-                src="/white-bg.png"
-                alt="Mirrored Background"
-                style={{
-                    transform: "scaleX(-1)",
-                }}
-                className="w-full h-full"
-            />
-        </div>
+      <div className="relative flex items-center justify-center py-10 z-10 mt-20">
+        <h1 className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase font-bold text-center">
+          Unleash Your Talents
+        </h1>
+      </div>
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src="/white-bg.png"
+          alt="Mirrored Background"
+          style={{
+            transform: "scaleX(-1)",
+          }}
+          className="w-full h-full"
+        />
+      </div>
       <AppleCardsCarouselDemo type="Technical Events" />
       <AppleCardsCarouselDemo type="Non Technical Events" />
     </div>
