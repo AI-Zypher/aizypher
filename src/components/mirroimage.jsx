@@ -4,13 +4,13 @@ const SecondComp = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/white-bg.png"
-          alt="Mirrored Background"
-          className="w-full h-full object-cover"
-        />
-      </div>
+      <div className="absolute inset-0 z-0 overflow-hidden">
+            <img
+                src="/white-bg.png"
+                alt="Mirrored Background"
+                className="w-full h-full"
+            />
+        </div>
 
       {/* Centered Image */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
