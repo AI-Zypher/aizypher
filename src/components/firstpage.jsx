@@ -19,16 +19,6 @@ const AnimationPage = () => {
   const [activeLink, setActiveLink] = useState("#home");
 
   useEffect(() => {
-    // Load the countdown script
-    const script = document.createElement("script");
-
-    // Set the script source to the countdown.js file located in public folder
-    script.src = "./countdown.js";
-    script.async = true;
-
-    // Append the script to the body
-    document.body.appendChild(script);
-      
 
     let ctx = gsap.context(() => {
       gsap.to(imgref1.current, { rotate: 360,scale: 400, duration: 3, ease: Expo.easeIn });
@@ -66,7 +56,6 @@ const AnimationPage = () => {
 
     return () => {
       ctx.revert();
-      document.body.removeChild(script);
     };
   }, []);
 
