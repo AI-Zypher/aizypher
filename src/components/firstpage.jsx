@@ -14,6 +14,8 @@ const AnimationPage = () => {
   const imgref1 = useRef(null);
   const imgrefbg = useRef(null);
   const days = useRef(null);
+  const foregroundImageRRef = useRef(null); // New ref for foreground image
+  const foregroundImageLRef = useRef(null); // New ref for foreground image
   const [background, setBackground] = useState(20);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#home");
@@ -21,9 +23,11 @@ const AnimationPage = () => {
   useEffect(() => {
 
     let ctx = gsap.context(() => {
-      gsap.to(imgref1.current, { rotate: 360,scale: 400, duration: 3, ease: Expo.easeIn });
-      gsap.to(imgref1.current, { opacity:0,delay: 2, duration: 1, ease: Expo.easeIn });
-      gsap.to(imgrefbg.current, { opacity:0,delay: 2, duration: 0, ease: Expo.easeIn });
+      gsap.to(imgref1.current, { rotate: 360, scale: 400, duration: 3, ease: Expo.easeIn });
+      gsap.to(imgref1.current, { opacity: 0, delay: 2, duration: 1, ease: Expo.easeIn });
+      gsap.to(imgrefbg.current, { opacity: 0, delay: 2, duration: 0, ease: Expo.easeIn });
+      // gsap.to(foregroundImageRef.current, { opacity: 1, delay: 3, duration: 2, ease: Expo.easeOut }); // Animate the foreground image
+
       gsap.registerPlugin(ScrollTrigger);
       var tl = gsap.timeline({
         defaults: { duration: 1 },
@@ -41,14 +45,33 @@ const AnimationPage = () => {
       tl.to(
         headingRef.current,
         {
-          y: "-=250",
+          y: "-=350",
+          opacity:1,
+        },
+        0
+      );
+      tl.to(
+        foregroundImageRRef.current,
+        {
+          x: "-=550",
+          opacity:0,
+          
+        },
+        0
+      );
+      tl.to(
+        foregroundImageLRef.current,
+        {
+          opacity:0,
+          x: "+=550",
         },
         0
       );
       tl.to(
         clockRef.current,
         {
-          y: "-=250",
+          y: "-=350",
+          opacity:1,
         },
         0
       );
@@ -81,12 +104,39 @@ const AnimationPage = () => {
     closeMenu();
   };
 
+  const targetDate = new Date("2024-10-01");
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft(targetDate));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
+  function calculateTimeLeft(targetDate) {
+    const now = new Date();
+    const target = new Date(targetDate);
+    const difference = target - now;
+
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    return { days, hours, minutes, seconds };
+  }
+
   return (
-    
     <div ref={triggerzone} className="relative w-full h-screen overflow-hidden">
-      <div ref={imgrefbg} className="absolute z-40">
-        <img src="/ewastebg.jpg" className="w-screen h-screen bg-cover bg-center" alt="recycle" />
-      </div>
       <video
         autoPlay
         loop
@@ -96,79 +146,60 @@ const AnimationPage = () => {
         <source src="/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div ref={imgref1} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
-        <img src="/bin.png" className="h-28" alt="recycle" />
-      </div>
+
       <div className="relative z-10 flex flex-col w-full h-full">
         <nav className="z-20 bg-opacity-0 bg-black text-white px-4 flex items-center justify-between">
           <div className="flex-shrink-0">
             <img src="/nav-logo.png" alt="logo" className="h-28" />
           </div>
 
-          {/* Navbar Links - Visible in Desktop */}
           <ul className="hidden md:flex justify-center md:text-lg text-2xl space-x-6">
-            <li>
-              <a
-                href="#home"
-                onClick={() => handleLinkClick("#home")}
-                className={`font-bold px-6 ${
-                  activeLink === "#home" ? "text-white" : "text-gray-400"
-                }`}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                onClick={() => handleLinkClick("#about")}
-                className={`font-bold px-6 ${
-                  activeLink === "#about" ? "text-white" : "text-gray-400"
-                }`}
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#events"
-                onClick={() => handleLinkClick("#events")}
-                className={`font-bold px-6 ${
-                  activeLink === "#events" ? "text-white" : "text-gray-400"
-                }`}
-              >
-                Events
-              </a>
-            </li>
-            <li>
-              <a
-                href="#sponsors"
-                onClick={() => handleLinkClick("#sponsors")}
-                className={`font-bold px-6 ${
-                  activeLink === "#sponsors" ? "text-white" : "text-gray-400"
-                }`}
-              >
-                Sponsors
-              </a>
-            </li>
-            <li>
-              <a
-                href="#team"
-                onClick={() => handleLinkClick("#team")}
-                className={`font-bold px-6 ${
-                  activeLink === "#team" ? "text-white" : "text-gray-400"
-                }`}
-              >
-                Team
-              </a>
-            </li>
+            {["#home", "#about", "#events", "#sponsors", "#team"].map(
+              (link) => (
+                <li key={link}>
+                  <a
+                    href={link}
+                    onClick={() => handleLinkClick(link)}
+                    className={`font-bold px-6 ${
+                      activeLink === link ? "text-white" : "text-gray-400"
+                    }`}
+                  >
+                    {link.replace("#", "").charAt(0).toUpperCase() +
+                      link.slice(2)}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
 
           <div className="hidden md:block flex-shrink-0 pr-8">
-            <button className="text-[#31771F] border-2 border-white px-12 py-4 rounded-full tracking-widest font-bold text-sm bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200">
+            <button
+              onClick={handleSignIn}
+              className="text-[#31771F] border-2 border-white px-12 py-4 rounded-full tracking-widest font-bold text-sm bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200"
+            >
               Login
             </button>
           </div>
+
+          <button
+            className="md:hidden flex items-center text-white"
+            onClick={toggleMenu}
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
 
           <div
             className={`fixed top-0 left-0 h-full w-64 bg-black text-white transform ${
@@ -176,61 +207,22 @@ const AnimationPage = () => {
             } transition-transform duration-300 ease-in-out md:hidden z-20`}
           >
             <ul className="flex flex-col space-y-6 p-8">
-              <li>
-                <a
-                  href="#home"
-                  onClick={() => handleLinkClick("#home")}
-                  className={`font-bold text-xl ${
-                    activeLink === "#home" ? "text-white" : "text-gray-400"
-                  }`}
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  onClick={() => handleLinkClick("#about")}
-                  className={`font-bold text-xl ${
-                    activeLink === "#about" ? "text-white" : "text-gray-400"
-                  }`}
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#events"
-                  onClick={() => handleLinkClick("#events")}
-                  className={`font-bold text-xl ${
-                    activeLink === "#events" ? "text-white" : "text-gray-400"
-                  }`}
-                >
-                  Events
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#sponsors"
-                  onClick={() => handleLinkClick("#sponsors")}
-                  className={`font-bold text-xl ${
-                    activeLink === "#sponsors" ? "text-white" : "text-gray-400"
-                  }`}
-                >
-                  Sponsors
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#team"
-                  onClick={() => handleLinkClick("#team")}
-                  className={`font-bold text-xl ${
-                    activeLink === "#team" ? "text-white" : "text-gray-400"
-                  }`}
-                >
-                  Team
-                </a>
-              </li>
+              {["#home", "#about", "#events", "#sponsors", "#team"].map(
+                (link) => (
+                  <li key={link}>
+                    <a
+                      href={link}
+                      onClick={() => handleLinkClick(link)}
+                      className={`font-bold text-xl ${
+                        activeLink === link ? "text-white" : "text-gray-400"
+                      }`}
+                    >
+                      {link.replace("#", "").charAt(0).toUpperCase() +
+                        link.slice(2)}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </nav>
@@ -239,76 +231,72 @@ const AnimationPage = () => {
           <h1
             ref={headingRef}
             id="zypherheading"
-            className="translate-y-96 text-white text-6xl md:text-8xl font-extrabold tracking-wide drop-shadow-lg text-center"
+            className="translate-y-96 tracking-wide drop-shadow-lg opacity-0"
           >
-            <img src="./zypher-main.png" className="h-96" />
+            <img src="./zypher-main.png" className="lg:h-96 sm:h-40" />
           </h1>
           <div
             ref={clockRef}
-            className="w-full h-96 rounded-2xl flex gap-9 flex-col items-center justify-center bg-cover bg-center translate-y-44"
+            className="opacity-0 w-full h-auto max-w-4xl mx-auto rounded-2xl flex flex-col items-center justify-center bg-cover bg-center translate-y-44 p-4"
           >
-            <div className="flex items-start justify-center w-full gap-1.5 count-down-main">
-              <div className="timer">
-                <div className="rounded-xl bg-white/25 backdrop-blur-sm py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 px-3">
-                  <h3 className="countdown-element days font-manrope font-semibold text-2xl text-white text-center">00</h3>
-                  <p className="text-lg  font-normal text-white mt-1 text-center w-full">
+            <div className="flex flex-wrap items-start justify-center w-full gap-4 mt-32 md:gap-9">
+              <div className="timer flex flex-col items-center justify-center">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                    {timeLeft.days}
+                  </h3>
+                  <p className="text-xs md:text-sm font-normal text-white text-center w-full">
                     Days
                   </p>
                 </div>
               </div>
 
-              <div className="timer">
-                <div className="rounded-xl bg-white/25 backdrop-blur-sm py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 px-3">
-                  <h3 className="countdown-element hours font-manrope font-semibold text-2xl text-white text-center">00</h3>
-                  <p className="text-lg font-normal text-white mt-1 text-center w-full">
-                    Hour
+              <div className="timer flex flex-col items-center justify-center">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                    {timeLeft.hours}
+                  </h3>
+                  <p className="text-xs md:text-sm font-normal text-white text-center w-full">
+                    Hours
                   </p>
                 </div>
               </div>
 
-              <div className="timer">
-                <div className="rounded-xl bg-white/25 backdrop-blur-sm py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 px-3">
-                  <h3 className="countdown-element minutes font-manrope font-semibold text-2xl text-white text-center">00</h3>
-                  <p className="text-lg fo uppercasent-normal text-white mt-1 text-center w-full">
+              <div className="timer flex flex-col items-center justify-center">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                    {timeLeft.minutes}
+                  </h3>
+                  <p className="text-xs md:text-sm font-normal text-white text-center w-full">
                     Minutes
                   </p>
                 </div>
               </div>
 
-              <div className="timer">
-                <div className="rounded-xl bg-white/25 backdrop-blur-sm py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 px-3">
-                  <h3 className="countdown-element seconds font-manrope font-semibold text-2xl text-white text-center">00</h3>
-                  <p className="text-lg fo uppercasent-normal text-white mt-1 text-center w-full">
+              <div className="timer flex flex-col items-center justify-center">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                    {timeLeft.seconds}
+                  </h3>
+                  <p className="text-xs md:text-sm font-normal text-white text-center w-full">
                     Seconds
                   </p>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="mt-28">
-            <button
-              ref={buttonref}
-              onClick={handleSignIn}
-              className="opacity-0 px-8 py-3 border-2 border-green-500 bg-green-500 rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center"
-            >
-              Register
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-3.5 w-3.5 ml-2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 6.75L21 12m0 0l-3.75 5.25M21 12H3"
-                />
-              </svg>
-            </button>
-          </div>
+          <img
+            ref={foregroundImageRRef}
+            src="bushL.png"
+            alt="Foreground Image"
+            className="absolute bottom-0 left-0 z-50 w-full h-auto"
+          />
+          <img
+            ref={foregroundImageLRef}
+            src="bushR.png"
+            alt="Foreground Image"
+            className="absolute bottom-0 right-0 z-50 w-full h-auto"
+          />
         </div>
       </div>
     </div>
