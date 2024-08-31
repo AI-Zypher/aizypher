@@ -1,19 +1,20 @@
 import React from "react";
 
-const MirrorImage = () => {
+const SponsorsPage = () => {
   return (
-    <div className="h-screen w-full bg-black flex flex-col relative">
-      {/* Title Section */}
-      <div className="flex items-center justify-center py-10 relative z-10">
+    <div className="bg-black flex flex-col relative">
+      <div className="relative flex items-center justify-center py-10 relative z-10">
         <h1 className="text-white text-6xl font-bold">Sponsor</h1>
       </div>
 
       {/* Image Section */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="/white-bg.png"
           alt="Mirrored Background"
-          className="w-full h-full object-cover"
+          style={{
+            objectFit: "cover",
+          }}
         />
       </div>
 
@@ -35,8 +36,12 @@ const MirrorImage = () => {
       {/* Footer Section */}
       <div className="bg-green-600 text-white flex justify-between items-center py-4 px-6 border-t border-white relative z-10">
         <div className="flex space-x-4">
-          <a href="#" className="hover:text-green-500">Privacy Policy</a>
-          <a href="#" className="hover:text-green-500">Terms and Conditions</a>
+          <a href="#" className="hover:text-green-500">
+            Privacy Policy
+          </a>
+          <a href="#" className="hover:text-green-500">
+            Terms and Conditions
+          </a>
         </div>
         <div>
           <p>Copyright SRM 2024</p>
@@ -46,4 +51,4 @@ const MirrorImage = () => {
   );
 };
 
-export default MirrorImage;
+export default SponsorsPage;

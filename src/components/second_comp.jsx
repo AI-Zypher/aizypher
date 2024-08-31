@@ -9,4 +9,4 @@ const SecondComp = () => {
   );
 };
 
-export default SecondComp;
+export default SecondComp;
