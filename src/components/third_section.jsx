@@ -36,7 +36,7 @@ const DummyContent = () => {
               thought.
             </p>
             <Image
-              src="https://assets.aceternity.com/macbook.png"
+              src="/card.png"
               alt="Macbook mockup from Aceternity UI"
               height="500"
               width="500"
