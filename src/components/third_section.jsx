@@ -9,7 +9,7 @@ export function AppleCardsCarouselDemo({ type }) {
 
   return (
     <div className="w-full h-full relative">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans z-10 relative">
+      <h2 className="max-w-7xl pl-4 mx-auto text-xl text-center mt-10 md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans z-10 relative">
         {type}
       </h2>
       <Carousel items={cards} className="relative z-10" />

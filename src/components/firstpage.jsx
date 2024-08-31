@@ -217,7 +217,7 @@ const AnimationPage = () => {
           >
             <div className="flex flex-wrap items-start justify-center w-full gap-4 mt-32 md:gap-9">
               <div className="timer flex flex-col items-center justify-center">
-                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center justify-center flex-col px-2 md:px-3">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
                   <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
                     {timeLeft.days}
                   </h3>
@@ -228,7 +228,7 @@ const AnimationPage = () => {
               </div>
 
               <div className="timer flex flex-col items-center justify-center">
-                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center justify-center flex-col px-2 md:px-3">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
                   <h3 className="countdown-element hours font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
                     {timeLeft.hours}
                   </h3>
@@ -239,7 +239,7 @@ const AnimationPage = () => {
               </div>
 
               <div className="timer flex flex-col items-center justify-center">
-                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center justify-center flex-col px-2 md:px-3">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
                   <h3 className="countdown-element minutes font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
                     {timeLeft.minutes}
                   </h3>
@@ -250,7 +250,7 @@ const AnimationPage = () => {
               </div>
 
               <div className="timer flex flex-col items-center justify-center">
-                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center justify-center flex-col px-2 md:px-3">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
                   <h3 className="countdown-element seconds font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
                     {timeLeft.seconds}
                   </h3>
