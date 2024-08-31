@@ -1,7 +1,7 @@
 "use client";
 import { auth, provider, signInWithPopup } from "../app/firebaseConfig";
 import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
+import { gsap, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -9,19 +9,28 @@ gsap.registerPlugin(ScrollTrigger);
 const AnimationPage = () => {
   const triggerzone = useRef(null);
   const headingRef = useRef(null);
+  const clockRef = useRef(null);
+  const buttonref = useRef(null);
+  const imgref1 = useRef(null);
+  const imgrefbg = useRef(null);
+  const days = useRef(null);
   const [background, setBackground] = useState(20);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#home");
 
   useEffect(() => {
+
     let ctx = gsap.context(() => {
+      gsap.to(imgref1.current, { rotate: 360,scale: 400, duration: 3, ease: Expo.easeIn });
+      gsap.to(imgref1.current, { opacity:0,delay: 2, duration: 1, ease: Expo.easeIn });
+      gsap.to(imgrefbg.current, { opacity:0,delay: 2, duration: 0, ease: Expo.easeIn });
       gsap.registerPlugin(ScrollTrigger);
       var tl = gsap.timeline({
         defaults: { duration: 1 },
         scrollTrigger: {
           trigger: triggerzone.current,
           start: "top top",
-          end: "5000 bottom",
+          end: "3000 bottom",
           scrub: true,
           pin: true,
           onUpdate: (self) => {
@@ -32,12 +41,22 @@ const AnimationPage = () => {
       tl.to(
         headingRef.current,
         {
-          y: "-=540",
+          y: "-=250",
+        },
+        0
+      );
+      tl.to(
+        clockRef.current,
+        {
+          y: "-=250",
         },
         0
       );
     });
-    return () => ctx.revert();
+
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   const handleSignIn = async () => {
@@ -63,7 +82,11 @@ const AnimationPage = () => {
   };
 
   return (
+    
     <div ref={triggerzone} className="relative w-full h-screen overflow-hidden">
+      <div ref={imgrefbg} className="absolute z-40">
+        <img src="/ewastebg.jpg" className="w-screen h-screen bg-cover bg-center" alt="recycle" />
+      </div>
       <video
         autoPlay
         loop
@@ -73,44 +96,16 @@ const AnimationPage = () => {
         <source src="/bgvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-
+      <div ref={imgref1} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+        <img src="/bin.png" className="h-28" alt="recycle" />
+      </div>
       <div className="relative z-10 flex flex-col w-full h-full">
         <nav className="z-20 bg-opacity-0 bg-black text-white px-4 flex items-center justify-between">
           <div className="flex-shrink-0">
             <img src="/nav-logo.png" alt="logo" className="h-28" />
           </div>
 
-          <div className="block md:hidden z-30">
-            <button
-              onClick={toggleMenu}
-              className="text-white focus:outline-none"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
-
+          {/* Navbar Links - Visible in Desktop */}
           <ul className="hidden md:flex justify-center md:text-lg text-2xl space-x-6">
             <li>
               <a
@@ -246,12 +241,56 @@ const AnimationPage = () => {
             id="zypherheading"
             className="translate-y-96 text-white text-6xl md:text-8xl font-extrabold tracking-wide drop-shadow-lg text-center"
           >
-            Welcome to AI-ZYPHER 2024
+            <img src="./zypher-main.png" className="h-96" />
           </h1>
+          <div
+            ref={clockRef}
+            className="w-full h-96 rounded-2xl flex gap-9 flex-col items-center justify-center bg-cover bg-center translate-y-44"
+          >
+            <div className="flex items-start justify-center w-full gap-1.5 count-down-main">
+              <div className="timer">
+                <div className="rounded-xl bg-white/25 backdrop-blur-sm py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 px-3">
+                  <h3 className="countdown-element days font-manrope font-semibold text-2xl text-white text-center">00</h3>
+                  <p className="text-lg  font-normal text-white mt-1 text-center w-full">
+                    Days
+                  </p>
+                </div>
+              </div>
+
+              <div className="timer">
+                <div className="rounded-xl bg-white/25 backdrop-blur-sm py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 px-3">
+                  <h3 className="countdown-element hours font-manrope font-semibold text-2xl text-white text-center">00</h3>
+                  <p className="text-lg font-normal text-white mt-1 text-center w-full">
+                    Hour
+                  </p>
+                </div>
+              </div>
+
+              <div className="timer">
+                <div className="rounded-xl bg-white/25 backdrop-blur-sm py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 px-3">
+                  <h3 className="countdown-element minutes font-manrope font-semibold text-2xl text-white text-center">00</h3>
+                  <p className="text-lg fo uppercasent-normal text-white mt-1 text-center w-full">
+                    Minutes
+                  </p>
+                </div>
+              </div>
+
+              <div className="timer">
+                <div className="rounded-xl bg-white/25 backdrop-blur-sm py-3 min-w-[96px] flex items-center justify-center flex-col gap-1 px-3">
+                  <h3 className="countdown-element seconds font-manrope font-semibold text-2xl text-white text-center">00</h3>
+                  <p className="text-lg fo uppercasent-normal text-white mt-1 text-center w-full">
+                    Seconds
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="mt-28">
             <button
+              ref={buttonref}
               onClick={handleSignIn}
-              className="px-8 py-3 border-2 border-green-500 bg-green-500 rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center"
+              className="opacity-0 px-8 py-3 border-2 border-green-500 bg-green-500 rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center"
             >
               Register
               <svg
