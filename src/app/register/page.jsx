@@ -189,7 +189,7 @@ export default function RegistrationForm() {
         </div>
         <div className="waveWrapperInner bgMiddle">
           <div
-            className="wave waveMiddle"
+            className="wave_inv waveMiddle"
             style={{ backgroundImage: "url('./wave2.png')" }}
           ></div>
         </div>

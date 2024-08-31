@@ -45,6 +45,18 @@ body {
   }
 }
 
+@keyframes move_wave_inverse {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(50%) translateZ(0) scaleY(1);
+  }
+}
+
 .waveWrapper {
   @apply overflow-hidden absolute left-0 right-0 top-0 bottom-0 m-auto;
 }
@@ -55,15 +67,15 @@ body {
 }
 
 .bgTop {
-  @apply z-10 opacity-50;
+  @apply z-10 opacity-0;
 }
 
 .bgMiddle {
-  @apply z-0 opacity-75;
+  @apply z-0 opacity-100;
 }
 
 .bgBottom {
-  @apply z--10;
+  @apply z--10 opacity-70;
 }
 
 .wave {
@@ -73,20 +85,24 @@ body {
   transform-origin: center bottom;
 }
 
+.wave_inv {
+  @apply absolute right-0 w-[200%] h-full;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
 .waveTop {
-  background-size: 50% 100px;
-  animation: move_wave 3s;
-  -webkit-animation: move_wave 3s;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+  background-size: 50% 120px;
+  animation: move_wave 20s linear infinite;
 }
 
 .waveMiddle {
   background-size: 50% 120px;
-  animation: move_wave 10s linear infinite;
+  animation: move_wave_inverse 20s linear infinite;
 }
 
 .waveBottom {
   background-size: 50% 100px;
-  animation: move_wave 15s linear infinite;
+  animation: move_wave 17s linear infinite;
 }
