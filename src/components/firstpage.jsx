@@ -111,7 +111,6 @@ const AnimationPage = () => {
             </button>
           </div>
 
-          {/* Navbar Links - Visible in Desktop */}
           <ul className="hidden md:flex justify-center md:text-lg text-2xl space-x-6">
             <li>
               <a

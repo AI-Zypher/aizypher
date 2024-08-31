@@ -106,7 +106,7 @@ const Events = () => {
   return (
     <div className="relative items-center justify-center bg-black w-full h-full">
         <div className="relative flex items-center justify-center py-10 relative z-10">
-            <h1 className="text-white text-6xl font-bold">Events</h1>
+            <h1 className="text-white text-8xl uppercase font-bold">Unleash Your Talents</h1>
         </div>
         <div className="absolute inset-0 z-0 overflow-hidden">
             <img
