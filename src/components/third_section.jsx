@@ -9,7 +9,7 @@ export function AppleCardsCarouselDemo({ type }) {
 
   return (
     <div className="w-full h-full relative">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans z-10 relative">
+      <h2 className="max-w-7xl pl-4 mx-auto text-xl text-center mt-10 md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans z-10 relative">
         {type}
       </h2>
       <Carousel items={cards} className="relative z-10" />
@@ -105,19 +105,21 @@ const data = [
 const Events = () => {
   return (
     <div className="relative items-center justify-center bg-black w-full h-full">
-        <div className="relative flex items-center justify-center py-10 relative z-10">
-            <h1 className="text-white text-6xl font-bold">Events</h1>
-        </div>
-        <div className="absolute inset-0 z-0 overflow-hidden">
-            <img
-                src="/white-bg.png"
-                alt="Mirrored Background"
-                style={{
-                    transform: "scaleX(-1)",
-                }}
-                className="w-full h-full"
-            />
-        </div>
+      <div className="relative flex items-center justify-center py-10 z-10 mt-20">
+        <h1 className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase font-bold text-center">
+          Unleash Your Talents
+        </h1>
+      </div>
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src="/white-bg.png"
+          alt="Mirrored Background"
+          style={{
+            transform: "scaleX(-1)",
+          }}
+          className="w-full h-full"
+        />
+      </div>
       <AppleCardsCarouselDemo type="Technical Events" />
       <AppleCardsCarouselDemo type="Non Technical Events" />
     </div>

@@ -65,7 +65,14 @@ const AnimationPage = () => {
           opacity:0,
           x: "+=550",
         },
-        0
+        1
+      );
+      tl.to(
+        foregroundImageRef.current,
+        {
+          opacity:0,
+        },
+        2
       );
       tl.to(
         clockRef.current,
@@ -73,7 +80,7 @@ const AnimationPage = () => {
           y: "-=350",
           opacity:1,
         },
-        0
+        1
       );
     });
 
@@ -103,6 +110,37 @@ const AnimationPage = () => {
     setActiveLink(link);
     closeMenu();
   };
+
+  const targetDate = new Date("2024-10-01");
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft(targetDate));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
+  function calculateTimeLeft(targetDate) {
+    const now = new Date();
+    const target = new Date(targetDate);
+    const difference = target - now;
+
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    return { days, hours, minutes, seconds };
+  }
 
   const targetDate = new Date("2024-10-01");
 
@@ -170,6 +208,22 @@ const AnimationPage = () => {
                 </li>
               )
             )}
+            {["#home", "#about", "#events", "#sponsors", "#team"].map(
+              (link) => (
+                <li key={link}>
+                  <a
+                    href={link}
+                    onClick={() => handleLinkClick(link)}
+                    className={`font-bold px-6 ${
+                      activeLink === link ? "text-white" : "text-gray-400"
+                    }`}
+                  >
+                    {link.replace("#", "").charAt(0).toUpperCase() +
+                      link.slice(2)}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
 
           <div className="hidden md:block flex-shrink-0 pr-8">
@@ -177,9 +231,33 @@ const AnimationPage = () => {
               onClick={handleSignIn}
               className="text-[#31771F] border-2 border-white px-12 py-4 rounded-full tracking-widest font-bold text-sm bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200"
             >
+            <button
+              onClick={handleSignIn}
+              className="text-[#31771F] border-2 border-white px-12 py-4 rounded-full tracking-widest font-bold text-sm bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200"
+            >
               Login
             </button>
           </div>
+
+          <button
+            className="md:hidden flex items-center text-white"
+            onClick={toggleMenu}
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
 
           <button
             className="md:hidden flex items-center text-white"
@@ -223,6 +301,22 @@ const AnimationPage = () => {
                   </li>
                 )
               )}
+              {["#home", "#about", "#events", "#sponsors", "#team"].map(
+                (link) => (
+                  <li key={link}>
+                    <a
+                      href={link}
+                      onClick={() => handleLinkClick(link)}
+                      className={`font-bold text-xl ${
+                        activeLink === link ? "text-white" : "text-gray-400"
+                      }`}
+                    >
+                      {link.replace("#", "").charAt(0).toUpperCase() +
+                        link.slice(2)}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </nav>
@@ -232,13 +326,23 @@ const AnimationPage = () => {
             ref={headingRef}
             id="zypherheading"
             className="translate-y-96 tracking-wide drop-shadow-lg opacity-0"
+            className="translate-y-96 tracking-wide drop-shadow-lg"
           >
+            <img src="./zypher-main.png" className="lg:h-96 sm:h-40" />
             <img src="./zypher-main.png" className="lg:h-96 sm:h-40" />
           </h1>
           <div
             ref={clockRef}
             className="opacity-0 w-full h-auto max-w-4xl mx-auto rounded-2xl flex flex-col items-center justify-center bg-cover bg-center translate-y-44 p-4"
+            className="w-full h-auto max-w-4xl mx-auto rounded-2xl flex flex-col items-center justify-center bg-cover bg-center translate-y-44 p-4"
           >
+            <div className="flex flex-wrap items-start justify-center w-full gap-4 mt-32 md:gap-9">
+              <div className="timer flex flex-col items-center justify-center">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                    {timeLeft.days}
+                  </h3>
+                  <p className="text-xs md:text-sm font-normal text-white text-center w-full">
             <div className="flex flex-wrap items-start justify-center w-full gap-4 mt-32 md:gap-9">
               <div className="timer flex flex-col items-center justify-center">
                 <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
@@ -258,10 +362,23 @@ const AnimationPage = () => {
                   </h3>
                   <p className="text-xs md:text-sm font-normal text-white text-center w-full">
                     Hours
+              <div className="timer flex flex-col items-center justify-center">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                    {timeLeft.hours}
+                  </h3>
+                  <p className="text-xs md:text-sm font-normal text-white text-center w-full">
+                    Hours
                   </p>
                 </div>
               </div>
 
+              <div className="timer flex flex-col items-center justify-center">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                    {timeLeft.minutes}
+                  </h3>
+                  <p className="text-xs md:text-sm font-normal text-white text-center w-full">
               <div className="timer flex flex-col items-center justify-center">
                 <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
                   <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
@@ -273,6 +390,12 @@ const AnimationPage = () => {
                 </div>
               </div>
 
+              <div className="timer flex flex-col items-center justify-center">
+                <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
+                  <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
+                    {timeLeft.seconds}
+                  </h3>
+                  <p className="text-xs md:text-sm font-normal text-white text-center w-full">
               <div className="timer flex flex-col items-center justify-center">
                 <div className="rounded-xl bg-white/15 backdrop-blur-sm py-2 md:py-3 min-w-[80px] md:min-w-[96px] flex items-center border border-white justify-center flex-col px-2 md:px-3">
                   <h3 className="countdown-element days font-manrope font-semibold text-4xl md:text-6xl text-white text-center">
@@ -296,6 +419,12 @@ const AnimationPage = () => {
             src="bushR.png"
             alt="Foreground Image"
             className="absolute bottom-0 right-0 z-50 w-full h-auto"
+          />
+          <img
+            ref={foregroundImageRef}
+            src="bush.png"
+            alt="Foreground Image"
+            className="absolute top-0 left-0 z-50 w-full h-auto opacity-0"
           />
         </div>
       </div>
