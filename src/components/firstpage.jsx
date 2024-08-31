@@ -137,7 +137,11 @@ const AnimationPage = () => {
   }
 
   return (
-    <div id="home" ref={triggerzone} className="relative w-full h-screen overflow-hidden">
+    <div
+      id="home"
+      ref={triggerzone}
+      className="relative w-full h-screen overflow-hidden"
+    >
       <video
         autoPlay
         loop
@@ -291,13 +295,13 @@ const AnimationPage = () => {
             ref={foregroundImageRRef}
             src="bushL.png"
             alt="Foreground Image"
-            className="absolute bottom-0 left-0 w-full h-auto opacity-70"
+            className="absolute bottom-0 left-0 w-full h-auto filter brightness-50"
           />
           <img
             ref={foregroundImageLRef}
             src="bushR.png"
             alt="Foreground Image"
-            className="absolute bottom-0 right-0 w-full h-auto opacity-70"
+            className="absolute bottom-0 right-0 w-full h-auto filter brightness-50"
           />
         </div>
       </div>
