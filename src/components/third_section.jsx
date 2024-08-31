@@ -150,9 +150,13 @@ const Events = () => {
           className="w-full h-full"
         />
       </div>
-      <InfiniteMovingCardsDemo />
-      <AppleCardsCarouselDemo type="Technical Events" />
-      <AppleCardsCarouselDemo type="Non Technical Events" />
+      
+      
+      {/* cards */}
+      <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <InfiniteMovingCards items={data} direction="right" speed="slow" />
+      </div>
+
     </div>
   );
 };

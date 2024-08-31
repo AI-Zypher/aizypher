@@ -289,13 +289,13 @@ const AnimationPage = () => {
             ref={foregroundImageRRef}
             src="bushL.png"
             alt="Foreground Image"
-            className="absolute bottom-0 left-0 z-50 w-full h-auto"
+            className="absolute bottom-0 left-0 z-50 w-full h-auto opacity-70"
           />
           <img
             ref={foregroundImageLRef}
             src="bushR.png"
             alt="Foreground Image"
-            className="absolute bottom-0 right-0 z-50 w-full h-auto"
+            className="absolute bottom-0 right-0 z-50 w-full h-auto opacity-70"
           />
         </div>
       </div>
