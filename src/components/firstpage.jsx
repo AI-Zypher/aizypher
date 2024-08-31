@@ -171,7 +171,7 @@ const AnimationPage = () => {
           </ul>
 
           <div className="hidden md:block flex-shrink-0 pr-8">
-            <button className="text-[#31771F] border-2 border-white px-12 py-4 rounded-full tracking-widest uppercase font-bold text-sm bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200">
+            <button className="text-[#31771F] border-2 border-white px-12 py-4 rounded-full tracking-widest font-bold text-sm bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200">
               Login
             </button>
           </div>
