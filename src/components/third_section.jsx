@@ -135,11 +135,6 @@ export function InfiniteMovingCardsDemo() {
 const Events = () => {
   return (
     <div className="relative items-center justify-center bg-black w-full h-full">
-      <div className="relative flex items-center justify-center py-10 z-10 mt-20">
-        <h1 className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase font-bold text-center">
-          Unleash Your Talents
-        </h1>
-      </div>
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="/white-bg.png"
@@ -149,14 +144,46 @@ const Events = () => {
           }}
           className="w-full h-full"
         />
+        </div>
+      <div className="relative flex items-center justify-center py-10 z-10 mt-20">
+        <h1 className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase font-bold text-center">
+          Unleash Your Talents
+        </h1>
       </div>
+      <div className="relative items-center justify-center bg-black w-full h-full">
       
       
+    </div>
+    
+    <div className="relative flex items-center justify-center py-10 z-10 mt-10">
+    <a href="" className="mt-5 ">
+        <h1 className="text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-center">
+          Technical Events
+        </h1>
+      </a>  
+      </div>
       {/* cards */}
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards items={data} direction="right" speed="slow" />
       </div>
-
+      <div className="relative flex items-center justify-center py-10 z-10 mt-10">
+      <button class="px-8 py-3   rounded-full bg-purple-700 text-white font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">View All &nbsp; <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke-width="1.1" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path></svg></button>
+      </div>
+      <a href="" className="mt-5 ">
+      <div className="relative flex items-center justify-center py-10 z-10 mt-20">
+        <h1 className="text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-center">
+          Non Technical Events
+        </h1>
+      </div>
+      </a>
+      
+      <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <InfiniteMovingCards items={data} direction="left" speed="slow" />
+      </div>
+      <div className="relative flex items-center justify-center py-10 z-10 mt-10">
+      <button class="px-8 py-3   rounded-full bg-purple-700 text-white font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">View All &nbsp; <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke-width="1.1" stroke="currentColor" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path></svg></button>
+      </div>
+      
     </div>
   );
 };
