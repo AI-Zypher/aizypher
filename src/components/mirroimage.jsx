@@ -5,7 +5,7 @@ const SecondComp = () => {
     <div className="relative min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
-          src="/white-bg.png"
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/white-bg.png"
           alt="Mirrored Background"
           className="w-full h-full"
         />
@@ -14,7 +14,7 @@ const SecondComp = () => {
       {/* Centered Image */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
         <img
-          src="/zypherimg.png" // Replace with the path to your limited size image
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypherimg.png" // Replace with the path to your limited size image
           alt="Centered"
           className="w-full max-w-xs md:max-w-md h-auto object-cover rounded-lg" // Adjust size as needed
         />

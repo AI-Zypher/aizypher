@@ -29,7 +29,11 @@ const Navbar = () => {
     <div className="relative z-10 flex flex-col w-full h-full">
       <nav className="relative z-50 bg-opacity-0 bg-black text-white px-4 flex items-center justify-between">
         <div className="flex-shrink-0">
-          <img src="/nav-logo.png" alt="logo" className="h-28" />
+          <img
+            src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/nav-logo.png"
+            alt="logo"
+            className="h-28"
+          />
         </div>
 
         <ul className="hidden md:flex justify-center md:text-lg text-2xl space-x-6">

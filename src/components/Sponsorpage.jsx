@@ -10,7 +10,7 @@ const SponsorsPage = () => {
       {/* Image Section */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
-          src="/white-bg.png"
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/white-bg.png"
           alt="Mirrored Background"
           style={{
             objectFit: "cover",

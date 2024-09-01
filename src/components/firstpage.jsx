@@ -148,7 +148,10 @@ const AnimationPage = () => {
         muted
         className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-10"
       >
-        <source src="/bgvideo.mp4" type="video/mp4" />
+        <source
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/bgvideo.mp4"
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
 
@@ -239,7 +242,10 @@ const AnimationPage = () => {
             id="zypherheading"
             className="translate-y-96 tracking-wide drop-shadow-lg opacity-0"
           >
-            <img src="./zypher-main.png" className="lg:h-96 sm:h-40" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypher-main.png"
+              className="lg:h-96 sm:h-40"
+            />
           </h1>
           <div
             ref={clockRef}
@@ -293,13 +299,13 @@ const AnimationPage = () => {
           </div>
           <img
             ref={foregroundImageRRef}
-            src="bushL.png"
+            src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/bushL.png"
             alt="Foreground Image"
             className="absolute bottom-0 left-0 w-full h-auto filter brightness-50"
           />
           <img
             ref={foregroundImageLRef}
-            src="bushR.png"
+            src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/bushR.png"
             alt="Foreground Image"
             className="absolute bottom-0 right-0 w-full h-auto filter brightness-50"
           />
