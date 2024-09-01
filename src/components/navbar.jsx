@@ -1,4 +1,6 @@
 import React from "react";
+import { signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../app/firebaseConfig";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
