@@ -3,7 +3,6 @@ import { auth, provider, signInWithPopup } from "../app/firebaseConfig";
 import React, { useEffect, useRef, useState } from "react";
 import { gsap, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import NavBar from "./navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -156,7 +155,6 @@ const AnimationPage = () => {
       </video>
 
       <div className="relative z-10 flex flex-col w-full h-full">
-        <NavBar activeLink={activeLink} handleLinkClick={handleLinkClick} />
         {/* <nav className="relative z-50 bg-opacity-0 bg-black text-white px-4 flex items-center justify-between">
           <div className="flex-shrink-0">
             <img src="/nav-logo.png" alt="logo" className="h-28" />
