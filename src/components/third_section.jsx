@@ -159,7 +159,7 @@ const Events = () => {
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards items={data} direction="right" speed="slow" />
       </div>
-      <Link href="/allevents">
+      <Link href="/events">
         <div className="relative flex items-center justify-center py-10 z-10 mt-10">
           <button class="px-8 py-3   rounded-full bg-purple-700 text-white font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
             View All &nbsp;{" "}
@@ -180,13 +180,13 @@ const Events = () => {
           </button>
         </div>
       </Link>
-      <a href="" className="mt-5 ">
+      <Link href="/events" className="mt-5 ">
         <div className="relative flex items-center justify-center py-10 z-10 mt-20">
           <h1 className="text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-center">
             Non Technical Events
           </h1>
         </div>
-      </a>
+      </Link>
 
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards items={data} direction="left" speed="slow" />
