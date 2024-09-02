@@ -3,7 +3,6 @@ import { auth, provider, signInWithPopup } from "../app/firebaseConfig";
 import React, { useEffect, useRef, useState } from "react";
 import { gsap, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import NavBar from "./navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -137,19 +136,25 @@ const AnimationPage = () => {
   }
 
   return (
-    <div id="home" ref={triggerzone} className="relative w-full h-screen overflow-hidden">
+    <div
+      id="home"
+      ref={triggerzone}
+      className="relative w-full h-screen overflow-hidden"
+    >
       <video
         autoPlay
         loop
         muted
         className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-10"
       >
-        <source src="/bgvideo.mp4" type="video/mp4" />
+        <source
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/bgvideo.mp4"
+          type="video/mp4"
+        />
         Your browser does not support the video tag.
       </video>
 
       <div className="relative z-10 flex flex-col w-full h-full">
-        <NavBar activeLink={activeLink} handleLinkClick={handleLinkClick} />
         {/* <nav className="relative z-50 bg-opacity-0 bg-black text-white px-4 flex items-center justify-between">
           <div className="flex-shrink-0">
             <img src="/nav-logo.png" alt="logo" className="h-28" />
@@ -235,7 +240,10 @@ const AnimationPage = () => {
             id="zypherheading"
             className="translate-y-96 tracking-wide drop-shadow-lg opacity-0"
           >
-            <img src="./zypher-main.png" className="lg:h-96 sm:h-40" />
+            <img
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypher-main.png"
+              className="lg:h-96 sm:h-40"
+            />
           </h1>
           <div
             ref={clockRef}
@@ -289,15 +297,15 @@ const AnimationPage = () => {
           </div>
           <img
             ref={foregroundImageRRef}
-            src="bushL.png"
+            src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/bushL.png"
             alt="Foreground Image"
-            className="absolute bottom-0 left-0 w-full h-auto opacity-70"
+            className="absolute bottom-0 left-0 w-full h-auto filter brightness-50"
           />
           <img
             ref={foregroundImageLRef}
-            src="bushR.png"
+            src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/bushR.png"
             alt="Foreground Image"
-            className="absolute bottom-0 right-0 w-full h-auto opacity-70"
+            className="absolute bottom-0 right-0 w-full h-auto filter brightness-50"
           />
         </div>
       </div>

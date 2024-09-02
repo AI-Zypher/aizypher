@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
+import { signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../app/firebaseConfig";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [activeLink, setActiveLink] = React.useState("#home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("#home");
+  const [navbarBg, setNavbarBg] = useState("bg-opacity-0");
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -25,21 +29,44 @@ const Navbar = () => {
       console.error("Error during sign-in:", error.message);
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 1500) {
+        setNavbarBg("backdrop-blur-sm bg-opacity-50");
+      } else {
+        setNavbarBg("bg-opacity-0");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="relative z-10 flex flex-col w-full h-full">
-      <nav className="relative z-50 bg-opacity-0 bg-black text-white px-4 flex items-center justify-between">
+    <div className="relative z-50 flex flex-col w-full">
+      <nav
+        className={`fixed top-0 w-full rounded-b-lg z-50 transition-all duration-300 ease-in-out px-4 flex items-center justify-between ${navbarBg}`}
+      >
         <div className="flex-shrink-0">
-          <img src="/nav-logo.png" alt="logo" className="h-28" />
+          <img
+            src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/nav-logo.png"
+            alt="logo"
+            className="h-16 md:h-20"
+          />
         </div>
 
-        <ul className="hidden md:flex justify-center md:text-lg text-2xl space-x-6">
+        <ul className="hidden md:flex space-x-4 text-base md:text-lg">
           {["#home", "#about", "#events", "#sponsors", "#team"].map((link) => (
             <li key={link}>
               <a
                 href={link}
                 onClick={() => handleLinkClick(link)}
-                className={`font-bold px-6 ${
-                  activeLink === link ? "text-white" : "text-gray-400"
+                className={`font-medium px-4 ${
+                  activeLink === link ? "text-white" : "text-gray-300"
                 }`}
               >
                 {link.replace("#", "").charAt(0).toUpperCase() + link.slice(2)}
@@ -48,10 +75,10 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="hidden md:block flex-shrink-0 pr-8">
+        <div className="hidden md:block">
           <button
             onClick={handleSignIn}
-            className="text-[#31771F] border-2 border-white px-12 py-4 rounded-full tracking-widest font-bold text-sm bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200"
+            className="text-purple-900 border-2 border-white px-8 py-2 rounded-full tracking-wide font-medium text-sm bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200"
           >
             Login
           </button>
@@ -62,7 +89,7 @@ const Navbar = () => {
           onClick={toggleMenu}
         >
           <svg
-            className="w-8 h-8"
+            className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -82,15 +109,15 @@ const Navbar = () => {
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-300 ease-in-out md:hidden z-20`}
         >
-          <ul className="flex flex-col space-y-6 p-8">
+          <ul className="flex flex-col space-y-4 p-6">
             {["#home", "#about", "#events", "#sponsors", "#team"].map(
               (link) => (
                 <li key={link}>
                   <a
                     href={link}
                     onClick={() => handleLinkClick(link)}
-                    className={`font-bold text-xl ${
-                      activeLink === link ? "text-white" : "text-gray-400"
+                    className={`font-medium text-lg ${
+                      activeLink === link ? "text-white" : "text-gray-300"
                     }`}
                   >
                     {link.replace("#", "").charAt(0).toUpperCase() +

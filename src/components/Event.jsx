@@ -6,7 +6,7 @@ const Event = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
-          src="/white-bg.png"
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/white-bg.png"
           alt="Mirrored Background"
           className="w-full h-full object-cover"
         />
@@ -15,7 +15,7 @@ const Event = () => {
       {/* Poster Image */}
       <div className="relative z-10 mb-8 self-center">
         <img
-          src="/postereg.png"
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/postereg.png"
           alt="Event Poster"
           className="max-w-full max-h-[80%] object-contain"
         />

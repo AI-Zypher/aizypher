@@ -110,3 +110,18 @@ body {
   background-size: 50% 100px;
   animation: move_wave 17s linear infinite;
 }
+
+#cardevent {
+  transition: transform 0.7s ease-in-out;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/new-york-city.png');
+}
+
+#cardevent:hover .infos {
+  transform: translateY(-311px);
+}
+
+#cardevent:hover .infos .seats,
+#cardevent:hover .infos .txt,
+#cardevent:hover .infos .details {
+  opacity: 1;
+}
