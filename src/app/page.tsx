@@ -5,6 +5,7 @@ import Third from "../components/third_section";
 import Fourth from "../components/mirroimage";
 import Event from "../components/Event";
 import NavBar from "../components/navbar";
+import Footer from "../components/footerpage";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Third />
       <SponsorsPage />
       {/* <Event /> */}
+      <Footer />
     </div>
   );
 }
