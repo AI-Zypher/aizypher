@@ -34,39 +34,50 @@ const DummyContent = () => (
 
 const data = [
   {
-    category: "Artificial Intelligence",
+    category: "Battle Of Bots",
     title: "You can do more with AI.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Battle.png",
     content: <DummyContent />,
   },
   {
-    category: "Productivity",
+    category: "Canvart",
     title: "Enhance your productivity.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Canvart.png",
     content: <DummyContent />,
   },
   {
-    category: "Product",
+    category: "Code Auction",
     title: "Launching the new Apple Vision Pro.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Codeauction.png",
     content: <DummyContent />,
   },
   {
-    category: "Product",
+    category: "Escape",
     title: "Maps for your iPhone 15 Pro Max.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Escape.png",
     content: <DummyContent />,
   },
   {
-    category: "iOS",
+    category: "Muder Mystery",
     title: "Photography just got better.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MuderMystery.png",
     content: <DummyContent />,
   },
   {
-    category: "Hiring",
+    category: "Shark Tank",
     title: "Hiring for a Staff Software Engineer",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Sharktank.png",
+    content: <DummyContent />,
+  },
+  {
+    category: "Shark Tank",
+    title: "Hiring for a Staff Software Engineer",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Spinaweb.png",
+    content: <DummyContent />,
+  },{
+    category: "Shark Tank",
+    title: "Hiring for a Staff Software Engineer",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/ZypherMUN.png",
     content: <DummyContent />,
   },
 ];

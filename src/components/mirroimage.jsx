@@ -10,15 +10,24 @@ const SecondComp = () => {
           className="w-full h-full"
         />
       </div>
-
+      <div className="absolute inset-0 z-5 overflow-hidden">
+        <video
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/hackathonreal.mp4" // Replace with your video URL
+          autoPlay
+          loop
+          muted
+          className="w-full h-full object-cover"
+        ></video>
+      </div>
       {/* Centered Image */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
-        <img
-          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypherimg.png" // Replace with the path to your limited size image
-          alt="Centered"
-          className="w-full max-w-xs md:max-w-md h-auto object-cover rounded-lg" // Adjust size as needed
-        />
-      </div>
+  <img
+    src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypherimg.png"
+    alt="Centered"
+    className="w-120 md:w-140 h-auto object-cover rounded-lg" // Specific width classes
+  />
+</div>
+
 
       {/* Left Section */}
       <section className="absolute left-1/2 md:left-[16%] top-[85%] md:top-[68%] transform -translate-x-1/2 md:translate-x-0 -translate-y-1/2 bg-transparent p-6 rounded-lg text-white w-11/12 md:w-80 h-auto md:h-64 border border-transparent transition-all duration-300 ease-in-out z-20 flex flex-col justify-center">
