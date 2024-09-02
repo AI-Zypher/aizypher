@@ -56,7 +56,7 @@ const SingleCard = ({
               {item.title}
             </motion.p>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent backdrop-blur-md flex justify-end items-center pr-4 z-50 transition-all duration-500 ease-in-out group-hover:bottom-auto group-hover:bottom-0 group-hover:h-full" />
+          <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-black/50 to-transparent backdrop-blur-md flex justify-end items-center pr-4 z-50 transition-all duration-500 ease-in-out group-hover:bottom-auto group-hover:bottom-0 group-hover:h-full" />
         </motion.button>
       </ul>
     </div>
