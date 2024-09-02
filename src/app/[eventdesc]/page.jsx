@@ -2,6 +2,8 @@ import React from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
 
+export const runtime = "edge";
+
 const EventPage = async ({ params }) => {
   const { eventdesc } = params;
 
