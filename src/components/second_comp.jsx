@@ -12,7 +12,15 @@ const borderGradientStyle = {
 
 const SecondComp = () => {
   return (
-    <div className="w-full p-4 min-h-screen flex items-center justify-center bg-gradient-to-b from-[#016E2D] to-black">
+    <div
+      className="w-full p-4 min-h-screen flex items-center justify-center"
+      style={{
+        backgroundImage:
+          "linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(0, 0, 0, 1) 12.5%), url('/mnt/data/bg2.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="w-full p-4 sm:p-6 md:p-8 lg:p-10 mx-auto flex flex-col gap-8">
         {/* Section 1: SRM Institute of Science and Technology */}
         <section
@@ -21,7 +29,7 @@ const SecondComp = () => {
         >
           <div className="flex items-start p-4 sm:p-6">
             <img
-              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sideimg.png"
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher/sideimg.png"
               width={75}
               height={100}
               alt="Side Decoration"
@@ -49,7 +57,7 @@ const SecondComp = () => {
         >
           <div className="flex flex-row-reverse items-start p-4 sm:p-6">
             <img
-              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sideimg.png"
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher/sideimg.png"
               width={75}
               height={100}
               alt="Side Decoration"
@@ -77,7 +85,7 @@ const SecondComp = () => {
         >
           <div className="flex items-start p-4 sm:p-6">
             <img
-              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sideimg.png"
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher/sideimg.png"
               width={75}
               height={100}
               alt="Side Decoration"

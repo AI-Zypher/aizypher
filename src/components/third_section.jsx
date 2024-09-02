@@ -172,7 +172,7 @@ const Events = () => {
       </div>
       <Link href="/events">
         <div className="relative flex items-center justify-center py-10 z-10 mt-10">
-          <button class="px-8 py-3   rounded-full bg-purple-700 text-white font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
+          <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
             View All &nbsp;{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +203,7 @@ const Events = () => {
         <InfiniteMovingCards items={data} direction="left" speed="slow" />
       </div>
       <div className="relative flex items-center justify-center py-10 z-10 mt-10">
-        <button class="px-8 py-3   rounded-full bg-purple-700 text-white font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
+        <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
           View All &nbsp;{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
