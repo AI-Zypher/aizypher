@@ -69,8 +69,8 @@ const EventPage = ({ params }) => {
         {/* Event Content */}
         <div className="relative z-10 text-white text-left w-full px-4 sm:px-6 md:px-8 lg:px-10">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-4xl font-bold text-purple-600">
-              {eventData.title}
+            <h1 className="text-4xl font-bold text-[#eab308]">
+              {eventData.name}
             </h1>
             <a href={eventData.registrationLink} className="mt-5 text-blue-300">
               <button className="px-6 py-2 border-2 border-green-500 bg-transparent rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">

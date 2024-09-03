@@ -13,13 +13,7 @@ const borderGradientStyle = {
 const SecondComp = () => {
   return (
     <div
-      className="w-full p-4 min-h-screen flex items-center justify-center"
-      style={{
-        backgroundImage:
-          "linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(0, 0, 0, 1) 12.5%), url('/mnt/data/bg2.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+    className="w-full p-4 min-h-screen flex items-center justify-center bg-gradient-to-b from-[#555] to-black"
     >
       <div className="w-full p-4 sm:p-6 md:p-8 lg:p-10 mx-auto flex flex-col gap-8">
         {/* Section 1: SRM Institute of Science and Technology */}

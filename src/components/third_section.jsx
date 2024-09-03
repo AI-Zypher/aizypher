@@ -36,7 +36,7 @@ const DummyContent = () => (
 
 const data = [
   {
-    category: "Battle Of Bots",
+    category: "Battle Of Bugs",
     title: "You can do more with AI.",
     src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Battle.png",
     content: <DummyContent />,
@@ -63,23 +63,6 @@ const data = [
     category: "Muder Mystery",
     title: "Photography just got better.",
     src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MuderMystery.png",
-    content: <DummyContent />,
-  },
-  {
-    category: "Shark Tank",
-    title: "Hiring for a Staff Software Engineer",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Sharktank.png",
-    content: <DummyContent />,
-  },
-  {
-    category: "Shark Tank",
-    title: "Hiring for a Staff Software Engineer",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Spinaweb.png",
-    content: <DummyContent />,
-  },{
-    category: "Shark Tank",
-    title: "Hiring for a Staff Software Engineer",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/ZypherMUN.png",
     content: <DummyContent />,
   },
 ];

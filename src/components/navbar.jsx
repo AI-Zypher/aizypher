@@ -55,7 +55,7 @@ const Navbar = () => {
           <img
             src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/nav-logo.png"
             alt="logo"
-            className="h-16 md:h-20"
+            className="h-20 md:h-24"
           />
         </div>
 

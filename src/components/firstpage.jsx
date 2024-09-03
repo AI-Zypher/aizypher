@@ -104,7 +104,7 @@ const AnimationPage = () => {
     closeMenu();
   };
 
-  const targetDate = new Date("2024-10-01");
+  const targetDate = new Date("2024-09-26");
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
@@ -145,10 +145,10 @@ const AnimationPage = () => {
         autoPlay
         loop
         muted
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-10"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-80 z-10"
       >
         <source
-          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher/bgvideo.mp4"
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/bgvideo.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
