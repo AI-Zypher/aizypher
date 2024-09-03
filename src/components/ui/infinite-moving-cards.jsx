@@ -55,30 +55,19 @@ export const InfiniteMovingCards = ({
                 key={index}
                 layoutId={item.layout ? `card-${item.title}` : undefined}
                 onClick={() => console.log("Card clicked")} // Replace with actual open logic
-                className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
+                className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-96 md:w-72 overflow-hidden flex flex-col items-start justify-start relative z-10"
               >
                 <img
                   src={item.src}
                   alt={item.title}
-                  className="object-cover absolute inset-0 w-full h-full"
+                  className="object-cover absolute inset-0 w-full h-full rounded-3xl"
                 />
-                <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-                {/* <div className="relative z-40 p-8">
-              <motion.p
-                layoutId={item.layout ? `category-${item.category}` : undefined}
-                className="text-white text-sm md:text-base font-medium font-sans text-left"
-              >
-                {item.category}
-              </motion.p>
-              <motion.p
-                layoutId={item.layout ? `title-${item.title}` : undefined}
-                className="text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2"
-              >
-                {item.title}
-              </motion.p>
-            </div> */}
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent backdrop-blur-md flex justify-end items-center pr-4 z-50">
-                  <div className="h-5 w-5 bg-green-500 rounded-full flex items-center justify-center"></div>
+                <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none rounded-3xl" />
+                <div className="absolute bottom-0 left-0 right-0 h-[5rem] bg-gradient-to-t from-black/50 to-transparent backdrop-blur-md rounded-b-3xl flex flex-col justify-center items-center pr-4 z-50">
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center h-full">
+                    <p className="text-cfb04d text-lg font-semibold">Your Text Here</p>
+                    <div className="absolute bottom-4 right-4 h-3 w-3 bg-green-500 rounded-full flex items-center justify-center"></div>
+                  </div>
                 </div>
               </motion.button>
             </Link>
