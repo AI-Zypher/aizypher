@@ -126,7 +126,7 @@ const Events = () => {
         <InfiniteMovingCards items={data} direction="right" speed="slow" />
       </div>
       <Link href="/events">
-        <div className="relative flex items-center justify-center py-10 z-10 mt-10">
+        <div className="relative flex items-center justify-center z-10">
           <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
             View All &nbsp;{" "}
             <svg
@@ -157,7 +157,7 @@ const Events = () => {
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <Link href="/AI01"><InfiniteMovingCards items={data} direction="left" speed="slow" /></Link>
       </div>
-      <div className="relative flex items-center justify-center py-10 z-10 mt-10">
+      <div className="relative flex items-center justify-center z-10">
         <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
           View All &nbsp;{" "}
           <svg
