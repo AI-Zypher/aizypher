@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
 
+export const runtime = 'edge';
+
 const EventPage = ({ params }) => {
   const { eventdesc } = params;
   const [eventData, setEventData] = useState(null);
