@@ -1,31 +1,45 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
 
-export const runtime = "edge";
-
-const EventPage = async ({ params }) => {
+const EventPage = ({ params }) => {
   const { eventdesc } = params;
+  const [eventData, setEventData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const fetchEventData = async () => {
-    try {
-      const eventDocRef = doc(db, "events", eventdesc);
-      const eventDoc = await getDoc(eventDocRef);
-
-      if (!eventDoc.exists()) {
-        return null;
+  useEffect(() => {
+    const fetchEventData = async () => {
+      try {
+        console.log("Fetching event with ID:", eventdesc); 
+        const eventDocRef = doc(db, "events", eventdesc);
+        const eventDoc = await getDoc(eventDocRef);
+  
+        if (!eventDoc.exists()) {
+          console.log("No such document!"); // Debug log
+          setEventData(null);
+          return;
+        }
+  
+        console.log("Document data:", eventDoc.data()); // Debug log
+        setEventData(eventDoc.data());
+      } catch (error) {
+        console.error("Error fetching event data:", error);
+        setError(error);
+      } finally {
+        setLoading(false);
       }
+    };
+  
+    fetchEventData();
+  }, [eventdesc]);
+  
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-      return eventDoc.data();
-    } catch (error) {
-      console.error("Error fetching event data:", error);
-      return null;
-    }
-  };
-
-  const eventData = await fetchEventData();
-
-  if (!eventData) {
+  if (error || !eventData) {
     return <div>Event not found or an error occurred.</div>;
   }
 
