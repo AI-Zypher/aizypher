@@ -1,8 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDoc, updateDoc, doc, increment } from "firebase/firestore";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { db } from "../../firebaseConfig";
 
-export default function RegistrationForm() {
+export default function RegistrationForm({ params }) {
+  const event_id = params.eventdesc;
+
   const [formData, setFormData] = useState({
     name: "",
     registerNo: "",
@@ -15,14 +20,13 @@ export default function RegistrationForm() {
   });
 
   useEffect(() => {
-    const eventId = localStorage.getItem("event_id");
-    if (eventId) {
+    if (event_id) {
       setFormData((prevState) => ({
         ...prevState,
-        event_id: eventId,
+        event_id: event_id,
       }));
     }
-  }, []);
+  }, [event_id]);
 
   const handleChange = (e) => {
     setFormData({
@@ -31,20 +35,49 @@ export default function RegistrationForm() {
     });
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (isSubmitting) return; // Prevent multiple submissions
+
+    setIsSubmitting(true);
+
     try {
-      const docRef = await addDoc(collection(db, "registrations"), formData);
-      alert("Registration successful! Document ID: " + docRef.id);
+      // Add the form data to the "registrations" collection
+      await addDoc(collection(db, "registrations"), formData);
+
+      // Get the reference to the specific event document
+      const eventDocRef = doc(db, "events", event_id);
+      const eventDocSnap = await getDoc(eventDocRef);
+
+      if (eventDocSnap.exists()) {
+        const eventData = eventDocSnap.data();
+
+        // Check if slots are available
+        if (eventData.slots > 0) {
+          await updateDoc(eventDocRef, {
+            slots: increment(-1),
+          });
+          toast.success("Registration successful!");
+        } else {
+          toast.error("Registration failed. No slots available.");
+        }
+      } else {
+        toast.error("Event not found.");
+      }
     } catch (e) {
       console.error("Error adding document: ", e);
-      alert("Error registering. Please try again.");
+      toast.error("Error registering. Please try again.");
+    } finally {
+      setIsSubmitting(false); // Re-enable the submit button
     }
   };
 
   return (
     <div className="h-screen w-screen flex items-center justify-center bg-clack-100">
+      <ToastContainer />
       <div className="w-full max-w-lg lg:max-w-2xl mx-auto p-8 bg-white shadow-md rounded-lg z-40">
         <h2 className="text-2xl font-bold mb-6 text-center text-black">
           Registration Form

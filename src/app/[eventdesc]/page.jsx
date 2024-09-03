@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
 
@@ -10,8 +11,6 @@ const EventPage = ({ params }) => {
   const [eventData, setEventData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  localStorage.setItem("event_id", eventdesc);
 
   useEffect(() => {
     const fetchEventData = async () => {
@@ -73,7 +72,7 @@ const EventPage = ({ params }) => {
             <h1 className="text-4xl font-bold text-[#eab308]">
               {eventData.name}
             </h1>
-            <a href={eventData.registrationLink} className="mt-5 text-blue-300">
+            <Link href={"/"+eventdesc+"/register"} className="mt-5 text-blue-300">
               <button className="px-6 py-2 border-2 border-green-500 bg-transparent rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
                 Register &nbsp;{" "}
                 <svg
@@ -91,7 +90,7 @@ const EventPage = ({ params }) => {
                   ></path>
                 </svg>
               </button>
-            </a>
+            </Link>
           </div>
 
           <p className="text-2xl mb-2">{eventData.event_fee} per team</p>

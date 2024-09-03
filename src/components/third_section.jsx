@@ -47,7 +47,7 @@ const data = [
     title: "Enhance your productivity.",
     src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Canvart.png",
     content: <DummyContent />,
-    link: "/AI02",
+    link: "/AI03",
   },
   {
     category: "Code Auction",
@@ -57,11 +57,11 @@ const data = [
     link: "/AI03",
   },
   {
-    category: "Escape",
+    category: "Escape Room",
     title: "Maps for your iPhone 15 Pro Max.",
     src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Escape.png",
     content: <DummyContent />,
-    link: "/AI04",
+    link: "/AI01",
   },
   {
     category: "Muder Mystery",
