@@ -13,6 +13,7 @@ export default function RegistrationForm() {
     branch: "",
     specialization: "",
     email: "",
+    event_id: localStorage.getItem("event_id"),
   });
 
   const handleChange = (e) => {
@@ -34,16 +35,8 @@ export default function RegistrationForm() {
     }
   };
 
-  const [user, loading, error] = useAuthState(auth);
-  console.log("User: ", user);
-
   return (
     <div className="h-screen w-screen flex items-center justify-center bg-clack-100">
-      {user ? (
-        <div className="flex justify-center items-center z-50 text-bold text-5xl text-white">
-          Please sign in to Register!
-        </div>
-      ) : (
         <div className="w-full max-w-lg lg:max-w-2xl mx-auto p-8 bg-white shadow-md rounded-lg z-40">
           <h2 className="text-2xl font-bold mb-6 text-center text-black">
             Registration Form
@@ -189,7 +182,6 @@ export default function RegistrationForm() {
             </button>
           </form>
         </div>
-      )}
 
       <div className="waveWrapper waveAnimation z-30">
         <div className="waveWrapperInner bgTop">

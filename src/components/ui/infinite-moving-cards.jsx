@@ -40,7 +40,6 @@ export const InfiniteMovingCards = ({
         "--animation-duration": animationDuration,
       }}
     >
-      <Link href="/AI01">
       <ul
         ref={scrollerRef}
         className={cn(
@@ -49,23 +48,22 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        <AnimatePresence>
-          {/* Optional overlay for modals or popups can be added here */}
-        </AnimatePresence>
-        {items.map((item, index) => (
-          <motion.button
-            key={index}
-            layoutId={item.layout ? `card-${item.title}` : undefined}
-            onClick={() => console.log("Card clicked")} // Replace with actual open logic
-            className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
-          >
-            <img
-              src={item.src}
-              alt={item.title}
-              className="object-cover absolute inset-0 w-full h-full"
-            />
-            <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
-            {/* <div className="relative z-40 p-8">
+        {items.map((item, index) =>
+          item.link ? (
+            <Link href={item.link} key={index}>
+              <motion.button
+                key={index}
+                layoutId={item.layout ? `card-${item.title}` : undefined}
+                onClick={() => console.log("Card clicked")} // Replace with actual open logic
+                className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
+              >
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="object-cover absolute inset-0 w-full h-full"
+                />
+                <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
+                {/* <div className="relative z-40 p-8">
               <motion.p
                 layoutId={item.layout ? `category-${item.category}` : undefined}
                 className="text-white text-sm md:text-base font-medium font-sans text-left"
@@ -79,13 +77,14 @@ export const InfiniteMovingCards = ({
                 {item.title}
               </motion.p>
             </div> */}
-            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent backdrop-blur-md flex justify-end items-center pr-4 z-50">
-              <div className="h-5 w-5 bg-green-500 rounded-full flex items-center justify-center"></div>
-            </div>
-          </motion.button>
-        ))}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/50 to-transparent backdrop-blur-md flex justify-end items-center pr-4 z-50">
+                  <div className="h-5 w-5 bg-green-500 rounded-full flex items-center justify-center"></div>
+                </div>
+              </motion.button>
+            </Link>
+          ) : null
+        )}
       </ul>
-      </Link>
     </div>
   );
 };

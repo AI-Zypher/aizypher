@@ -11,6 +11,8 @@ const EventPage = ({ params }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  localStorage.setItem("event_id", eventdesc);
+
   useEffect(() => {
     const fetchEventData = async () => {
       try {
@@ -48,7 +50,6 @@ const EventPage = ({ params }) => {
   return (
     <div>
       <div className="relative min-h-screen flex flex-col items-start justify-center p-4">
-        {/* Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/white-bg.png"
@@ -62,7 +63,7 @@ const EventPage = ({ params }) => {
           <img
             src={eventData.poster}
             alt="Event Poster"
-            className="max-w-full max-h-[80%] object-contain"
+            className="max-w-full max-h-[80%] object-contain rounded-lg shadow-lg"
           />
         </div>
 
