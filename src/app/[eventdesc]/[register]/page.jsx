@@ -5,6 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../firebaseConfig";
 
+export const runtime = 'edge';
+
 export default function RegistrationForm({ params }) {
   const event_id = params.eventdesc;
 
