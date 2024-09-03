@@ -12,7 +12,7 @@ const borderGradientStyle = {
 
 const SecondComp = () => {
   return (
-    <div
+    <div id="about"
     className="w-full p-4 min-h-screen flex items-center justify-center bg-gradient-to-b from-[#555] to-black"
     >
       <div className="w-full p-4 sm:p-6 md:p-8 lg:p-10 mx-auto flex flex-col gap-8">
