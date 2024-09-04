@@ -68,7 +68,7 @@
                         <h3 className="text-white text-sm">{item.title}</h3>
                       </div>
                       {/* Uncomment and adjust the following line if you need the green dot */}
-                      {/* <div className="h-5 w-5 bg-green-500 rounded-full flex items-center justify-center absolute right-4"></div> */}
+                      <div className="h-4 w-4 bg-green-500 rounded-full flex items-center justify-center absolute right-4"></div> 
                     </div>
                   </div>
                 </motion.button>

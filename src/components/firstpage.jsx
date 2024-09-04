@@ -155,14 +155,14 @@ const AnimationPage = () => {
       </video>
 
       <div className="relative z-10 flex flex-col w-full h-full">
-        <div className="flex flex-col items-center justify-center h-full">
+      <div className="flex flex-col items-center justify-center h-full mt-2">
           <h1
             id="zypherheading"
             className="tracking-wide drop-shadow-lg z-50 pt-30"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypher-main.png"
-              className="h-24 sm:h-40 md:h-64 lg:h-96"
+              className="h-20 sm:h-32 md:h-48 lg:h-64"
             />
           </h1>
           <div className="w-full h-auto max-w-4xl mx-auto rounded-2xl flex flex-col items-center justify-center bg-cover bg-center">
