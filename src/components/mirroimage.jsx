@@ -24,7 +24,7 @@ const SecondComp = () => {
         <img
           src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypherimg.png"
           alt="Centered"
-          className="w-120 md:w-140 h-auto object-cover rounded-lg" // Specific width classes
+          className="w-98 md:w-114 h-auto object-cover rounded-lg" // Specific width classes
         />
       </div>
 
