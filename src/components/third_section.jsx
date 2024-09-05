@@ -127,7 +127,7 @@ const data2 = [
     title: "Fast & Curious",
     src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MuderMystery.png",
     content: <DummyContent />,
-    link: "/AI05",
+    link: "/AIN05",
   },
 ];
 
