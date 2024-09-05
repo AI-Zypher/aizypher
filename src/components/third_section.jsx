@@ -36,36 +36,95 @@ const DummyContent = () => (
 
 const data = [
   {
+    category: "AI Escape Room",
+    title: "AI Escape Room",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/escaperoom.png",
+    content: <DummyContent />,
+    link: "/AIT01",  
+  },
+  {
     category: "Battle Of Bugs",
-    title: "You can do more with AI.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Battle.png",
+    title: "Battle Of Bugs",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/battleofbugs.png",
     content: <DummyContent />,
-    link: "/AI01",  
+    link: "/AIT02",
   },
   {
-    category: "Canvart",
-    title: "Enhance your productivity.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Canvart.png",
-    content: <DummyContent />,
-    link: "/AI03",
-  },
-  {
-    category: "Code Auction",
-    title: "Launching the new Apple Vision Pro.",
+    category: "Code Premier League",
+    title: "Code Premier League ",
     src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Codeauction.png",
     content: <DummyContent />,
-    link: "/AI03",
+    link: "/AIT03",
   },
   {
-    category: "Escape Room",
-    title: "Maps for your iPhone 15 Pro Max.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Escape.png",
+    category: "Shark Tank",
+    title: "Shark Tank",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sharktank.png",
     content: <DummyContent />,
-    link: "/AI01",
+    link: "/AIT04",
   },
   {
-    category: "Muder Mystery",
-    title: "Photography just got better.",
+    category: "Codecrafters: The Murder Mystery ",
+    title: "Codecrafters: The Murder Mystery",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/murdermystery.png",
+    content: <DummyContent />,
+    link: "/AIT05",
+  },
+  {
+    category: "Spin a Web",
+    title: "Spin a Web",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/spinaweb.png",
+    content: <DummyContent />,
+    link: "/AIT06",
+  },
+  {
+    category: "Poster Presentation - Canvart ",
+    title: "Poster Presentation - Canvart",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/canvart.png",
+    content: <DummyContent />,
+    link: "/AIT07",
+  },
+  {
+    category: "Mini MUN",
+    title: "Mini MUN",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MiniMUN.png",
+    content: <DummyContent />,
+    link: "/AIT08",
+  },
+];
+
+const data2 = [
+  {
+    category: "Mr. & Ms. Zypher",
+    title: "Mr. & Ms. Zypher",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MrMsZypher.png",
+    content: <DummyContent />,
+    link: "/AIN01",  
+  },
+  {
+    category: "2 Minutes to Talent",
+    title: "2 Minutes to Talent",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/2minutesoftalent.png",
+    content: <DummyContent />,
+    link: "/AIN02",
+  },
+  {
+    category: "Esports Royal Battle",
+    title: "Esports Royal Battle",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/FIFA.png",
+    content: <DummyContent />,
+    link: "/AIN03",
+  },
+  {
+    category: "Adzap",
+    title: "Adzap",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Adzap.png",
+    content: <DummyContent />,
+    link: "/AIN04",
+  },
+  {
+    category: "Fast & Curious",
+    title: "Fast & Curious",
     src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MuderMystery.png",
     content: <DummyContent />,
     link: "/AI05",
@@ -155,7 +214,7 @@ const Events = () => {
       </Link>
 
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <Link href="/AI01"><InfiniteMovingCards items={data} direction="left" speed="slow" /></Link>
+      <Link href="/AI01"><InfiniteMovingCards items={data2} direction="left" speed="slow" /></Link>
       </div>
       <div className="relative flex items-center justify-center z-10">
         <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">

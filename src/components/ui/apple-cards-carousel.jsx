@@ -45,7 +45,7 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
   const scrollLeft = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
-    }
+    }npm 
   };
 
   const scrollRight = () => {
