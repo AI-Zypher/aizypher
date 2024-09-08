@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';  // Import Link from next/link
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
         </Link>
       </div>
       <div>
-        <p>Copyright SRM 2024</p>
+        <p>Copyright @SRM 2024</p>
       </div>
     </footer>
   );

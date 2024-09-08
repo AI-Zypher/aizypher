@@ -9,7 +9,7 @@ export default function TeamPage() {
       <div className="w-full max-w-sm">
         <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
           <Image
-            src={`jordans.webp`}
+            src=""
             alt="jordans"
             height="400"
             width="400"

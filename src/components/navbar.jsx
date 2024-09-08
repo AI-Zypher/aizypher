@@ -60,7 +60,7 @@ const Navbar = () => {
         </div>
 
         <ul className="hidden md:flex space-x-4 text-base md:text-lg">
-          {["#home", "#about", "#events", "#sponsors", "#team"].map((link) => (
+          {["#home", "#about", "#events", "#sponsors", "/team"].map((link) => (
             <li key={link}>
               <a
                 href={link}
@@ -69,7 +69,10 @@ const Navbar = () => {
                   activeLink === link ? "text-white" : "text-gray-300"
                 }`}
               >
-                {link.replace("#", "").charAt(0).toUpperCase() + link.slice(2)}
+                {link.startsWith("#")
+                  ? link.replace("#", "").charAt(0).toUpperCase() +
+                    link.slice(2)
+                  : link.slice(1).charAt(0).toUpperCase() + link.slice(2)}
               </a>
             </li>
           ))}
@@ -109,19 +112,21 @@ const Navbar = () => {
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-300 ease-in-out md:hidden z-20`}
         >
-          <ul className="flex flex-col space-y-4 p-6">
-            {["#home", "#about", "#events", "#sponsors", "#team"].map(
+          <ul className="hidden md:flex space-x-4 text-base md:text-lg">
+            {["#home", "#about", "#events", "#sponsors", "/team"].map(
               (link) => (
                 <li key={link}>
                   <a
                     href={link}
                     onClick={() => handleLinkClick(link)}
-                    className={`font-medium text-lg ${
+                    className={`font-medium px-4 ${
                       activeLink === link ? "text-white" : "text-gray-300"
                     }`}
                   >
-                    {link.replace("#", "").charAt(0).toUpperCase() +
-                      link.slice(2)}
+                    {link.startsWith("#")
+                      ? link.replace("#", "").charAt(0).toUpperCase() +
+                        link.slice(2)
+                      : link.slice(1).charAt(0).toUpperCase() + link.slice(2)}
                   </a>
                 </li>
               )
