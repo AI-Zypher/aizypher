@@ -1,83 +1,206 @@
-"use client";
-import React, { createContext, useRef } from "react";
-import { motion } from "framer-motion";
-import { cn } from "../../../lib/utils";
+import React from "react";
+import Image from "next/image";
+import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import Link from "next/link";
 
-const SingleCard = ({
-  item,
-  animationDirection,
-  animationDuration,
-  className,
-  start = true,
-  pauseOnHover = true,
-}) => {
-  const containerRef = useRef(null);
-  const scrollerRef = useRef(null);
+export const runtime = 'edge';
+
+
+const DummyContent = () => (
+  <>
+    {[...new Array(3).fill(1)].map((_, index) => (
+      <div
+        key={"dummy-content" + index}
+        className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+      >
+        <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          <span className="font-bold text-neutral-700 dark:text-neutral-200">
+            The first rule of Apple club is that you boast about Apple club.
+          </span>{" "}
+          Keep a journal, quickly jot down a grocery list, and take amazing
+          class notes. Want to convert those notes to text? No problem.
+          Langotiya jeetu ka mara hua yaar is ready to capture every thought.
+        </p>
+        <Image
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/card.png"
+          alt="Macbook mockup from Aceternity UI"
+          height="500"
+          width="500"
+          className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
+        />
+      </div>
+    ))}
+  </>
+);
+
+const data = [
+  {
+    category: "AI Escape Room",
+    title: "AI Escape Room",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/escaperoom.png",
+    content: <DummyContent />,
+    link: "/AIT01",  
+  },
+  {
+    category: "Battle Of Bugs",
+    title: "Battle Of Bugs",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/battleofbugs.png",
+    content: <DummyContent />,
+    link: "/AIT02",
+  },
+  {
+    category: "Code Premier League",
+    title: "Code Premier League ",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Codeauction.png",
+    content: <DummyContent />,
+    link: "/AIT03",
+  },
+  {
+    category: "Shark Tank",
+    title: "Shark Tank",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sharktank.png",
+    content: <DummyContent />,
+    link: "/AIT04",
+  },
+  {
+    category: "Codecrafters: The Murder Mystery ",
+    title: "Codecrafters: The Murder Mystery",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/murdermystery.png",
+    content: <DummyContent />,
+    link: "/AIT05",
+  },
+  {
+    category: "Spin a Web",
+    title: "Spin a Web",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/spinaweb.png",
+    content: <DummyContent />,
+    link: "/AIT06",
+  },
+  {
+    category: "Poster Presentation - Canvart ",
+    title: "Poster Presentation - Canvart",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/canvart.png",
+    content: <DummyContent />,
+    link: "/AIT07",
+  },
+  {
+    category: "Mini MUN",
+    title: "Mini MUN",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MiniMUN.png",
+    content: <DummyContent />,
+    link: "/AIT08",
+  },
+];
+
+const data2 = [
+  {
+    category: "Mr. & Ms. Zypher",
+    title: "Mr. & Ms. Zypher",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MrMsZypher.png",
+    content: <DummyContent />,
+    link: "/AIN01",  
+  },
+  {
+    category: "2 Minutes to Talent",
+    title: "2 Minutes to Talent",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/2minutesoftalent.png",
+    content: <DummyContent />,
+    link: "/AIN02",
+  },
+  {
+    category: "Esports Royal Battle",
+    title: "Esports Royal Battle",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/FIFA.png",
+    content: <DummyContent />,
+    link: "/AIN03",
+  },
+  {
+    category: "Adzap",
+    title: "Adzap",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Adzap.png",
+    content: <DummyContent />,
+    link: "/AIN04",
+  },
+  {
+    category: "Fast & Curious",
+    title: "Fast & Curious",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MuderMystery.png",
+    content: <DummyContent />,
+    link: "/AIN05",
+  },
+];
+
+export function AppleCardsCarouselDemo({ type }) {
+  const cards = data.map((card, index) => (
+    <Card key={card.src} card={card} index={index} />
+  ));
 
   return (
+    <div className="w-full h-full relative">
+      <h2 className="max-w-7xl pl-4 mx-auto text-xl text-center mt-10 md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans z-10 relative">
+        {type}
+      </h2>
+      <Carousel items={cards} className="relative z-10" />
+    </div>
+  );
+}
+
+export function InfiniteMovingCardsDemo() {
+  return (
+    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <InfiniteMovingCards items={data} direction="right" speed="slow" />
+    </div>
+  );
+}
+
+const Events = () => {
+  return (
     <div
-      ref={containerRef}
-      className={cn("scroller relative z-20 max-w-7xl", className)}
-      style={{
-        "--animation-direction": animationDirection,
-        "--animation-duration": animationDuration,
-      }}
+      id="events"
+      className="relative items-center justify-center bg-black w-full h-full"
     >
-      <ul
-        ref={scrollerRef}
-        className={cn(
-          "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]"
-        )}
-      >
-        <motion.button
-          layoutId={item.layout ? `card-${item.title}` : undefined}
-          onClick={() => console.log("Card clicked")} // Replace with actual open logic
-          className="group rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
-        >
-          <img
-            src={item.src}
-            alt={item.title}
-            className="object-cover absolute inset-0 w-full h-full"
-          />
-          <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none transition-all duration-500 ease-in-out group-hover:bg-gradient-to-t group-hover:from-transparent group-hover:via-transparent group-hover:to-black/50" />
-          <div className="relative z-40 p-8">
-            <motion.p
-              layoutId={item.layout ? `category-${item.category}` : undefined}
-              className="text-white text-sm md:text-base font-medium font-sans text-left"
-            >
-              {item.category}
-            </motion.p>
-            <motion.p
-              layoutId={item.layout ? `title-${item.title}` : undefined}
-              className="text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2"
-            >
-              {item.title}
-            </motion.p>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 h-0 bg-gradient-to-t from-black/50 to-transparent backdrop-blur-md flex justify-end items-center pr-4 z-50 transition-[height] duration-500 ease-in-out group-hover:h-full" />
-        </motion.button>
-      </ul>
+      <div className="relative flex items-center justify-center py-10 z-10 mt-20">
+        <h1 className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase font-bold text-center">
+          All Events
+        </h1>
+      </div>
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/white-bg.png"
+          alt="Mirrored Background"
+          style={{
+            transform: "scaleX(-1)",
+          }}
+          className="w-full h-full"
+        />
+      </div>
+
+      <div className="relative flex items-center justify-center py-10 z-10 mt-10">
+          <h1 className="text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-center">
+            Technical Events
+          </h1>
+      </div>
+      <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <InfiniteMovingCards items={data} direction="right" speed="slow" />
+      </div>
+      <Link href="/events">
+        
+      </Link>
+      <Link href="/events" className="mt-5 ">
+        <div className="relative flex items-center justify-center py-10 z-10 mt-20">
+          <h1 className="text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-center">
+            Non Technical Events
+          </h1>
+        </div>
+      </Link>
+
+      <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <Link href="/AI01"><InfiniteMovingCards items={data2} direction="left" speed="slow" /></Link>
+      </div>
+      
     </div>
   );
 };
 
-const EventsPage = () => {
-  const item = {
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/card.png",
-    title: "Sample Card Title",
-    category: "Sample Category",
-    layout: true,
-  };
-  return (
-    <SingleCard
-      item={item}
-      animationDirection="left"
-      animationDuration="3s"
-      className="your-custom-class"
-    />
-  );
-};
-
-export default EventsPage;
+export default Events;
