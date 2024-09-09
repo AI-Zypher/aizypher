@@ -6,6 +6,7 @@ import Fourth from "../components/mirroimage";
 import Event from "../components/Event";
 import NavBar from "../components/navbar";
 import Footer from "../components/footerpage";
+import Dashboard from "../components/dashboard";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <SponsorsPage />
       {/* <Event /> */}
       <Footer />
+      {/* <Dashboard /> */}
     </div>
   );
 }
