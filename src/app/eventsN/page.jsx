@@ -8,53 +8,42 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 export default function EventsPage() {
   const items = [
     {
-      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/espaceroomp2.png",
-      title: "AI ESCAPE ROOM",
+      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/mrmszypherp.png",
+      title: "MR / MS ZYPHER",
       description: "Hover over this card to unleash the power of CSS perspective",
-      link: "/AIT01",
+      link: "/AIN01",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/battleofbugsp.png",
-      title: "BATTLE OF BUGS",
+      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/2min2p.png",
+      title: "2 MINUTES TO TALENT",
       description: "Hover over this card to unleash the power of CSS perspective",
-      link: "/AIT02",
+      link: "/AIN02",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/escaperoom.png",
-      title: "CODE AUCTION",
+      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/fifap.png",
+      title: "FIFA",
       description: "Hover over this card to unleash the power of CSS perspective",
-      link: "/AIT03",
+      link: "/AIN03",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sharktankp.png",
-      title: "SHARK TANK",
+      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/adzapp.png",
+      title: "ADZAP",
       description: "Hover over this card to unleash the power of CSS perspective",
-      link: "/AIT04",
+      link: "/AIN04",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/codecraftersp.png",
-      title: "CODECRAFTERS",
+      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/pubgp.png",
+      title: "PUBG",
       description: "Hover over this card to unleash the power of CSS perspective",
-      link: "/AIT05",
+      link: "/AIN05",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/spinawebp.png",
-      title: "SPIN A WEB",
+      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/valorantp.png",
+      title: "VALORANT",
       description: "Hover over this card to unleash the power of CSS perspective",
-      link: "/AIT06",
+      link: "/AIN06",
     },
-    {
-      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/cavnartp.png",
-      title: "CANVART",
-      description: "Hover over this card to unleash the power of CSS perspective",
-      link: "/AIT07",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/minimunp.png",
-      title: "MINI MUN",
-      description: "Hover over this card to unleash the power of CSS perspective",
-      link: "/AIT08",
-    },
+    
     // Add more items...
   ];
 

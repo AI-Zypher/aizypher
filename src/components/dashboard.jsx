@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from "../components/navbar";
-import Card from "../app/events/page"; // Ensure this path is correct
+import Card from "../app/eventsT/page"; // Ensure this path is correct
 
 const DashboardPage = () => {
   return (
