@@ -104,7 +104,7 @@ const AnimationPage = () => {
     closeMenu();
   };
 
-  const targetDate = new Date("2024-10-01");
+  const targetDate = new Date("2024-09-26");
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
@@ -145,24 +145,24 @@ const AnimationPage = () => {
         autoPlay
         loop
         muted
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 z-10"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-80 z-10"
       >
         <source
-          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/bgvideo.mp4"
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/glowtree.mp4"
           type="video/mp4"
         />
         Your browser does not support the video tag.
       </video>
 
       <div className="relative z-10 flex flex-col w-full h-full">
-        <div className="flex flex-col items-center justify-center h-full">
+      <div className="flex flex-col items-center justify-center h-full mt-2">
           <h1
             id="zypherheading"
             className="tracking-wide drop-shadow-lg z-50 pt-30"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypher-main.png"
-              className="h-24 sm:h-40 md:h-64 lg:h-96"
+              className="h-20 sm:h-32 md:h-48 lg:h-64"
             />
           </h1>
           <div className="w-full h-auto max-w-4xl mx-auto rounded-2xl flex flex-col items-center justify-center bg-cover bg-center">

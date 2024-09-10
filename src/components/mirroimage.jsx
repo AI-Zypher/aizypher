@@ -3,25 +3,33 @@ import React from "react";
 const SecondComp = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-10 overflow-hidden">
         <img
           src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/white-bg.png"
           alt="Mirrored Background"
           className="w-full h-full"
         />
       </div>
-
+      <div className="absolute inset-0 z-5 overflow-hidden">
+        <video
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/hackathonreal.mp4" // Replace with your video URL
+          autoPlay
+          loop
+          muted
+          className="w-full h-full transform scale-[1.4]"
+        ></video>
+      </div>
       {/* Centered Image */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center">
+      <div className="absolute inset-0 z-20 flex items-center justify-center">
         <img
-          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypherimg.png" // Replace with the path to your limited size image
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypherimg.png"
           alt="Centered"
-          className="w-full max-w-xs md:max-w-md h-auto object-cover rounded-lg" // Adjust size as needed
+          className="w-98 md:w-114 h-auto object-cover rounded-lg" // Specific width classes
         />
       </div>
 
       {/* Left Section */}
-      <section className="absolute left-1/2 md:left-[16%] top-[85%] md:top-[68%] transform -translate-x-1/2 md:translate-x-0 -translate-y-1/2 bg-transparent p-6 rounded-lg text-white w-11/12 md:w-80 h-auto md:h-64 border border-transparent transition-all duration-300 ease-in-out z-20 flex flex-col justify-center">
+      <section className="absolute left-1/2 md:left-[16%] top-[90%] md:top-[75%] transform -translate-x-1/2 md:translate-x-0 -translate-y-1/2 bg-transparent p-6 rounded-lg text-white w-11/12 md:w-80 h-auto md:h-64 border border-transparent transition-all duration-300 ease-in-out z-20 flex flex-col justify-center">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 text-left">
           Join Our Exciting HACKATHON!
         </h1>
@@ -55,7 +63,7 @@ const SecondComp = () => {
       </section>
 
       {/* Right Section */}
-      <section className="absolute right-1/2 md:right-1/4 top-[32%] md:top-[30%] transform translate-x-1/2 md:translate-x-0 -translate-y-1/2 bg-transparent p-6 md:p-8 rounded-lg text-white w-11/12 md:w-64 h-auto border border-transparent transition-all duration-300 ease-in-out z-20 flex flex-col items-center">
+      <section className="absolute right-[43%] md:right-[23%] top-[23%] md:top-[17%] transform translate-x-1/2 md:translate-x-0 -translate-y-1/2 bg-transparent p-6 md:p-8 rounded-lg text-white w-11/12 md:w-64 h-auto border border-transparent transition-all duration-300 ease-in-out z-20 flex flex-col items-center">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">
           Get Involved!
         </h1>

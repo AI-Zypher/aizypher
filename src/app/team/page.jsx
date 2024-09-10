@@ -30,6 +30,8 @@ export default function TeamPage() {
       <div className="relative mx-auto w-full max-w-sm mb-[5vh]">
         <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
           <Image
+            src={`jordans.webp`}
+            alt="jordans"
             height="400"
             width="400"
             className="object-contain"

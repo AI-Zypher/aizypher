@@ -4,6 +4,8 @@ import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import Link from "next/link";
 
+export const runtime = 'edge';
+
 
 const DummyContent = () => (
   <>
@@ -34,73 +36,98 @@ const DummyContent = () => (
 
 const data = [
   {
-    category: "Artificial Intelligence",
-    title: "You can do more with AI.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    category: "AI Escape Room",
+    title: "AI Escape Room",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/escaperoom.png",
     content: <DummyContent />,
+    link: "/AIT01",  
   },
   {
-    category: "Productivity",
-    title: "Enhance your productivity.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    category: "Battle Of Bugs",
+    title: "Battle Of Bugs",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/battleofbugs.png",
     content: <DummyContent />,
+    link: "/AIT02",
   },
   {
-    category: "Product",
-    title: "Launching the new Apple Vision Pro.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    category: "Code Premier League",
+    title: "Code Premier League ",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Codeauction.png",
     content: <DummyContent />,
+    link: "/AIT03",
   },
   {
-    category: "Product",
-    title: "Maps for your iPhone 15 Pro Max.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    category: "Shark Tank",
+    title: "Shark Tank",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sharktank.png",
     content: <DummyContent />,
+    link: "/AIT04",
   },
   {
-    category: "iOS",
-    title: "Photography just got better.",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    category: "Codecrafters: The Murder Mystery ",
+    title: "Codecrafters: The Murder Mystery",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/murdermystery.png",
     content: <DummyContent />,
+    link: "/AIT05",
   },
   {
-    category: "Hiring",
-    title: "Hiring for a Staff Software Engineer",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main//card.png",
+    category: "Spin a Web",
+    title: "Spin a Web",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/spinaweb.png",
     content: <DummyContent />,
+    link: "/AIT06",
+  },
+  {
+    category: "Poster Presentation - Canvart ",
+    title: "Poster Presentation - Canvart",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/canvart.png",
+    content: <DummyContent />,
+    link: "/AIT07",
+  },
+  {
+    category: "Mini MUN",
+    title: "Mini MUN",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MiniMUN.png",
+    content: <DummyContent />,
+    link: "/AIT08",
   },
 ];
 
-// Testimonials data for the InfiniteMovingCards component
-const testimonials = [
+const data2 = [
   {
-    quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+    category: "Mr. & Ms. Zypher",
+    title: "Mr. & Ms. Zypher",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MrMsZypher.png",
+    content: <DummyContent />,
+    link: "/AIN01",  
   },
   {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
+    category: "2 Minutes to Talent",
+    title: "2 Minutes to Talent",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/2minutesoftalent.png",
+    content: <DummyContent />,
+    link: "/AIN02",
   },
   {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+    category: "Esports Royal Battle",
+    title: "Esports Royal Battle",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/FIFA.png",
+    content: <DummyContent />,
+    link: "/AIN03",
   },
   {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+    category: "Adzap",
+    title: "Adzap",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Adzap.png",
+    content: <DummyContent />,
+    link: "/AIN04",
   },
   {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+    category: "Fast & Curious",
+    title: "Fast & Curious",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MuderMystery.png",
+    content: <DummyContent />,
+    link: "/AIN05",
   },
 ];
 
@@ -150,18 +177,16 @@ const Events = () => {
       </div>
 
       <div className="relative flex items-center justify-center py-10 z-10 mt-10">
-        <a href="" className="mt-5 ">
           <h1 className="text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-center">
             Technical Events
           </h1>
-        </a>
       </div>
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards items={data} direction="right" speed="slow" />
       </div>
       <Link href="/events">
-        <div className="relative flex items-center justify-center py-10 z-10 mt-10">
-          <button class="px-8 py-3   rounded-full bg-purple-700 text-white font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
+        <div className="relative flex items-center justify-center z-10">
+          <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
             View All &nbsp;{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -189,10 +214,10 @@ const Events = () => {
       </Link>
 
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-        <InfiniteMovingCards items={data} direction="left" speed="slow" />
+      <Link href="/AI01"><InfiniteMovingCards items={data2} direction="left" speed="slow" /></Link>
       </div>
-      <div className="relative flex items-center justify-center py-10 z-10 mt-10">
-        <button class="px-8 py-3   rounded-full bg-purple-700 text-white font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
+      <div className="relative flex items-center justify-center z-10">
+        <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
           View All &nbsp;{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
