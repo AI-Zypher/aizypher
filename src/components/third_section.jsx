@@ -66,7 +66,7 @@ const data = [
   {
     category: "Codecrafters: The Murder Mystery ",
     title: "Codecrafters: The Murder Mystery",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/murdermystery.png",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/murdermystery2.png",
     content: <DummyContent />,
     link: "/AIT05",
   },
