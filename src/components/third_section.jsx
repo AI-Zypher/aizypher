@@ -66,7 +66,7 @@ const data = [
   {
     category: "Codecrafters: The Murder Mystery ",
     title: "Codecrafters: The Murder Mystery",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/murdermystery.png",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/murdermystery2.png",
     content: <DummyContent />,
     link: "/AIT05",
   },
@@ -91,12 +91,19 @@ const data = [
     content: <DummyContent />,
     link: "/AIT08",
   },
+  {
+    category: "Fast & Curious",
+    title: "Fast & Curious",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MuderMystery.png",
+    content: <DummyContent />,
+    link: "/AIT09",
+  },
 ];
 
 const data2 = [
   {
-    category: "Mr. & Ms. Zypher",
-    title: "Mr. & Ms. Zypher",
+    category: "Mr. / Ms. Zypher",
+    title: "Mr. / Ms. Zypher",
     src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MrMsZypher.png",
     content: <DummyContent />,
     link: "/AIN01",  
@@ -109,8 +116,8 @@ const data2 = [
     link: "/AIN02",
   },
   {
-    category: "Esports Royal Battle",
-    title: "Esports Royal Battle",
+    category: "FIFA",
+    title: "FIFA",
     src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/FIFA.png",
     content: <DummyContent />,
     link: "/AIN03",
@@ -123,12 +130,20 @@ const data2 = [
     link: "/AIN04",
   },
   {
-    category: "Fast & Curious",
-    title: "Fast & Curious",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MuderMystery.png",
+    category: "PUBG",
+    title: "PUBG",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/pubg.png",
     content: <DummyContent />,
     link: "/AIN05",
   },
+  {
+    category: "VALORANT",
+    title: "VALORANT",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/Valorant.png",
+    content: <DummyContent />,
+    link: "/AIN06",
+  },
+  
 ];
 
 export function AppleCardsCarouselDemo({ type }) {
@@ -184,7 +199,7 @@ const Events = () => {
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards items={data} direction="right" speed="slow" />
       </div>
-      <Link href="/events">
+      <Link href="/eventsT">
         <div className="relative flex items-center justify-center z-10">
           <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
             View All &nbsp;{" "}
@@ -216,6 +231,7 @@ const Events = () => {
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <Link href="/AI01"><InfiniteMovingCards items={data2} direction="left" speed="slow" /></Link>
       </div>
+      <Link href="/eventsN">
       <div className="relative flex items-center justify-center z-10">
         <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
           View All &nbsp;{" "}
@@ -235,6 +251,7 @@ const Events = () => {
           </svg>
         </button>
       </div>
+      </Link>
     </div>
   );
 };

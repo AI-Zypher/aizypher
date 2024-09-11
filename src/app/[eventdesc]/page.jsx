@@ -109,6 +109,8 @@ const EventPage = ({ params }) => {
             {eventData.coordinator1}
             <br />
             {eventData.coordinator2}
+            <br />
+            {eventData.coordinator3}
           </p>
 
           <h2 className="text-2xl font-bold mb-4">STUDENT COORDINATORS</h2>
@@ -120,8 +122,6 @@ const EventPage = ({ params }) => {
             {eventData.student_coordinator3}
           </p>
 
-          <h2 className="text-2xl font-bold mb-4">CONTACT:</h2>
-          <p className="text-lg mb-8">{eventData.contact}</p>
         </div>
       </div>
     </div>
