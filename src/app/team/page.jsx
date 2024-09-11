@@ -27,7 +27,7 @@ export default function TeamPage() {
                 xl:grid-cols-3
                 2xl:grid-cols-4">
       {sections.map((section) => (
-      <div className="relative mx-auto w-full max-w-sm mb-[5vh]">
+      <div className="relative mx-auto w-full max-w-sm mb-[5vh]" key={section.id}>
         <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
           <Image
             src={`jordans.webp`}
