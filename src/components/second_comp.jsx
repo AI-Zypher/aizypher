@@ -3,87 +3,83 @@
 import React from "react";
 
 const borderGradientStyle = {
-  borderRadius: "0.5rem",
-  background: "rgba(0, 0, 0, 0.6)", // Slightly dark transparent background
+  borderRadius: "1rem",
+  background: "rgba(0, 0, 0, 0.75)", // Darker transparent background
   backgroundClip: "padding-box",
-  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.5)", // Subtle shadow, adjust as needed
+  boxShadow: "0 10px 20px rgba(0, 0, 0, 0.6)", // Shadow for depth
   transition: "box-shadow 0.3s ease",
 };
 
 const SecondComp = () => {
   return (
-    <div id="about"
-    className="w-full p-4 min-h-screen flex items-center justify-center bg-gradient-to-b from-[#555] to-black"
-    >
-      <div className="w-full p-4 sm:p-6 md:p-8 lg:p-10 mx-auto flex flex-col gap-8">
+    <div className="relative w-full min-h-screen flex items-center justify-center">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/white-bg.png"
+          alt="Mirrored Background"
+          style={{
+            objectFit: "cover",
+            width: "100%",
+            height: "100%",
+          }}
+        />
+      </div>
+
+      {/* Main Content */}
+      <div className="w-full p-4 sm:p-6 md:p-8 lg:p-10 mx-auto flex flex-col gap-8 relative z-10">
         {/* Section 1: SRM Institute of Science and Technology */}
         <section
-  className="w-full md:w-2/3 ml-0 md:ml-0 relative rounded-lg transition-shadow duration-300 ease-in-out"
-  style={borderGradientStyle}
->
-  <div className="relative flex items-start p-4 sm:p-6">
-    <div className="relative flex items-center w-full">
-      <div className="flex-1 flex items-center justify-center">
-        {/* Left Image */}
-        <img
-          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher/srmlogo.png" // Replace with your image URL
-          alt="Left Decoration"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* Middle Gradient / Blur */}
-      <div className="flex-none w-16 bg-gradient-to-r from-blue-500 via-blue-300 to-transparent blur-md"></div> {/* Adjust width here */}
-
-      <div className="flex-1 flex items-center justify-center">
-        {/* Right Image */}
-        <img
-          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher/blue.png" // Replace with your image URL
-          alt="Right Decoration"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      <img
-        src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher/hand.png"
-        width={400} // Increased size for overlap effect
-        height={400}
-        alt="Side Decoration"
-        className="absolute -left-20 top-12" // Adjust image position
-      />
-    </div>
-    <div className="ml-28"> {/* Create space for the image */}
-      <h1 className="text-3xl sm:text-4xl font-bold mb-2">SRM IST</h1>
-      <p className="text-base sm:text-lg">
-        SRM Institute of Science and Technology (SRMIST) Ramapuram in Chennai is
-        a leading campus known for its engineering, technology, and management
-        programs. It boasts modern classrooms, advanced labs, and extensive
-        libraries. With strong industry ties, it provides valuable internships
-        and placements. The vibrant campus life includes cultural events,
-        technical fests, and sports, fostering both academic and personal
-        growth.
-      </p>
-    </div>
-  </div>
-</section>
-
+          className="w-full lg:w-3/4 mx-auto relative rounded-lg transition-shadow duration-300 ease-in-out"
+          style={{
+            ...borderGradientStyle,
+            marginLeft: "0", // Remove margin on mobile
+          }}
+        >
+          <div className="flex flex-col lg:flex-row items-start p-4 lg:p-6">
+            <img
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/handlogo.png"
+              alt="Icon"
+              className="w-full lg:w-1/3 h-auto mr-0 lg:mr-4 mb-4 lg:mb-0" // Responsive image sizing
+            />
+            <div className="pl-0 lg:pl-4">
+              <h1 className="text-3xl lg:text-4xl font-extrabold text-white mb-2">
+                SRM IST
+                <span className="block w-12 h-1 mt-1 bg-yellow-400"></span>
+              </h1>
+              <p className="text-md lg:text-lg text-gray-300">
+                SRM Institute of Science and Technology (SRMIST) Ramapuram in
+                Chennai is a leading campus known for its engineering,
+                technology, and management programs. It boasts modern
+                classrooms, advanced labs, and extensive libraries. With strong
+                industry ties, it provides valuable internships and placements.
+                The vibrant campus life includes cultural events, technical
+                fests, and sports, fostering both academic and personal growth.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Section 2: AIML Department */}
         <section
-          className="w-full md:w-2/3 ml-auto relative rounded-lg transition-shadow duration-300 ease-in-out"
-          style={borderGradientStyle}
+          className="w-full lg:w-3/4 mx-auto relative rounded-lg transition-shadow duration-300 ease-in-out"
+          style={{
+            ...borderGradientStyle,
+            marginRight: "0", // Remove margin on mobile
+          }}
         >
-          <div className="flex flex-row-reverse items-start p-4 sm:p-6">
+          <div className="flex flex-col-reverse lg:flex-row-reverse items-start p-4 lg:p-6">
             <img
-              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher/robo.png"
-              width={75}
-              height={100}
-              alt="Side Decoration"
-              className="ml-4"
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/robo.png"
+              alt="Icon"
+              className="w-full lg:w-1/3 h-auto ml-0 lg:ml-4 mb-4 lg:mb-0" // Responsive image sizing
             />
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-semibold mb-4">AIML Department</h2>
-              <p className="text-base sm:text-lg">
+            <div className="pr-0 lg:pr-4">
+              <h2 className="text-2xl lg:text-3xl font-extrabold text-white mb-2">
+                AIML Department
+                <span className="block w-12 h-1 mt-1 bg-green-400"></span>
+              </h2>
+              <p className="text-md lg:text-lg text-gray-300">
                 The AIML Department at SRMIST advances AI and ML education with
                 a comprehensive curriculum in areas like deep learning and data
                 science. It offers hands-on experience through state-of-the-art
@@ -98,20 +94,24 @@ const SecondComp = () => {
 
         {/* Section 3: Zypher */}
         <section
-          className="w-full md:w-2/3 ml-0 md:ml-0 relative rounded-lg transition-shadow duration-300 ease-in-out"
-          style={borderGradientStyle}
+          className="w-full lg:w-3/4 mx-auto relative rounded-lg transition-shadow duration-300 ease-in-out"
+          style={{
+            ...borderGradientStyle,
+            marginLeft: "0", // Remove margin on mobile
+          }}
         >
-          <div className="flex items-start p-4 sm:p-6">
+          <div className="flex flex-col lg:flex-row items-start p-4 lg:p-6">
             <img
-              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher/gradbg.png"
-              width={75}
-              height={100}
-              alt="Side Decoration"
-              className="mr-4"
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/aiz.png"
+              alt="Icon"
+              className="w-full lg:w-1/3 h-auto mr-0 lg:mr-4 mb-4 lg:mb-0" // Responsive image sizing
             />
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Zypher</h2>
-              <p className="text-base sm:text-lg">
+            <div className="pl-0 lg:pl-4">
+              <h2 className="text-2xl lg:text-3xl font-extrabold text-white mb-2">
+                Zypher
+                <span className="block w-12 h-1 mt-1 bg-green-400"></span>
+              </h2>
+              <p className="text-md lg:text-lg text-gray-300">
                 AI Zypher, hosted by SRMIST&apos;s AIML Department, is a premier
                 event uniting students, researchers, and industry experts to
                 explore AI and ML advancements. It features workshops,
