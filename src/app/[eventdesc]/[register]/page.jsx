@@ -40,7 +40,7 @@ export default function RegistrationForm({ params }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent form from submitting in the traditional way
 
     if (isSubmitting) return; // Prevent multiple submissions
 
@@ -62,7 +62,47 @@ export default function RegistrationForm({ params }) {
           await updateDoc(eventDocRef, {
             slots: increment(-1),
           });
-          toast.success("Registration successful!");
+
+          // Initiate the payment
+          const response = await fetch(
+            "https://aizypher-backend.vercel.app/api/initiate_payment",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                key: process.env.EASEBUZZ_KEY,
+                name: formData.name,
+                email: formData.email,
+                amount: eventData.price,
+                productinfo: eventData.event_id,
+                phone: formData.mobileNo,
+                txnid: `TASDAO${Math.floor(Math.random() * 1000)}`,
+                surl: "https://youtube.com",
+                furl: "https://google.com",
+              }),
+            }
+          );
+
+          if (response.ok) {
+            const data = await response.json();
+            // Assuming the response contains a URL to redirect to
+            if (data.paymentUrl) {
+              window.location.href = data.paymentUrl;
+            } else {
+              toast.error("Payment initiation failed. No URL provided.");
+            }
+          } else {
+            // Handle non-ok responses with detailed error messages
+            const errorText = await response.text();
+            console.error(
+              "Payment initiation failed:",
+              response.statusText,
+              errorText
+            );
+            toast.error("Payment initiation failed. Please try again.");
+          }
         } else {
           toast.error("Registration failed. No slots available.");
         }
@@ -70,12 +110,13 @@ export default function RegistrationForm({ params }) {
         toast.error("Event not found.");
       }
     } catch (e) {
-      console.error("Error adding document: ", e);
+      console.error("Error during registration: ", e);
       toast.error("Error registering. Please try again.");
     } finally {
       setIsSubmitting(false); // Re-enable the submit button
     }
   };
+
 
   return (
     <div className="h-screen w-screen flex items-center justify-center bg-clack-100">
