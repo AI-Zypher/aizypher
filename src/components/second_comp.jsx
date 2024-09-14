@@ -40,7 +40,7 @@ const SecondComp = () => {
             <img
               src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/handlogo.png"
               alt="Icon"
-              className="w-full lg:w-1/3 h-auto mr-0 lg:mr-4 mb-4 lg:mb-0" // Responsive image sizing
+              className="w-full lg:w-1/3 h-full mr-0 lg:mr-4 mb-4 lg:mb-0" // Responsive image sizing
             />
             <div className="pl-0 lg:pl-4">
               <h1 className="text-3xl lg:text-4xl font-extrabold text-white mb-2">
@@ -72,7 +72,7 @@ const SecondComp = () => {
             <img
               src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/robo.png"
               alt="Icon"
-              className="w-full lg:w-1/3 h-auto ml-0 lg:ml-4 mb-4 lg:mb-0" // Responsive image sizing
+              className="w-1/4 lg:w-1/6 w-full lg:w-1/3 h-auto ml-0 lg:ml-4 mb-4 lg:mb-0" // Responsive image sizing
             />
             <div className="pr-0 lg:pr-4">
               <h2 className="text-2xl lg:text-3xl font-extrabold text-white mb-2">
@@ -104,7 +104,7 @@ const SecondComp = () => {
             <img
               src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/aiz.png"
               alt="Icon"
-              className="w-full lg:w-1/3 h-auto mr-0 lg:mr-4 mb-4 lg:mb-0" // Responsive image sizing
+              className="w-1/4 lg:w-1/6 w-full lg:w-1/3 h-auto ml-0 lg:ml-4 mb-4 lg:mb-0" // Responsive image sizing
             />
             <div className="pl-0 lg:pl-4">
               <h2 className="text-2xl lg:text-3xl font-extrabold text-white mb-2">

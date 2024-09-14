@@ -3,6 +3,10 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
+import { Alert, AlertTitle } from "../../components/ui/alert";
+import {Terminal} from "lucide-react";
+
+
 
 export const runtime = 'edge';
 
@@ -47,7 +51,7 @@ const EventPage = ({ params }) => {
   }
 
   return (
-    <div>
+    <div className="relative">
       <div className="relative min-h-screen flex flex-col items-start justify-center p-4">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
@@ -56,13 +60,25 @@ const EventPage = ({ params }) => {
             className="w-full h-full object-cover"
           />
         </div>
+      <div className="container-fix pb-4 md:py-4 w-2/3  mx-auto">
+        <Alert className="bg-yellow-800/25 text-yellow-500 animate-pulse">
+          <Terminal className="h-4 w-4" />
+          <AlertTitle>
+            Participants from AIML dept of SRMIST Ramapuram and Arts, Science,
+            Humanities (Non B.E/B.Tech) Students of other colleges are not
+            allowed <br />
+            <br />
+          </AlertTitle>
+        </Alert>
+      </div>
+      
 
         {/* Poster Image */}
-        <div className="relative z-10 mb-8 self-center">
+        <div className="relative z-10 mb-8 self-center mx-auto flex justify-center">
           <img
             src={eventData.poster}
             alt="Event Poster"
-            className="max-w-full max-h-[80%] object-contain rounded-lg shadow-lg"
+            className="max-w-[80%] max-h-[80%] object-contain rounded-lg shadow-lg"
           />
         </div>
 

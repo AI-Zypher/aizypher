@@ -37,7 +37,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 1500) {
+      if (window.scrollY > 600) {
         setNavbarBg("backdrop-blur-sm bg-opacity-50");
       } else {
         setNavbarBg("bg-opacity-0");
