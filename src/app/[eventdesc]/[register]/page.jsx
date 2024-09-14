@@ -47,17 +47,14 @@ export default function RegistrationForm({ params }) {
     setIsSubmitting(true);
 
     try {
-      // Add the form data to the "registrations" collection
       await addDoc(collection(db, "registrations"), formData);
 
-      // Get the reference to the specific event document
       const eventDocRef = doc(db, "events", event_id);
       const eventDocSnap = await getDoc(eventDocRef);
 
       if (eventDocSnap.exists()) {
         const eventData = eventDocSnap.data();
 
-        // Check if slots are available
         if (eventData.slots > 0) {
           await updateDoc(eventDocRef, {
             slots: increment(-1),
