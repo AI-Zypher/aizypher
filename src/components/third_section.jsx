@@ -199,7 +199,7 @@ const Events = () => {
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
         <InfiniteMovingCards items={data} direction="right" speed="slow" />
       </div>
-      <Link href="/eventsT">
+      <Link href="/tech">
         <div className="relative flex items-center justify-center z-10">
           <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
             View All &nbsp;{" "}
@@ -220,18 +220,16 @@ const Events = () => {
           </button>
         </div>
       </Link>
-      <Link href="/events" className="mt-5 ">
         <div className="relative flex items-center justify-center py-10 z-10 mt-20">
           <h1 className="text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-center">
             Non Technical Events
           </h1>
         </div>
-      </Link>
 
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <Link href="/AI01"><InfiniteMovingCards items={data2} direction="left" speed="slow" /></Link>
       </div>
-      <Link href="/eventsN">
+      <Link href="/non-tech">
       <div className="relative flex items-center justify-center z-10">
         <button class="px-8 py-3   rounded-full bg-white text-black font-semibold  focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
           View All &nbsp;{" "}
