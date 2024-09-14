@@ -13,6 +13,9 @@ const Footer = () => {
           Terms and Conditions
         </Link>
       </div>
+      <Link href="/team">
+        <p className="text-center text-white">Made with ❤️ by AI Zypher Team</p>
+      </Link>
       <div>
         <p>Copyright @SRM 2024</p>
       </div>

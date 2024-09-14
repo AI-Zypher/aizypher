@@ -19,6 +19,11 @@ const Navbar = () => {
   const handleLinkClick = (link) => {
     setActiveLink(link);
     closeMenu();
+    if (link !== "/team") {
+      document.querySelector(link)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = link;
+    }
   };
 
   const handleSignIn = async () => {
@@ -64,7 +69,10 @@ const Navbar = () => {
             <li key={link}>
               <a
                 href={link}
-                onClick={() => handleLinkClick(link)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(link);
+                }}
                 className={`font-medium px-4 ${
                   activeLink === link ? "text-white" : "text-gray-300"
                 }`}
@@ -112,14 +120,17 @@ const Navbar = () => {
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-300 ease-in-out md:hidden z-20`}
         >
-          <ul className="hidden md:flex space-x-4 text-base md:text-lg">
+          <ul className="space-y-4 text-base md:text-lg p-4">
             {["#home", "#about", "#events", "#sponsors", "/team"].map(
               (link) => (
                 <li key={link}>
                   <a
                     href={link}
-                    onClick={() => handleLinkClick(link)}
-                    className={`font-medium px-4 ${
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick(link);
+                    }}
+                    className={`block font-medium px-4 py-2 ${
                       activeLink === link ? "text-white" : "text-gray-300"
                     }`}
                   >
@@ -131,6 +142,14 @@ const Navbar = () => {
                 </li>
               )
             )}
+            <li>
+              <button
+                onClick={handleSignIn}
+                className="w-full text-purple-900 border-2 border-white px-8 py-2 rounded-full tracking-wide font-medium text-sm bg-white hover:bg-white hover:text-[#31771F] hover:border-[#31771F] transition duration-200"
+              >
+                Login
+              </button>
+            </li>
           </ul>
         </div>
       </nav>
