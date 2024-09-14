@@ -73,7 +73,11 @@ const EventPage = ({ params }) => {
               {eventData.name}
             </h1>
             <Link href={"/"+eventdesc+"/register"} className="mt-5 text-blue-300">
-              <button className="px-6 py-2 border-2 border-green-500 bg-transparent rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
+              <button className="px-6 py-2 border-2 border-green-500 bg-transparent rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2"
+              onClick={() => {
+                localStorage.setItem("amount", eventData.event_fee);
+              }}
+              >
                 Register &nbsp;{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

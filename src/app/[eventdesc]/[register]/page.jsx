@@ -40,9 +40,9 @@ export default function RegistrationForm({ params }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent form from submitting in the traditional way
+    e.preventDefault();
 
-    if (isSubmitting) return; // Prevent multiple submissions
+    if (isSubmitting) return;
 
     setIsSubmitting(true);
 
@@ -63,46 +63,12 @@ export default function RegistrationForm({ params }) {
             slots: increment(-1),
           });
 
-          // Initiate the payment
-          const response = await fetch(
-            "https://aizypher-backend.vercel.app/api/initiate_payment",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                key: process.env.EASEBUZZ_KEY,
-                name: formData.name,
-                email: formData.email,
-                amount: eventData.price,
-                productinfo: eventData.event_id,
-                phone: formData.mobileNo,
-                txnid: `TASDAO${Math.floor(Math.random() * 1000)}`,
-                surl: "https://youtube.com",
-                furl: "https://google.com",
-              }),
-            }
-          );
+          localStorage.setItem("event_id", event_id);
+          localStorage.setItem("firstname", formData.name);
+          localStorage.setItem("email", formData.email);
+          localStorage.setItem("phone", formData.mobileNo);
+          window.location.href = "/payment";
 
-          if (response.ok) {
-            const data = await response.json();
-            // Assuming the response contains a URL to redirect to
-            if (data.paymentUrl) {
-              window.location.href = data.paymentUrl;
-            } else {
-              toast.error("Payment initiation failed. No URL provided.");
-            }
-          } else {
-            // Handle non-ok responses with detailed error messages
-            const errorText = await response.text();
-            console.error(
-              "Payment initiation failed:",
-              response.statusText,
-              errorText
-            );
-            toast.error("Payment initiation failed. Please try again.");
-          }
         } else {
           toast.error("Registration failed. No slots available.");
         }
