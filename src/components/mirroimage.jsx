@@ -20,7 +20,7 @@ const SecondComp = () => {
         ></video>
       </div>
       {/* Centered Image */}
-      <div className="absolute inset-0 z-20 flex items-center justify-center">
+      <div className="absolute inset-0 z-20 flex items-center top-[-5%] md:top-[-20%] justify-center">
         <img
           src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypherimg.png"
           alt="Centered"
@@ -29,7 +29,7 @@ const SecondComp = () => {
       </div>
 
       {/* Left Section */}
-      <section className="absolute left-1/2 md:left-[16%] top-[90%] md:top-[75%] transform -translate-x-1/2 md:translate-x-0 -translate-y-1/2 bg-transparent p-6 rounded-lg text-white w-11/12 md:w-80 h-auto md:h-64 border border-transparent transition-all duration-300 ease-in-out z-20 flex flex-col justify-center">
+      <section className="absolute left-1/2 md:left-[16%] top-[88%] md:top-[73%] transform -translate-x-1/2 md:translate-x-0 -translate-y-1/2 bg-transparent p-6 rounded-lg text-white w-11/12 md:w-80 h-auto md:h-64 border border-transparent transition-all duration-300 ease-in-out z-20 flex flex-col justify-center">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 text-left">
           Join Our Exciting HACKATHON!
         </h1>
@@ -63,7 +63,7 @@ const SecondComp = () => {
       </section>
 
       {/* Right Section */}
-      <section className="absolute right-[43%] md:right-[23%] top-[23%] md:top-[17%] transform translate-x-1/2 md:translate-x-0 -translate-y-1/2 bg-transparent p-6 md:p-8 rounded-lg text-white w-11/12 md:w-64 h-auto border border-transparent transition-all duration-300 ease-in-out z-20 flex flex-col items-center">
+      <section className="absolute right-[40%] md:right-[20%] top-[22%] md:top-[16%] transform translate-x-1/2 md:translate-x-0 -translate-y-1/2 bg-transparent p-6 md:p-8 rounded-lg text-white w-11/12 md:w-64 h-auto border border-transparent transition-all duration-300 ease-in-out z-20 flex flex-col items-center">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6">
           Get Involved!
         </h1>

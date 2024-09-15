@@ -3,13 +3,13 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-green-600 text-white flex justify-between items-center py-4 px-6 border-t border-white relative z-10">
+    <footer className="bg-[#242424] text-white flex justify-between items-center py-4 px-6 border-t border-white relative z-10">
       <div className="flex space-x-4">
         {/* Remove <a> and apply class directly to Link */}
-        <Link href="/privacy-policy" className="hover:text-green-500">
+        <Link href="/privacy-policy">
           Privacy Policy
         </Link>
-        <Link href="/terms-and-conditions" className="hover:text-green-500">
+        <Link href="/terms-and-conditions">
           Terms and Conditions
         </Link>
       </div>
