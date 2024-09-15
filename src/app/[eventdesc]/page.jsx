@@ -4,11 +4,9 @@ import Link from "next/link";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
 import { Alert, AlertTitle } from "../../components/ui/alert";
-import {Terminal} from "lucide-react";
+import { Terminal } from "lucide-react";
 
-
-
-export const runtime = 'edge';
+export const runtime = "edge";
 
 const EventPage = ({ params }) => {
   const { eventdesc } = params;
@@ -19,16 +17,16 @@ const EventPage = ({ params }) => {
   useEffect(() => {
     const fetchEventData = async () => {
       try {
-        console.log("Fetching event with ID:", eventdesc); 
+        console.log("Fetching event with ID:", eventdesc);
         const eventDocRef = doc(db, "events", eventdesc);
         const eventDoc = await getDoc(eventDocRef);
-  
+
         if (!eventDoc.exists()) {
           console.log("No such document!"); // Debug log
           setEventData(null);
           return;
         }
-  
+
         console.log("Document data:", eventDoc.data()); // Debug log
         setEventData(eventDoc.data());
       } catch (error) {
@@ -38,10 +36,10 @@ const EventPage = ({ params }) => {
         setLoading(false);
       }
     };
-  
+
     fetchEventData();
   }, [eventdesc]);
-  
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -60,18 +58,16 @@ const EventPage = ({ params }) => {
             className="w-full h-full object-cover"
           />
         </div>
-      <div className="container-fix pb-4 md:py-4 w-2/3  mx-auto">
-        <Alert className="bg-yellow-800/25 text-yellow-500 animate-pulse">
-          <Terminal className="h-4 w-4" />
-          <AlertTitle>
-            Participants from AIML dept of SRMIST Ramapuram and Arts, Science,
-            Humanities (Non B.E/B.Tech) Students of other colleges are not
-            allowed <br />
-            <br />
-          </AlertTitle>
-        </Alert>
-      </div>
-      
+        <div className="container-fix pb-4 md:py-4 w-2/3 mx-auto text-center">
+          <Alert className="bg-yellow-800/25 text-yellow-500 animate-pulse">
+            <AlertTitle>
+              Participants from AIML dept of SRMIST Ramapuram and Arts, Science,
+              Humanities (Non B.E/B.Tech) Students of other colleges are not
+              allowed <br />
+              <br />
+            </AlertTitle>
+          </Alert>
+        </div>
 
         {/* Poster Image */}
         <div className="relative z-10 mb-8 self-center mx-auto flex justify-center">
@@ -88,11 +84,15 @@ const EventPage = ({ params }) => {
             <h1 className="text-4xl font-bold text-[#eab308]">
               {eventData.name}
             </h1>
-            <Link href={"/"+eventdesc+"/register"} className="mt-5 text-blue-300">
-              <button className="px-6 py-2 border-2 border-green-500 bg-transparent rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2"
-              onClick={() => {
-                localStorage.setItem("amount", eventData.event_fee);
-              }}
+            <Link
+              href={"/" + eventdesc + "/register"}
+              className="mt-5 text-blue-300"
+            >
+              <button
+                className="px-6 py-2 border-2 border-green-500 bg-transparent rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2"
+                onClick={() => {
+                  localStorage.setItem("amount", eventData.event_fee);
+                }}
               >
                 Register &nbsp;{" "}
                 <svg
@@ -141,7 +141,6 @@ const EventPage = ({ params }) => {
             <br />
             {eventData.student_coordinator3}
           </p>
-
         </div>
       </div>
     </div>
