@@ -20,7 +20,7 @@ const SecondComp = () => {
         ></video>
       </div>
       {/* Centered Image */}
-      <div className="absolute inset-0 z-20 flex items-center top-[-26%] md:top-[-20%] justify-center">
+      <div className="absolute inset-0 z-20 flex items-center top-[-5%] md:top-[-20%] justify-center">
         <img
           src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypherimg.png"
           alt="Centered"
