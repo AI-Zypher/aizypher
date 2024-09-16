@@ -56,7 +56,7 @@ export default function EventsPage() {
       link: "/AIT08",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/minimunp.png",
+      src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/fastandcuriousp2.png",
       title: "FAST AND CURIOUS",
       description: "Hover over this card to unleash the power of CSS perspective",
       link: "/AIT09",
@@ -65,12 +65,14 @@ export default function EventsPage() {
   ];
 
   return (
-    
-    (<div className="min-h-screen w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
-      {/* This div sets the background for the whole page */}
+    <div className="min-h-screen w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center antialiased">
+      {/* Background */}
       <BackgroundBeams className="absolute inset-0 z-0" />
+      
+      {/* Main Content Container */}
       <div className="container mx-auto py-10 px-4">
-        <div className="grid grid-cols-2 gap-6">
+        {/* Responsive Grid: Single Column on Mobile, Two Columns on Larger Screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {items.map((item, index) => (
             <CardContainer
               key={index}
@@ -96,11 +98,11 @@ export default function EventsPage() {
                     src={item.src}
                     height={400}
                     width={400}
-                    className="h-60 w-full object-cover rounded-xl"
+                    className="h-40 w-full sm:h-60 object-cover rounded-xl"
                     alt="thumbnail"
                   />
                 </CardItem>
-                <div className="flex justify-between items-center mt-20">
+                <div className="flex justify-between items-center mt-10">
                   <Link href={item.link} passHref>
                     <CardItem
                       translateZ={20}
@@ -115,7 +117,7 @@ export default function EventsPage() {
             </CardContainer>
           ))}
         </div>
-      </div> 
-    </div>)
+      </div>
+    </div>
   );
 }

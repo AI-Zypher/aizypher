@@ -109,10 +109,10 @@ const SecondComp = () => {
             />
             <div className="pl-0 lg:pl-4">
               <h2 className="text-3xl lg:text-4xl font-extrabold text-white mb-2">
-                Zypher
+                ZYPHER
                 <span className="block w-12 h-1 mt-1 bg-green-400"></span>
               </h2>
-              <p className="text-md lg:text-lg text-gray-300">
+              <p className="text-md lg:text-lg text-gray-300 my-auto">
                 AI Zypher, hosted by SRMIST&apos;s AIML Department, is a premier
                 event uniting students, researchers, and industry experts to
                 explore AI and ML advancements. It features workshops,

@@ -41,7 +41,7 @@ const SecondComp = () => {
           learn, and win exciting prizes. Let&apos;s code the future together!
           <br />
         </p>
-        <a href="/AIH01" className="mt-5 text-blue-300">
+        <a href="/hackathon" className="mt-5 text-blue-300">
           <button class="px-6 py-2 border-2 border-green-500 bg-transparent rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 flex items-center space-x-2">
             View &nbsp;{" "}
             <svg

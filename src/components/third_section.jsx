@@ -94,7 +94,7 @@ const data = [
   {
     category: "Fast & Curious",
     title: "Fast & Curious",
-    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MuderMystery.png",
+    src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/fastandcurious.png",
     content: <DummyContent />,
     link: "/AIT09",
   },
