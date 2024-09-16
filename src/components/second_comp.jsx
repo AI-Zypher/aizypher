@@ -37,11 +37,11 @@ const SecondComp = () => {
               </h1>
               <p className="text-md lg:text-lg text-gray-300">
                 SRM Institute of Science and Technology (SRMIST) Ramapuram in
-                Chennai is a leading campus known for its engineering, technology, and management programs. It boasts modern
+                Chennai is a leading campus known for its Engineering, Technology, and Management programs. It boasts modern
                 classrooms, advanced labs, and extensive libraries. With strong
-                industry ties, it provides valuable internships and placements.
-                The vibrant campus life includes cultural events, technical
-                fests, and sports, fostering both academic and personal growth.
+                Industry ties, it provides valuable internships and placements.
+                The Vibrant Campus Life includes Cultural Events, Technical
+                Fests, and Sports, fostering both Academic and Personal Growth.
               </p>
             </div>
           </div>
@@ -68,12 +68,12 @@ const SecondComp = () => {
               </h2>
               <p className="text-md lg:text-lg text-gray-300">
                 The AIML Department at SRMIST advances AI and ML education with
-                a comprehensive curriculum in areas like deep learning and data
-                science. It offers hands-on experience through state-of-the-art
+                a comprehensive curriculum in areas like Deep Learning and Data
+                Science. It offers hands-on experience through state-of-the-art
                 labs and industry collaboration. With a focus on research,
                 internships, and a vibrant learning community, it prepares
-                students for careers in data science, AI engineering, and
-                innovation.
+                students for careers in Data Science, AI engineering, and
+                Innovation.
               </p>
             </div>
           </div>
@@ -100,10 +100,10 @@ const SecondComp = () => {
               </h2>
               <p className="text-md lg:text-lg text-gray-300 my-auto">
                 AI Zypher, hosted by SRMIST&apos;s AIML Department, is a premier
-                event uniting students, researchers, and industry experts to
-                explore AI and ML advancements. It features workshops,
-                hackathons, keynote sessions, and networking opportunities,
-                fostering innovation and collaborative problem-solving. The
+                event uniting Students, Researchers, and Industry Experts to
+                explore AI and ML advancements. It features Workshops,
+                Hackathons, Keynote sessions, and Networking opportunities,
+                fostering Innovation and Collaborative Problem-Solving. The
                 event highlights cutting-edge research and provides a platform
                 for emerging AI leaders to connect and learn.
               </p>
