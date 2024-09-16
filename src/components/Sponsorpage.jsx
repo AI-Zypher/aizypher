@@ -21,13 +21,13 @@ const SponsorsPage = () => {
       {/* Centered Sections */}
       <div className="flex-1 flex flex-col items-center justify-start w-full px-4 relative z-10 mb-60">
         <div className="w-full max-w-6xl flex justify-between gap-4 mt-4">
-          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white hover:border-green-500 transition-all h-[12rem]">
+          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white  transition-all h-[12rem]">
             <h2>Section 1</h2>
           </section>
-          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white hover:border-green-500 transition-all h-[12rem]">
+          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white  transition-all h-[12rem]">
             <h2>Section 2</h2>
           </section>
-          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white hover:border-green-500 transition-all h-[12rem]">
+          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white  transition-all h-[12rem]">
             <h2>Section 3</h2>
           </section>
         </div>

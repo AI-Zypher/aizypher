@@ -4,31 +4,17 @@ import React from "react";
 
 const borderGradientStyle = {
   borderRadius: "1rem",
-  background: "rgba(0, 0, 0, 0.75)", // Darker transparent background
+  background: "rgba(0, 0, 0, 0.75)",
   backgroundClip: "padding-box",
-  boxShadow: "0 10px 20px rgba(0, 0, 0, 0.6)", // Shadow for depth
+  boxShadow: "0 10px 20px rgba(0, 0, 0, 0.6)",
   transition: "box-shadow 0.3s ease",
 };
 
 const SecondComp = () => {
-  return (
-    <div className="relative w-full min-h-screen flex items-center justify-center">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <img
-          src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/white-bg.png"
-          alt="Mirrored Background"
-          style={{
-            objectFit: "cover",
-            width: "100%",
-            height: "100%",
-          }}
-        />
-      </div>
+  return (  
+    <div className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#333] to-black bg-cover bg-center" id="about">
 
-      {/* Main Content */}
       <div className="w-full p-4 sm:p-6 md:p-8 lg:p-10 mx-auto flex flex-col gap-8 relative z-10">
-        {/* Section 1: SRM Institute of Science and Technology */}
         <section
           className="w-full lg:w-3/4 mx-auto relative rounded-lg transition-shadow duration-300 ease-in-out"
           style={{
