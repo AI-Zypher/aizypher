@@ -131,7 +131,12 @@ const EventPage = ({ params }) => {
           <p className="text-lg mb-8">{eventData.description}</p>
 
           <h2 className="text-2xl font-bold mb-4">EVENT RULES</h2>
-          <p className="text-lg mb-8">{eventData.rules}</p>
+          <p className="text-lg mb-8">{eventData.rules && eventData.rules.map((rule, index) => (
+              <span key={index}>
+                  {rule}<br/>
+                  </span>
+                  ))}
+          </p>
 
           <h2 className="text-2xl font-bold mb-4">STAFF COORDINATORS</h2>
           <p className="text-lg mb-8">
