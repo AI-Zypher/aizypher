@@ -69,8 +69,8 @@ const SecondComp = () => {
               <p className="text-md lg:text-lg text-gray-300">
                 The AIML Department at SRMIST advances AI and ML education with
                 a comprehensive curriculum in areas like Deep Learning and Data
-                Science. It offers hands-on experience through state-of-the-art
-                labs and industry collaboration. With a focus on research,
+                Science. It offers hands-on experience through State-Of-The-Art
+                Laboratories and industry collaboration. With a focus on research,
                 internships, and a vibrant learning community, it prepares
                 students for careers in Data Science, AI engineering, and
                 Innovation.

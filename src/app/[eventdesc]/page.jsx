@@ -5,6 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
 import { Alert, AlertTitle } from "../../components/ui/alert";
 import { Terminal } from "lucide-react";
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 export const runtime = "edge";
 
@@ -50,6 +51,15 @@ const EventPage = ({ params }) => {
 
   return (
     <div className="relative">
+      <a 
+        href="/" 
+        className="relative flex items-center justify-center w-10 h-10 border-2 border-green-500 bg-transparent rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mt-4 ml-4"
+      >
+        <HomeRoundedIcon 
+          fontSize="medium" 
+          className="text-white" 
+        />
+      </a>
       <div className="relative min-h-screen flex flex-col items-start justify-center p-4">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
@@ -63,8 +73,7 @@ const EventPage = ({ params }) => {
             <AlertTitle>
               Participants from AIML dept of SRMIST Ramapuram and Arts, Science,
               Humanities (Non B.E/B.Tech) Students of other colleges are not
-              allowed <br />
-              <br />
+              allowed
             </AlertTitle>
           </Alert>
         </div>
