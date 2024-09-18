@@ -96,9 +96,48 @@ const EasebuzzPayment = () => {
             },
             body: JSON.stringify({
               to: recepientEmail,
-              subject:
-                "Successful Registration on AIZYPHER!",
-              html: "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>AIZYPHER - Registration Confirmation</title><style>body { font-family: Arial, sans-serif; line-height: 1.6; } .container { margin: 0 auto; padding: 20px; max-width: 600px; } .header { background-color: #f4f4f4; padding: 10px; text-align: center; border-bottom: 2px solid #ddd; } .content { padding: 20px; } .button { display: block; width: fit-content; margin: 20px auto; padding: 10px 20px; text-align: center; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; } .footer { text-align: center; margin-top: 20px; font-size: 0.9em; color: #555; } </style></head><body><div class='container'><div class='header'><h1>AIZYPHER</h1></div><div class='content'><p>Dear Participant,</p><p>Thank you for registering for the “AIZYPHER,” our exciting innovation challenge. We are thrilled to have you on board as we embark on this journey of creativity and problem-solving.</p><h2>Your Registration is Confirmed!</h2><p>You are now officially a participant in the event, and we can’t wait to see the innovative solutions you will develop.</p><h3>Next Steps:</h3><p>To keep you updated and engaged, we have created a WhatsApp group where you can connect with other participants, mentors, and organizers. Join the group using the button below:</p><a class='button' href='https://chat.whatsapp.com/DyhjYjO9VmeD8O4YkyBCBy' style='color: white;'>Join the WhatsApp Group</a> <p>If you have any questions or need further information, please don’t hesitate to reach out.</p><p>Best of luck, and we look forward for you participation!</p><p>Warm regards,</p><p>AIZYPHER Web Dev Team,<br>AIZYPHER</p></div><div class='footer'>&copy; 2024 AIZYPHER. All rights reserved.</div></div></body></html>",
+              subject: "Successful Registration on AIZYPHER!",
+              html: `
+    <!DOCTYPE html>
+    <html lang='en'>
+    <head>
+      <meta charset='UTF-8'>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+      <title>AIZYPHER - Registration Confirmation</title>
+      <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { margin: 0 auto; padding: 20px; max-width: 600px; }
+        .header { background-color: #f4f4f4; padding: 10px; text-align: center; border-bottom: 2px solid #ddd; }
+        .content { padding: 20px; }
+        .button { display: block; width: fit-content; margin: 20px auto; padding: 10px 20px; text-align: center; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; }
+        .footer { text-align: center; margin-top: 20px; font-size: 0.9em; color: #555; }
+      </style>
+    </head>
+    <body>
+      <div class='container'>
+        <div class='header'>
+          <h1>AIZYPHER</h1>
+        </div>
+        <div class='content'>
+          <p>Dear Participant,</p>
+          <p>Thank you for registering for the “AIZYPHER,” our exciting innovation challenge. We are thrilled to have you on board as we embark on this journey of creativity and problem-solving.</p>
+          <h2>Your Registration is Confirmed!</h2>
+          <p>You are now officially a participant in the event.</p>
+          <h3>Next Steps:</h3>
+          <p>To keep you updated and engaged, we have created a WhatsApp group where you can connect with other participants, mentors, and organizers. Join the group using the button below:</p>
+          <a class='button' href='https://chat.whatsapp.com/DyhjYjO9VmeD8O4YkyBCBy' style='color: white;'>Join the WhatsApp Group</a>
+          <p>If you have any questions or need further information, please don’t hesitate to reach out.</p>
+          <p>Best of luck, and we look forward to your participation!</p>
+          <p>Warm regards,</p>
+          <p>AIZYPHER Web Dev Team</p>
+        </div>
+        <div class='footer'>
+          &copy; 2024 AIZYPHER. All rights reserved.
+        </div>
+      </div>
+    </body>
+    </html>
+  `,
             }),
           });
         } catch (error) {

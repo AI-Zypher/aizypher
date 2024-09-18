@@ -3,13 +3,14 @@ import React, { useState, useEffect } from "react";
 import { collection, addDoc, getDoc, updateDoc, doc, increment } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { db } from "../../firebaseConfig";
+import { db, auth } from "../../firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
 
 export const runtime = 'edge';
 
 export default function RegistrationForm({ params }) {
   const event_id = params.eventdesc;
-
+  const [user, setUser] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     registerNo: "",
@@ -30,6 +31,14 @@ export default function RegistrationForm({ params }) {
     }
   }, [event_id]);
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe(); // Clean up subscription on unmount
+  }, []);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -47,7 +56,17 @@ export default function RegistrationForm({ params }) {
     setIsSubmitting(true);
 
     try {
-      await addDoc(collection(db, "registrations"), formData);
+      if (!user) {
+        toast.error("You must be logged in to register.");
+        return;
+      }
+      
+      const registrationData = {
+        ...formData,
+        userId: user.uid,
+      };
+
+      await addDoc(collection(db, "registrations"), registrationData);
 
       const eventDocRef = doc(db, "events", event_id);
       const eventDocSnap = await getDoc(eventDocRef);
@@ -65,7 +84,6 @@ export default function RegistrationForm({ params }) {
           localStorage.setItem("email", formData.email);
           localStorage.setItem("phone", formData.mobileNo);
           window.location.href = "/payment";
-
         } else {
           toast.error("Registration failed. No slots available.");
         }
