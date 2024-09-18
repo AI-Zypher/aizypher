@@ -227,7 +227,7 @@ const Events = () => {
         </div>
 
       <div className="h-[40rem] rounded-md flex flex-col antialiased dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <Link href="/AI01"><InfiniteMovingCards items={data2} direction="left" speed="slow" /></Link>
+      <InfiniteMovingCards items={data2} direction="left" speed="slow" />
       </div>
       <Link href="/non-tech">
       <div className="relative flex items-center justify-center z-10">
