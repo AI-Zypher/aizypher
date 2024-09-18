@@ -84,7 +84,7 @@ const EasebuzzPayment = () => {
 
       const easebuzzCheckout = new window.EasebuzzCheckout(
         EASEBUZZ_KEY,
-        "test"
+        "prod"
       );
 
       const sendEmail = async (recepientEmail) => {
