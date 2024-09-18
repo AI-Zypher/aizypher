@@ -29,7 +29,7 @@ const Navbar = () => {
   const handleSignIn = async () => {
     try {
       await signInWithPopup(auth, provider);
-      window.location.href = "/register";
+      window.location.href = "/tech";
     } catch (error) {
       console.error("Error during sign-in:", error.message);
     }
