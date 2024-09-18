@@ -35,9 +35,13 @@ const SponsorsPage = () => {
               className="w-full h-full object-contain"
             />
           </section>
-          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white transition-all h-[12rem]">
-            <h2>Section 3</h2>
-          </section>
+          {/* <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white transition-all h-[12rem]">
+            <img 
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sprint.png" 
+              alt="sprint-image" 
+              className="w-full h-full object-contain"
+            />
+          </section> */}
         </div>
       </div>
 
