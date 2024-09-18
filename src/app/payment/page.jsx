@@ -29,14 +29,14 @@ const EasebuzzPayment = () => {
       const txnid = "TXN" + Date.now() + Math.floor(Math.random() * 1000);
       const paymentData = {
         txnid,
-        amount: "1",
+        amount: localStorage.getItem("pay"),
         firstname: localStorage.getItem("firstname"),
         email: localStorage.getItem("email"),
 
         phone: localStorage.getItem("phone"),
         productinfo: "AIZYPHER",
-        surl: "http://localhost:3000",
-        furl: "http://localhost:3000",
+        surl: "https://aizypher.in",
+        furl: "https://aizypher.in",
       };
 
       const response = await fetch(API_URL, {
@@ -84,7 +84,7 @@ const EasebuzzPayment = () => {
 
       const easebuzzCheckout = new window.EasebuzzCheckout(
         EASEBUZZ_KEY,
-        "test"
+        "prod"
       );
 
       const sendEmail = async (recepientEmail) => {

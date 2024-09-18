@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { db, auth } from "../../firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
 
+
 export const runtime = 'edge';
 
 export default function RegistrationForm({ params }) {
@@ -20,6 +21,7 @@ export default function RegistrationForm({ params }) {
     specialization: "",
     email: "",
     event_id: "",
+    collegeName: "",
   });
 
   useEffect(() => {
@@ -83,6 +85,7 @@ export default function RegistrationForm({ params }) {
           localStorage.setItem("firstname", formData.name);
           localStorage.setItem("email", formData.email);
           localStorage.setItem("phone", formData.mobileNo);
+          localStorage.setItem("pay",getDoc(pay));
           window.location.href = "/payment";
         } else {
           toast.error("Registration failed. No slots available.");
@@ -162,7 +165,23 @@ export default function RegistrationForm({ params }) {
               placeholder="Enter your mobile no."
             />
           </div>
-
+          <div>
+            <label
+              htmlFor="College Name"
+              className="block text-sm font-medium text-gray-700"
+            >
+              College Name
+            </label>
+            <input
+              type="text"
+              id="college name"
+              name="college name"
+              value={formData.CollegeName}
+              onChange={handleChange}
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
+              placeholder="Enter your College name"
+            />
+          </div>
           <div>
             <label
               htmlFor="yearOfStudy"
@@ -278,5 +297,6 @@ export default function RegistrationForm({ params }) {
         </div>
       </div>
     </div>
+    
   );
 }
