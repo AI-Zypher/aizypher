@@ -35,8 +35,8 @@ const EasebuzzPayment = () => {
 
         phone: localStorage.getItem("phone"),
         productinfo: "AIZYPHER",
-        surl: "http://aizypher.in",
-        furl: "http://aizypher.in",
+        surl: "https://aizypher.in",
+        furl: "https://aizypher.in",
       };
 
       const response = await fetch(API_URL, {
