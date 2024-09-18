@@ -7,6 +7,25 @@ const EASEBUZZ_KEY = process.env.NEXT_PUBLIC_EASEBUZZ_KEY;
 const EasebuzzPayment = () => {
   const [error, setError] = useState(null);
 
+  const savePaymentData = async (paymentData) => {
+    try {
+      const docRef = await addDoc(collection(db, "payments"), {
+        txnid: paymentData.txnid,
+        amount: localStorage.getItem("pay"),
+        firstname: localStorage.getItem("firstname"),
+        email: localStorage.getItem("email"),
+        phone: localStorage.getItem("phone"),
+        event: localStorage.getItem("event_id"),
+        productinfo: "AIZYPHER",
+        paymentStatus: "Success",
+        timestamp: new Date(),
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
+
   useEffect(() => {
     const loadScript = () => {
       const script = document.createElement("script");
@@ -35,8 +54,8 @@ const EasebuzzPayment = () => {
 
         phone: localStorage.getItem("phone"),
         productinfo: "AIZYPHER",
-        surl: "https://aizypher.in",
-        furl: "https://aizypher.in",
+        surl: "https://aizypher.in/dashboard",
+        furl: "https://aizypher.in/dashboard",
       };
 
       const response = await fetch(API_URL, {
@@ -125,7 +144,7 @@ const EasebuzzPayment = () => {
           <p>You are now officially a participant in the event.</p>
           <h3>Next Steps:</h3>
           <p>To keep you updated and engaged, we have created a WhatsApp group where you can connect with other participants, mentors, and organizers. Join the group using the button below:</p>
-          <a class='button' href='https://chat.whatsapp.com/DyhjYjO9VmeD8O4YkyBCBy' style='color: white;'>Join the WhatsApp Group</a>
+          <a class='button' href='https://chat.whatsapp.com/LKytIjyvHBGB8MCyimcB0W' style='color: white;'>Join the WhatsApp Group</a>
           <p>If you have any questions or need further information, please don’t hesitate to reach out.</p>
           <p>Best of luck, and we look forward to your participation!</p>
           <p>Warm regards,</p>
@@ -149,10 +168,11 @@ const EasebuzzPayment = () => {
         access_key: access_key,
         onResponse: (response) => {
           if (response.status === "success") {
+            savePaymentData();
             sendEmail(localStorage.getItem("email"));
-            window.location.href = "/";
+            window.location.href = "/dashboard";
           } else {
-            window.location.href = "/";
+            window.location.href = "/dashboard";
           }
         },
         theme: "#123456",

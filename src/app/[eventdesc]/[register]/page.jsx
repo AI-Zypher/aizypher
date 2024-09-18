@@ -38,7 +38,7 @@ export default function RegistrationForm({ params }) {
       setUser(currentUser);
     });
 
-    return () => unsubscribe(); // Clean up subscription on unmount
+    return () => unsubscribe();
   }, []);
 
   const handleChange = (e) => {
@@ -49,6 +49,33 @@ export default function RegistrationForm({ params }) {
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [eventData, setEventData] = useState(null);
+
+  useEffect(() => {
+    const fetchEventData = async () => {
+      try {
+        console.log("Fetching event with ID:", event_id);
+        const eventDocRef = doc(db, "events", event_id);
+        const eventDoc = await getDoc(eventDocRef);
+
+        if (!eventDoc.exists()) {
+          console.log("No such document!"); 
+          setEventData(null);
+          return;
+        }
+
+        console.log("Document data:", eventDoc.data()); 
+        setEventData(eventDoc.data());
+      } catch (error) {
+        console.error("Error fetching event data:", error);
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEventData();
+  }, [event_id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -85,7 +112,7 @@ export default function RegistrationForm({ params }) {
           localStorage.setItem("firstname", formData.name);
           localStorage.setItem("email", formData.email);
           localStorage.setItem("phone", formData.mobileNo);
-          localStorage.setItem("pay",getDoc(pay));
+          localStorage.setItem("pay", eventData.pay);
           window.location.href = "/payment";
         } else {
           toast.error("Registration failed. No slots available.");

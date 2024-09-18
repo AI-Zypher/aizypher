@@ -23,12 +23,12 @@ const EventPage = ({ params }) => {
         const eventDoc = await getDoc(eventDocRef);
 
         if (!eventDoc.exists()) {
-          console.log("No such document!"); // Debug log
+          console.log("No such document!"); 
           setEventData(null);
           return;
         }
 
-        console.log("Document data:", eventDoc.data()); // Debug log
+        console.log("Document data:", eventDoc.data()); 
         setEventData(eventDoc.data());
       } catch (error) {
         console.error("Error fetching event data:", error);
