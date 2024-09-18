@@ -1,16 +1,20 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../app/firebaseConfig";
 
 const API_URL = process.env.NEXT_PUBLIC_EASEBUZZ_LINK;
 const EASEBUZZ_KEY = process.env.NEXT_PUBLIC_EASEBUZZ_KEY;
 
 const EasebuzzPayment = () => {
   const [error, setError] = useState(null);
+  
+  const txnid = "TXN" + Date.now() + Math.floor(Math.random() * 1000);
 
-  const savePaymentData = async (paymentData) => {
+  const savePaymentData = async () => {
     try {
-      const docRef = await addDoc(collection(db, "payments"), {
-        txnid: paymentData.txnid,
+      const docRef = await addDoc(collection(db, "registered"), {
+        txnid: txnid,
         amount: localStorage.getItem("pay"),
         firstname: localStorage.getItem("firstname"),
         email: localStorage.getItem("email"),
@@ -45,7 +49,6 @@ const EasebuzzPayment = () => {
 
   const initiatePayment = async () => {
     try {
-      const txnid = "TXN" + Date.now() + Math.floor(Math.random() * 1000);
       const paymentData = {
         txnid,
         amount: localStorage.getItem("pay"),
