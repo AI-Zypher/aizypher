@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { db } from "../../firebaseConfig";
 
+
 export const runtime = 'edge';
 
 export default function RegistrationForm({ params }) {
@@ -65,6 +66,7 @@ export default function RegistrationForm({ params }) {
           localStorage.setItem("firstname", formData.name);
           localStorage.setItem("email", formData.email);
           localStorage.setItem("phone", formData.mobileNo);
+          localStorage.setItem("pay",getDoc(pay));
           window.location.href = "/payment";
 
         } else {
