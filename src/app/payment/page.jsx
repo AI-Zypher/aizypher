@@ -29,7 +29,7 @@ const EasebuzzPayment = () => {
       const txnid = "TXN" + Date.now() + Math.floor(Math.random() * 1000);
       const paymentData = {
         txnid,
-        amount: "250",
+        amount: "1",
         firstname: localStorage.getItem("firstname"),
         email: localStorage.getItem("email"),
 
