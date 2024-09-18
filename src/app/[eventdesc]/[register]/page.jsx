@@ -19,6 +19,7 @@ export default function RegistrationForm({ params }) {
     specialization: "",
     email: "",
     event_id: "",
+    collegeName: "",
   });
 
   useEffect(() => {
@@ -64,7 +65,7 @@ export default function RegistrationForm({ params }) {
           localStorage.setItem("firstname", formData.name);
           localStorage.setItem("email", formData.email);
           localStorage.setItem("phone", formData.mobileNo);
-          // window.location.href = "/payment";
+          window.location.href = "/payment";
 
         } else {
           toast.error("Registration failed. No slots available.");
@@ -153,9 +154,9 @@ export default function RegistrationForm({ params }) {
             </label>
             <input
               type="text"
-              id="College name"
-              name="College name"
-              value={formData.College_name}
+              id="college name"
+              name="college name"
+              value={formData.CollegeName}
               onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
               placeholder="Enter your College name"
