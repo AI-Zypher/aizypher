@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/navbar";
+import Link from 'next/link';
+
 import {
   collection,
   query,
@@ -12,6 +14,8 @@ import {
 import { db, auth } from "../firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
 import Image from "next/image";
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+
 
 // EventCard component to display event information
 const EventsCard = ({ poster, name, description }) => (
@@ -68,7 +72,7 @@ const DashboardPage = () => {
             setError("No event data found.");
           }
         } else {
-          setError("No user data found.");
+          setError("No event registered");
         }
       } catch (error) {
         setError("Error fetching data: " + error.message);
@@ -100,7 +104,18 @@ const DashboardPage = () => {
     <div
       style={{ position: "relative", minHeight: "100vh", overflowY: "auto" }}
     >
-      <NavBar />
+      <div className="relative"> 
+      <Link href="/" passHref>
+      <div 
+        className="relative flex items-center justify-center w-10 h-10 border-2 border-green-500 bg-transparent rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mt-4 ml-4 z-50"
+      >
+        <HomeRoundedIcon 
+          fontSize="medium" 
+          className="text-white" 
+        />
+      </div>
+      </Link>
+      
       <div
         style={{
           position: "absolute",
@@ -171,6 +186,7 @@ const DashboardPage = () => {
         ) : (
           <p style={{ color: "#fff" }}>No events available.</p>
         )}
+      </div>
       </div>
     </div>
   );
