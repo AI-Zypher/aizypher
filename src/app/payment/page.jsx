@@ -20,6 +20,7 @@ const EasebuzzPayment = () => {
         email: localStorage.getItem("email"),
         phone: localStorage.getItem("phone"),
         event: localStorage.getItem("event_id"),
+        userId: localStorage.getItem("userId"),
         productinfo: "AIZYPHER",
         paymentStatus: "Success",
         timestamp: new Date(),

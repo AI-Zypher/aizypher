@@ -89,6 +89,8 @@ export default function RegistrationForm({ params }) {
         toast.error("You must be logged in to register.");
         return;
       }
+
+      localStorage.setItem("usedId", user.uid);
       
       const registrationData = {
         ...formData,
