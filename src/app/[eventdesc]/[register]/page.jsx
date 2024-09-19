@@ -90,7 +90,7 @@ export default function RegistrationForm({ params }) {
         return;
       }
 
-      localStorage.setItem("usedId", user.uid);
+      localStorage.setItem("userId", user.uid);
       
       const registrationData = {
         ...formData,
