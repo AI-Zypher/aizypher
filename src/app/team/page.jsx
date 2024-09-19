@@ -6,14 +6,31 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 export default function TeamPage() {
   const sections = [
-    { title: "Red Dead Redemption II" },
-    { title: "PUBG Mobile" },
-    { title: "Fortnite" },
-    { title: "Call of Duty: Black Ops III" },
-    { title: "Grand Theft Auto V" },
-    { title: "AI Escape Room" },
-    { title: "The Witcher 3: Wild Hunt" },
-    { title: "Overwatch 2" },
+    { title: "SRAVANI NASIKA" ,role:"President",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sravani.jpg"},
+    { title: "MALLAPRAGADA NIKHIL" ,role:"President",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/nikhil.png"},
+    { title: "PRAISY DAFFODIL" ,role:"Vice-President",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/praisy.png"},
+    { title: "VIDYUT SURESH" ,role:"Vice-President",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/vidyut.png"},
+    { title: "G.V MADHAV RAM SAMANVAY" ,role:"Vice-President",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/madhav.png"},
+    { title: "ISHA K.G" ,role:"Vice-President",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/isha.png"},
+    { title: "JANAKI NAGESHWARAN" ,role:"Media Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/janaki.png"},
+    { title: "SACHEEN SUBANIDHI" ,role:"Media Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sacheen.png"},
+    { title: "ARSHAD KUMAR" ,role:"PR Marketing",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/arshad.png"},
+    { title: "ANISH KRISHNA G" ,role:"PR Marketing",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/img1.jpeg"},
+    { title: "MUTHU KRISHNA PERUMAL" ,role:"Sponsorship Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/muthu.png"},
+    { title: "SARATH RAM.B" ,role:"Promotion Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sarath.png"},
+    { title: "ADITHYA VENKATESH VD" ,role:"Promotion Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/img1.jpeg"},
+    { title: "HARSHITHA G" ,role:"Admin",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/harshitha.png"},
+    { title: "SRISAKTHIESWAR GS" ,role:"Design Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/shakti.png"},
+    { title: "RAVINDRA J" ,role:"Design Lead",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/ravindra.png"},
+    { title: "MOHAMED ARAFATH" ,role:"Website Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/img1.jpeg"},
+    { title: "L B UPPILI" ,role:"Website Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/uppili2.png"},
+    { title: "NAVEEN SAMPATH" ,role:"Non-Technical Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/naveen.png"},
+    { title: "SANJEEVAN A" ,role:"Technical Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sanjeevan.png"},
+    { title: "SHRIYA SANTHOSH" ,role:"Cultural Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/shriya.png"},
+    { title: "YUVAN ADITH" ,role:"Cultural Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/yuvan.jpg"},
+    { title: "LEANDER MORAIS" ,role:"Cultural Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/leander.png"},
+    { title: "SUVAN MATHEW" ,role:"Cultural Head",img:"https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/suvan.png"},
+
   ];
 
   return (
@@ -40,7 +57,7 @@ export default function TeamPage() {
           <div className="relative mx-auto w-full max-w-sm mb-[5vh]" key={index}>
             <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
               <Image
-                src={`/jordans.webp`}
+                src={section.img}
                 alt="jordans"
                 height="400"
                 width="400"
@@ -51,9 +68,7 @@ export default function TeamPage() {
               </p>
 
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
-                February 17, 2024. Your best opportunity to get these right now is
-                by entering raffles and waiting for the official releases.
+                {section.role}
               </p>
             </BackgroundGradient>
           </div>
