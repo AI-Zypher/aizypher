@@ -54,7 +54,7 @@ const DashboardPage = () => {
     const fetchData = async (userId) => {
       try {
         // Fetch user registration data
-        const userRef = collection(db, "registered");
+        const userRef = collection(db, "registrations");
         const q = query(userRef, where("userId", "==", userId));
         const querySnapshot = await getDocs(q);
 
