@@ -170,10 +170,10 @@ const EasebuzzPayment = () => {
 
       const options = {
         access_key: access_key,
-        onResponse: (response) => {
+        onResponse: async (response) => {
           if (response.status === "success") {
-            savePaymentData();
-            sendEmail(localStorage.getItem("email"));
+            await savePaymentData();
+            await sendEmail(localStorage.getItem("email"));
             window.location.href = "/dashboard";
           } else {
             window.location.href = "/dashboard";
