@@ -106,10 +106,6 @@ export default function RegistrationForm({ params }) {
         const eventData = eventDocSnap.data();
 
         if (eventData.slots > 0) {
-          await updateDoc(eventDocRef, {
-            slots: increment(-1),
-          });
-
           localStorage.setItem("event_id", event_id);
           localStorage.setItem("firstname", formData.name);
           localStorage.setItem("email", formData.email);
