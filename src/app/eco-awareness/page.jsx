@@ -26,7 +26,7 @@ const EcoAwarenessPage = () => {
         {/* Heading Section */}
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-            AI Zypher's Eco Initiative
+            AI Zypher&apos;s Eco Initiative
           </h1>
         </div>
 
