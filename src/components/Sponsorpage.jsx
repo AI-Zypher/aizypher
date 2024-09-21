@@ -4,7 +4,7 @@ const SponsorsPage = () => {
   return (
     <div id="sponsors" className="bg-black flex flex-col relative mt-20">
       <div className="relative flex items-center justify-center py-10 relative z-10">
-        <h1 className="text-white text-6xl font-bold">Sponsor</h1>
+        <h1 className="text-white text-6xl font-bold">Sponsors</h1>
       </div>
 
       {/* Image Section */}
