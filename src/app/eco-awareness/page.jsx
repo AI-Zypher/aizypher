@@ -1,21 +1,14 @@
 "use client";
 
 import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
+import dynamic from 'next/dynamic';
 
-// Custom marker icon
-const customIcon = new L.Icon({
-  iconUrl: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/map_marker4.png",
-  iconSize: [50, 60],
-  iconAnchor: [17, 46],
-  popupAnchor: [0, -46],
+const MapComponent = dynamic(() => import('./MapComponent'), {
+  ssr: false,
+  loading: () => <p>Loading map...</p>
 });
 
-const centerCoordinates = [13.032203, 80.183097];
-
-const Maps = () => {
+const EcoAwarenessPage = () => {
   return (
     <div className="relative" style={{ backgroundColor: '#18492D', minHeight: '100vh' }}>
       {/* Leaf Background */}
@@ -26,7 +19,6 @@ const Maps = () => {
           className="absolute opacity-30" 
           style={{ width: '100%', height: 'auto', zIndex: 0 }}
         />
-        {/* Additional leaf images can be added here with different styles */}
       </div>
 
       {/* Centered Content */}
@@ -41,29 +33,19 @@ const Maps = () => {
         {/* Content Section */}
         <div className="max-w-2xl text-center">
           <p className="text-lg md:text-xl text-white leading-relaxed">
-          The team of AI Zypher  believes in the importance of sustainability and environmental stewardship. 
-          To contribute to a greener planet, we are happy to announce our initiative to plant 250 saplings with the help of NGO.
-          This effort not only enhances our local ecosystem but also sets an example for our community and industry.
+            The team of AI Zypher believes in the importance of sustainability and environmental stewardship. 
+            To contribute to a greener planet, we are happy to announce our initiative to plant 250 saplings with the help of an NGO.
+            This effort not only enhances our local ecosystem but also sets an example for our community and industry.
           </p>
         </div>
       </div>
 
       {/* Map Section */}
       <div style={{ height: '800px', width: '80%', margin: '0 auto', padding: '20px', backgroundColor: '#f0f0f0', zIndex: 10 }}>
-        <MapContainer center={centerCoordinates} zoom={50} style={{ height: '100%', width: '100%' ,zIndex: 10}}>
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
-          <Marker position={centerCoordinates} icon={customIcon}>
-            <Popup>
-              This is where our Eco Awareness initiative has been initiated!!!
-            </Popup>
-          </Marker>
-        </MapContainer>
+        <MapComponent />
       </div>
     </div>
   );
 };
 
-export default Maps;
+export default EcoAwarenessPage;
