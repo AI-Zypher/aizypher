@@ -35,13 +35,37 @@ const SponsorsPage = () => {
               className="w-full h-full object-contain"
             />
           </section>
-          {/* <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white transition-all h-[12rem]">
+          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white transition-all h-[12rem]">
             <img 
-              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/sprint.png" 
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/aayna.png" 
               alt="sprint-image" 
               className="w-full h-full object-contain"
             />
-          </section> */}
+          </section>
+        </section>
+          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white transition-all h-[12rem]">
+            <img 
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/bhaga.PNG" 
+              alt="sprint-image" 
+              className="w-full h-full object-contain"
+            />
+          </section>
+        </section>
+          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white transition-all h-[12rem]">
+            <img 
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/national.PNG" 
+              alt="sprint-image" 
+              className="w-full h-full object-contain"
+            />
+          </section>
+      </section>
+          <section className="flex-1 bg-transparent text-white flex items-center justify-center border border-white transition-all h-[12rem]">
+            <img 
+              src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/rgd.jpg" 
+              alt="sprint-image" 
+              className="w-full h-full object-contain"
+            />
+          </section>
         </div>
       </div>
 
