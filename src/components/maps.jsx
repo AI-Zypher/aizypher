@@ -7,11 +7,9 @@ import Link from 'next/link';
 
 // Sample images (replace these with your own image URLs)
 const images = [
-  'https://via.placeholder.com/300x200?text=Image+1',
-  'https://via.placeholder.com/300x200?text=Image+2',
-  'https://via.placeholder.com/300x200?text=Image+3',
-  'https://via.placeholder.com/300x200?text=Image+4',
-  'https://via.placeholder.com/300x200?text=Image+5',
+    "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/er1.jpg",
+    "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/eri2.jpeg",
+    "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/eri3.jpeg",
 ];
 
 const maps = () => {
