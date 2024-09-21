@@ -27,7 +27,7 @@ const maps = () => {
   return (
     <div style={{ textAlign: 'center', padding: '50px' }}>
       {/* Heading */}
-      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">AI ZYPHER'S ECO INITIATIVE</h1>
+      <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">AI ZYPHER&apos;S ECO INITIATIVE</h1>
       
       {/* Carousel Section */}
       <div style={{ margin: '50px 0' }}>
