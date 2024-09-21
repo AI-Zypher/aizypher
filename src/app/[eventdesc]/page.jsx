@@ -73,7 +73,11 @@ const EventPage = ({ params }) => {
             <AlertTitle>
               Participants from AIML dept of SRMIST Ramapuram and Arts, Science,
               Humanities (Non B.E/B.Tech) Students of other colleges are not
-              allowed
+              allowed.
+              <br/>
+              For team events, A single registration is to be done. The other team members can give their names to the event coordinators of the particular event.
+              <br/>
+              For more details, reach out us at contact@aizypher.in
             </AlertTitle>
           </Alert>
         </div>

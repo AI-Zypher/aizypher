@@ -176,7 +176,7 @@ const EasebuzzPayment = () => {
             await sendEmail(localStorage.getItem("email"));
             window.location.href = "/dashboard";
           } else {
-            window.location.href = "/dashboard";
+            window.location.href = "/nonpayment";
           }
         },
         theme: "#123456",
