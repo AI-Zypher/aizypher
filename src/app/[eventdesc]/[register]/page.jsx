@@ -69,18 +69,63 @@ export default function RegistrationForm({ params }) {
       } catch (error) {
         console.error("Error fetching event data:", error);
         setError(error);
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchEventData();
   }, [event_id]);
 
+  const validateForm = () => {
+    const {
+      name,
+      registerNo,
+      mobileNo,
+      yearOfStudy,
+      branch,
+      email,
+      collegeName,
+    } = formData;
+
+    if (!name.trim()) {
+      toast.error("Name is required");
+      return false;
+    }
+    if (!registerNo.trim()) {
+      toast.error("Register No. is required");
+      return false;
+    }
+    if (!mobileNo.trim() || mobileNo.length !== 10) {
+      toast.error("Mobile No. must be 10 digits");
+      return false;
+    }
+    if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) {
+      toast.error("Valid email is required");
+      return false;
+    }
+    if (!yearOfStudy) {
+      toast.error("Year of Study is required");
+      return false;
+    }
+    if (!branch.trim()) {
+      toast.error("Branch is required");
+      return false;
+    }
+    if (!collegeName.trim()) {
+      toast.error("College Name is required");
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (isSubmitting) return;
+
+    if (!validateForm()) {
+      return;
+    }
 
     setIsSubmitting(true);
 
@@ -106,10 +151,6 @@ export default function RegistrationForm({ params }) {
         const eventData = eventDocSnap.data();
 
         if (eventData.slots > 0) {
-          await updateDoc(eventDocRef, {
-            slots: increment(-1),
-          });
-
           localStorage.setItem("event_id", event_id);
           localStorage.setItem("firstname", formData.name);
           localStorage.setItem("email", formData.email);
@@ -126,7 +167,7 @@ export default function RegistrationForm({ params }) {
       console.error("Error during registration: ", e);
       toast.error("Error registering. Please try again.");
     } finally {
-      setIsSubmitting(false); // Re-enable the submit button
+      setIsSubmitting(false);
     }
   };
 
@@ -203,9 +244,9 @@ export default function RegistrationForm({ params }) {
             </label>
             <input
               type="text"
-              id="college name"
-              name="college name"
-              value={formData.CollegeName}
+              id="collegeName"
+              name="collegeName"
+              value={formData.collegeName}
               onChange={handleChange}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black"
               placeholder="Enter your College name"

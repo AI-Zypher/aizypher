@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, doc, updateDoc, increment } from "firebase/firestore";
 import { db } from "../../app/firebaseConfig";
 
 const API_URL = process.env.NEXT_PUBLIC_EASEBUZZ_LINK;
@@ -172,6 +172,10 @@ const EasebuzzPayment = () => {
         access_key: access_key,
         onResponse: async (response) => {
           if (response.status === "success") {
+            const eventDocRef = doc(db, "events", localStorage.getItem("event_id"));
+            await updateDoc(eventDocRef, {
+              slots: increment(-1),
+            });
             await savePaymentData();
             await sendEmail(localStorage.getItem("email"));
             window.location.href = "/dashboard";
