@@ -15,9 +15,10 @@ const MapComponent = () => {
 
   return (
     <MapContainer center={centerCoordinates} zoom={13} style={{ height: '100%', width: '100%' }}>
+      {/* TileLayer for Satellite View from Esri */}
       <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{x}/{y}"
+        attribution='&copy; <a href="https://www.esri.com/">Esri</a> & contributors'
       />
       <Marker position={centerCoordinates} icon={customIcon}>
         <Popup>
