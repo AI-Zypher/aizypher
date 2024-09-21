@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 // Sample images (replace these with your own image URLs)
 const images = [
-    "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/er1.jpg",
+    "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/eri1.jpg",
     "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/eri2.jpeg",
     "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/eri3.jpeg",
 ];
@@ -70,7 +70,7 @@ const cardStyle = {
 // Style for the image inside the card
 const imageStyle = {
   width: '100%',
-  height: '100%',
+  height: '200px',
   objectFit: 'cover',
 };
 
