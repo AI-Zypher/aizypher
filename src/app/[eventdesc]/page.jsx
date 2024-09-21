@@ -50,17 +50,17 @@ const EventPage = ({ params }) => {
   }
 
   return (
-    <div className="relative">
-      <a 
+      <div className="relative min-h-screen flex flex-col items-start justify-center p-4">
+        <a 
         href="/" 
         className="relative flex items-center justify-center w-10 h-10 border-2 border-green-500 bg-transparent rounded-full text-white font-semibold hover:bg-purple-700 hover:border-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mt-4 ml-4"
+        style={{ zIndex: 100}}
       >
         <HomeRoundedIcon 
           fontSize="medium" 
           className="text-white" 
         />
       </a>
-      <div className="relative min-h-screen flex flex-col items-start justify-center p-4">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/white-bg.png"
@@ -68,16 +68,18 @@ const EventPage = ({ params }) => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="container-fix pb-4 md:py-4 w-2/3 mx-auto text-center">
-          <Alert className="bg-yellow-800/25 text-yellow-500 animate-pulse">
+        <div className="container-fix pb-4 md:py-4 w-5/6 mx-auto text-center ">
+          <Alert className="bg-yellow-800/25 text-yellow-500 animate-pulse ">
             <AlertTitle>
               Participants from AIML dept of SRMIST Ramapuram and Arts, Science,
               Humanities (Non B.E/B.Tech) Students of other colleges are not
               allowed.
               <br/>
+              <br/>
               For team events, A single registration is to be done. The other team members can give their names to the event coordinators of the particular event.
               <br/>
-              For more details, reach out us at contact@aizypher.in
+              <br/>
+              For more details, reach out to us at contact@aizypher.in
             </AlertTitle>
           </Alert>
         </div>
@@ -161,7 +163,7 @@ const EventPage = ({ params }) => {
           </p>
         </div>
       </div>
-    </div>
+    
   );
 };
 

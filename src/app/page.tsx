@@ -5,6 +5,7 @@ import Third from "../components/third_section";
 import Fourth from "../components/mirroimage";
 import NavBar from "../components/navbar";
 import Footer from "../components/footerpage";
+import Maps from "../components/maps";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <First />
       <Second />
       <Fourth />
+      <Maps /> 
       <Third />
       <SponsorsPage />
       {/* <Event /> */}
