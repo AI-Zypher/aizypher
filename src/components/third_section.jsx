@@ -102,7 +102,7 @@ const data = [
 
 const data2 = [
   {
-    category: "Mr. / Ms. Zypher",
+    category: "THE FINAL SHOWDOWN: TITLE EVENT",
     title: "Mr. / Ms. Zypher",
     src: "https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/MrMsZypher.png",
     content: <DummyContent />,
