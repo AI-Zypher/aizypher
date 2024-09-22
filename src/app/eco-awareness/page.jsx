@@ -40,13 +40,13 @@ const EcoAwarenessPage = () => {
         </div>
       </div>
 
-      {/* Map Section with QR Code */}
-      <div style={{ height: '80%', width: '80%', margin: '0 auto', padding: '5px', backgroundColor: '#f0f0f0', zIndex: 10, position: 'relative' }}>
-        {/* Expanded QR image to cover the white box */}
+      {/* Map Section with Responsive QR Code */}
+      <div className="relative z-10" style={{ width: '80%', maxWidth: '600px', margin: '40px auto', padding: '0', backgroundColor: '#f0f0f0' }}>
+        {/* Responsive QR Image */}
         <img 
           src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/qr.jpg" 
           alt="QR Code" 
-          style={{ width: '100%', height: '100%', objectFit: 'contain', zIndex: 1 }} 
+          style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }} 
         />
         {/* <MapComponent /> */}
       </div>
