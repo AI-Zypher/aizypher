@@ -3,6 +3,7 @@ import { auth, provider, signInWithPopup } from "../app/firebaseConfig";
 import React, { useEffect, useRef, useState } from "react";
 import { gsap, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import PulsatingButton from "@/components/ui/pulsating-button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -210,8 +211,16 @@ const AnimationPage = () => {
                   </p>
                 </div>
               </div>
+              
             </div>
+            <div className="flex flex-col items-center justify-center h-full mt-10">
+              {/* Lowering the button by adding margin */}
+                <a href="/register">
+                  <PulsatingButton className="mt-8">REGISTER NOW</PulsatingButton>
+                </a>
+              </div>
           </div>
+          
         </div>
       </div>
     </div>

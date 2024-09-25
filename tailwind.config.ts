@@ -16,6 +16,7 @@ const config: Config = {
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+          pulse: "pulse var(--duration) ease-out infinite",
       },
       keyframes: {
         scroll: {
@@ -27,5 +28,7 @@ const config: Config = {
     },
   },
   plugins: [],
+
+  
 };
 export default config;
