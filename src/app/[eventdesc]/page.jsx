@@ -99,6 +99,9 @@ const EventPage = ({ params }) => {
             <h1 className="text-4xl font-bold text-[#eab308]">
               {eventData.name}
             </h1>
+            <h1 className="text-4xl font-bold text-white">
+              {eventData.closure}
+            </h1>
             <Link
               href={"/" + eventdesc + "/register"}
               className="mt-5 text-blue-300"
