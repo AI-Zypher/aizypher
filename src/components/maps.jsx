@@ -47,7 +47,7 @@ const maps = () => {
       </div>
 
       {/* Button below the carousel */}
-      <Link href="/eco-awareness" passHref>
+      <Link href="/zyphtree" passHref>
       <button style={buttonStyle} className="cursor-pointer">
         Know More
       </button>
