@@ -1,46 +1,96 @@
 import React from "react";
-import Image from "next/image";``
 
-const zyphtree = () => {
+const Zyphtree = () => {
     return (
-        <div className="bg-[#1c2e27]">  
-            <div className="min-h-screen"> 
-                <div className="flex flex-row justify-between items-center"> 
-                <img src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/srmlogo.png" alt="" className="w-auto h-1/2" />
-                <img src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zyplogo.png" alt="" className="w-auto h-[100px]"/>
-                </div>
-                
-                <div className="relative flex flex-col items-center flex-end">
-                <img src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/branch.png" alt="" className="w-[80%] h-auto  "/>
-                <img src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypher-main.png" alt="" className="absolute top-[50%] left-1/2 transform -translate-x-1/2  w-1/3 h-auto z-20"/>
-                <img src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/root.png" alt="" className="w-[120%]"/>
-                </div>
-            </div>
-            <div className="flex flex-col items-center font-italic">
-             <h1 className="text-[50px] pb-20">
-             JOIN US IN MAKING A DIFFERENCE <br />
-             </h1>
-             
-             <h1 className="text-[50px] pb-20 text-center">
-             RECIPIENT NAME : ZYPHER<br/>LOCATION : SRM RAMAPURAM
-             </h1>             
-            </div>
-            <div className="flex flex-col items-center pb-20">
-            <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d834.67753145259!2d80.1794634118377!3d13.032541286488744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5260d62bc6942b%3A0x8cd23707b2ddfb87!2sSRM%20Easwari%20Engineering%20College!5e1!3m2!1sen!2sin!4v1732164490748!5m2!1sen!2sin"
-        className="w-[600px] h-[450px] border-0"
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-            </div>
-            <div className='flex flex-row justify-center'>
-                <img src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/leaves.png" alt="" className="w-auto h-1/2"/>
-                <img src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/leaves.png" alt="" className="w-auto h-1/2"/>
+        <div className="relative h-screen bg-custom-gradient overflow-x-hidden">
+            <div className="inset-0 bg-red-grid">
+            {/* Header Section */}
+            <div className="flex flex-row justify-between items-center pt-10 px-6 md:px-10">
+                <img
+                    src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/srmlogo.png"
+                    alt="SRM Logo"
+                    className="h-16 md:h-24 w-auto"
+                />
+                <img
+                    src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zypher-main.png"
+                    alt="Zypher Main"
+                    className="h-16 md:h-24 w-auto"
+                />
+                <img
+                    src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/zyplogo.png"
+                    alt="Zyph Logo"
+                    className="h-16 md:h-28 w-auto"
+                />
             </div>
 
+            {/* Image Section */}
+            <div className="flex flex-col items-center mt-8">
+                <img
+                    src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/tree1234.png"
+                    alt="Tree"
+                    className=" lg:w-[70%]  h-auto"
+                />
+            </div>
+
+            {/* Heading Section */}
+            <div className="flex flex-col items-center font-italic mt-10 md:mt-14">
+                <h1 className="text-3xl md:text-5xl text-center">
+                    JOIN US IN MAKING A DIFFERENCE
+                </h1>
+            </div>
+
+            {/* Buttons Section */}
+            <div className="flex flex-wrap lg:flex-wrap justify-center gap-6 mt-10 md:mt-14 px-4">
+                <div className="flex flex-col items-center w-full md:w-[45%] lg:w-[30%]">
+                    <h1 className="text-xl md:text-2xl lg:text-4xl pb-2">
+                        DR. SAKTHI GANESH M
+                    </h1>
+                    <a href="/zyphtree/tree1">
+                        <button className="bg-[#D9D9D9] text-black font-bold py-2 px-4 rounded-full text-sm md:text-lg lg:text-xl border border-black hover:bg-[#B3B3B3] focus:outline-none focus:ring-2 focus:ring-[#D9D9D9] focus:ring-opacity-50">
+                            CHECK NOW
+                        </button>
+                    </a>
+                </div>
+                <div className="flex flex-col items-center w-full md:w-[45%] lg:w-[30%]">
+                    <h1 className="text-xl md:text-2xl lg:text-4xl pb-2">
+                        DR. BALIKA J. CHELLIAH
+                    </h1>
+                    <a href="/zyphtree/tree2">
+                        <button className="bg-[#D9D9D9] text-black font-bold py-2 px-4 rounded-full text-sm md:text-lg lg:text-xl border border-black hover:bg-[#B3B3B3] focus:outline-none focus:ring-2 focus:ring-[#D9D9D9] focus:ring-opacity-50">
+                            CHECK NOW
+                        </button>
+                    </a>
+                </div>
+                <div className="flex flex-col items-center w-full lg:w-[30%]">
+                    <h1 className="text-xl md:text-2xl lg:text-4xl pb-2">
+                        Shri. DEEPAK SRIVATSAVA
+                    </h1>
+                    <a href="/zyphtree/tree3">
+                        <button className="bg-[#D9D9D9] text-black font-bold py-2 px-4 rounded-full text-sm md:text-lg lg:text-xl border border-black hover:bg-[#B3B3B3] focus:outline-none focus:ring-2 focus:ring-[#D9D9D9] focus:ring-opacity-50">
+                            CHECK NOW
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            {/* Leaves Section */}
+            {/* <div className="flex flex-row justify-center mt-10">
+                <img
+                    src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/leaves1.png"
+                    alt="Leaves"
+                    className="w-auto h-20 md:h-24 lg:h-24"
+                />
+                <img
+                    src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/leaves1.png"
+                    alt="Leaves"
+                    className="w-auto h-20 md:h-24 lg:h-24"
+                />
+            </div> */}
+            <div className="bg-[url('https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/leaves1.png')] bg-repeat-x bg-contain h-24 w-full mt-10">
+            </div>
+            </div>
         </div>
-        );  
-        };
+    );
+};
 
-export default zyphtree;
+export default Zyphtree;
