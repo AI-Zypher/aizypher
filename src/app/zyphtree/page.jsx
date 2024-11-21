@@ -26,7 +26,13 @@ const zyphtree = () => {
              </h1>             
             </div>
             <div className="flex flex-col items-center pb-20">
-            <img src="https://placehold.co/600x600" alt="" className=""/>
+            <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d834.67753145259!2d80.1794634118377!3d13.032541286488744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5260d62bc6942b%3A0x8cd23707b2ddfb87!2sSRM%20Easwari%20Engineering%20College!5e1!3m2!1sen!2sin!4v1732164490748!5m2!1sen!2sin"
+        className="w-[600px] h-[450px] border-0"
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
             </div>
             <div className='flex flex-row justify-center'>
                 <img src="https://cdn.jsdelivr.net/gh/MohamedArafath205/cdn.aizypher@main/leaves.png" alt="" className="w-auto h-1/2"/>
