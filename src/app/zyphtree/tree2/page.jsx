@@ -27,7 +27,7 @@ const Tree1 = () => {
       initMap();
     } else {
       const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAOxFZNGT3tnL19qyhzTUoInuF80GH56HE&callback=initMap`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&callback=initMap`;
       script.async = true;
       document.head.appendChild(script);
       window.initMap = initMap;
