@@ -58,7 +58,7 @@ const Tree1 = () => {
       />
 
       <div className="py-10 sm:text-xl md:text-3xl lg:text-6xl font-extrabold text-center">
-      A tree is a symbol of life, of growth, and of <br /> hope. When you plant a tree, you're not just <br /> growing a plant — you're growing a better <br /> future.
+      A tree is a symbol of life, of growth, and of <br /> hope. When you plant a tree, you&apos;re not just <br /> growing a plant — you&apos;re growing a better <br /> future.
       </div>
 
       <img

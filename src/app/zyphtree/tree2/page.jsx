@@ -58,7 +58,7 @@ const Tree1 = () => {
       />
 
       <div className="py-10 sm:text-xl md:text-3xl lg:text-6xl font-extrabold text-center">
-      Growing a tree is planting the roots of a <br /> healthier planet, a thriving ecosystem, and <br />a brighter future for all."
+      Growing a tree is planting the roots of a <br /> healthier planet, a thriving ecosystem, and <br />a brighter future for all.
       </div>
 
       <img
