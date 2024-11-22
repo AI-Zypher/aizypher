@@ -58,8 +58,8 @@ const Tree1 = () => {
       />
 
       <div className="py-10 text-[#003000] sm:text-xl md:text-3xl lg:text-6xl font-extrabold text-center">
-        " Planting a tree today sows the seeds of <br /> hope, life, and a greener
-        future for <br /> generations to come "
+        &quot; Planting a tree today sows the seeds of <br /> hope, life, and a greener
+        future for <br /> generations to come &quot;
       </div>
 
       <img

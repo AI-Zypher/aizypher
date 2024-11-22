@@ -58,7 +58,7 @@ const Tree1 = () => {
       />
 
       <div className="py-10 text-[#1d2818] sm:text-xl md:text-3xl lg:text-6xl font-extrabold text-center">
-      " A tree is a symbol of life, of growth, and of <br /> hope. When you plant a tree, you&apos;re not just <br /> growing a plant — you&apos;re growing a better future. "
+      &quot; A tree is a symbol of life, of growth, and of <br /> hope. When you plant a tree, you&apos;re not just <br /> growing a plant — you&apos;re growing a better future. &quot;
       </div>
 
       <img
