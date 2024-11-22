@@ -57,8 +57,8 @@ const Tree1 = () => {
         className="absolute left-0 top-[50%] lg:top-[70%] transform -translate-y-1/2 -translate-x-1/3 rotate-90 sm:w-[250px] md:w-[500px] lg:w-auto z-0"
       />
 
-      <div className="py-10 sm:text-xl md:text-3xl lg:text-6xl font-extrabold text-center">
-      Growing a tree is planting the roots of a <br /> healthier planet, a thriving ecosystem, and <br />a brighter future for all.
+      <div className="py-10 text-[#003000] sm:text-xl md:text-3xl lg:text-6xl font-extrabold text-center">
+      " Growing a tree is planting the roots of a <br /> healthier planet, a thriving ecosystem, and <br />a brighter future for all. ''
       </div>
 
       <img
@@ -77,11 +77,11 @@ const Tree1 = () => {
       </div>
 
       {/* Text about the person */}
-      <h1 className="text-black font-extrabold text-xl md:text-5xl text-center pt-10">
+      <h1 className="text-[#1d2818] font-extrabold text-xl md:text-5xl text-center pt-10">
       Dr. BALIKA J. CHELLIAH
       </h1>
 
-      <h1 className="text-black font-bold text-md md:text-3xl text-center py-4">
+      <h1 className="text-[#253921] font-bold text-md md:text-3xl text-center py-4">
       VP-Admin | Dy.HoD/AIML<br/>
     SRMIST, Ramapuram Campus,<br />
         Chennai.

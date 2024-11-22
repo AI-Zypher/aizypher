@@ -19,7 +19,7 @@ const Tree1 = () => {
 
       // When the marker is clicked, redirect to a page inside your website
       marker.addListener("click", () => {
-        window.location.href = "/your-target-page"; // Replace with your desired page URL
+        window.location.href = "/zyphtree/tree3/footage"; // Replace with your desired page URL
       });
     };
 
@@ -57,8 +57,8 @@ const Tree1 = () => {
         className="absolute left-0 top-[50%] lg:top-[70%] transform -translate-y-1/2 -translate-x-1/3 rotate-90 sm:w-[250px] md:w-[500px] lg:w-auto z-0"
       />
 
-      <div className="py-10 sm:text-xl md:text-3xl lg:text-6xl font-extrabold text-center">
-      A tree is a symbol of life, of growth, and of <br /> hope. When you plant a tree, you&apos;re not just <br /> growing a plant — you&apos;re growing a better <br /> future.
+      <div className="py-10 text-[#1d2818] sm:text-xl md:text-3xl lg:text-6xl font-extrabold text-center">
+      " A tree is a symbol of life, of growth, and of <br /> hope. When you plant a tree, you&apos;re not just <br /> growing a plant — you&apos;re growing a better future. "
       </div>
 
       <img
@@ -77,11 +77,11 @@ const Tree1 = () => {
       </div>
 
       {/* Text about the person */}
-      <h1 className="text-black font-extrabold text-xl md:text-5xl text-center pt-10">
+      <h1 className="text-[#1d2818] font-extrabold text-xl md:text-5xl text-center pt-10">
         Shri. DEEPAK SRIVATSAVA
       </h1>
 
-      <h1 className="text-black font-bold text-md md:text-3xl text-center py-4">
+      <h1 className="text-[#253921] font-bold text-md md:text-3xl text-center py-4">
       IFS <br />
     Additional Principal Chief Conservator <br />
     of Forests and Member Secretary, <br />
